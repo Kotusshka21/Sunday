@@ -96,7 +96,7 @@
             letter-spacing: 0.1em;
         }
 
-        /* ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ СПРАВА */
+        /* ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ */
         .lang-switch {
             display: flex;
             justify-content: flex-end;
@@ -122,11 +122,11 @@
             border-bottom: 1px solid var(--text);
         }
 
-        /* HERO СЕКЦИЯ */
+        /* HERO СЕКЦИЯ БЕЗ БЕЛОГО ПРЯМОУГОЛЬНИКА */
         .hero {
             position: relative;
-            height: 88vh;
-            min-height: 550px;
+            height: 90vh;
+            min-height: 580px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -140,7 +140,7 @@
             inset: 0;
             z-index: 1;
             background-color: #ededed;
-            background-image: url('hero.jpg');
+            background-image: url('hero.jpg'), url('hero.png');
             background-size: cover;
             background-position: center;
         }
@@ -149,28 +149,34 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.12);
+            background: rgba(0, 0, 0, 0.25);
         }
 
         .hero-center-box {
             position: relative;
             z-index: 2;
             text-align: center;
-            max-width: 680px;
+            max-width: 900px;
             padding: 20px;
         }
 
         .hero-center-box h1 {
-            font-size: clamp(1.25rem, 2.4vw, 1.9rem);
+            font-size: clamp(2rem, 4.4vw, 3.8rem);
             font-weight: 500;
-            line-height: 1.35;
-            letter-spacing: -0.015em;
-            color: #111;
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(8px);
-            padding: 20px 32px;
-            border-radius: 2px;
-            display: inline-block;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: #ffffff;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+            margin-bottom: 14px;
+        }
+
+        .hero-sub {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
         }
 
         /* СЕКЦИЯ 01: ПРО НАС */
@@ -275,13 +281,13 @@
             min-height: 320px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Фиксирует элементы сверху */
+            justify-content: flex-start;
         }
 
         .service-card .num {
             font-size: 11px;
             color: var(--muted);
-            margin-bottom: 56px; /* Фиксированная высота отступа от номера */
+            margin-bottom: 56px;
             display: block;
         }
 
@@ -570,7 +576,8 @@
     <section class="hero">
         <div class="hero-media"></div>
         <div class="hero-center-box">
-            <h1 data-i18n="hero_phrase">Агентство SMM, видеопродакшна и брендинга в Хельсинки.</h1>
+            <h1 data-i18n="hero_title">Создаем визуальный контент, который продает ваш бренд</h1>
+            <div class="hero-sub" data-i18n="hero_sub">Helsinki — SMM, Video & Web</div>
         </div>
     </section>
 
@@ -636,22 +643,22 @@
                         <div class="slider-container" id="teetaoSlider">
                             <button id="teetaoSoundBtn" class="sound-toggle-btn" onclick="toggleAudio('teetaoSlider', 'teetaoSoundBtn')">Sound Off</button>
 
-                            <!-- 1: Фото з чайниками -->
+                            <!-- 1: Фото с чайниками -->
                             <div class="slide active">
                                 <img src="teetao-1.jpg" alt="Teetao photo 1" onerror="this.src='teetao-1.png'">
                             </div>
 
-                            <!-- 2: Відео з десертами -->
+                            <!-- 2: Видео с десертами -->
                             <div class="slide">
                                 <video src="https://res.cloudinary.com/rkmxpfot/video/upload/v1788792893/teetao-2.mp4" autoplay muted loop playsinline></video>
                             </div>
 
-                            <!-- 3: Відео з атмосферою -->
+                            <!-- 3: Видео с атмосферой -->
                             <div class="slide">
                                 <video src="https://res.cloudinary.com/rkmxpfot/video/upload/v1788793399/teetao-3.mp4" autoplay muted loop playsinline></video>
                             </div>
 
-                            <!-- 4: Фото сидять -->
+                            <!-- 4: Фото интерьера -->
                             <div class="slide">
                                 <img src="teetao-4.jpg" alt="Teetao interior seating" onerror="this.src='teetao-4.png'">
                             </div>
@@ -757,7 +764,7 @@
             <div class="footer-grid">
                 <div class="footer-label" data-i18n="contact_label">[ 04 / Контакты ]</div>
                 <div>
-                    <a href="mailto:hello@sundaystudio.fi" class="contact-mail">hello@sundaystudio.fi</a>
+                    <a href="mailto:sundaycreative777@gmail.com" class="contact-mail">sundaycreative777@gmail.com</a>
                     <div class="contact-details">
                         <div>
                             <span data-i18n="social_label">Instagram</span>
@@ -785,7 +792,8 @@
                 nav_services: "Услуги",
                 nav_portfolio: "Кейсы",
                 nav_contact: "Контакты",
-                hero_phrase: "Агентство SMM, видеопродакшна и брендинга в Хельсинки.",
+                hero_title: "Создаем визуальный контент, который продает ваш бренд",
+                hero_sub: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / О студии ]",
                 about_p1: "SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.",
                 about_p2: "От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.",
@@ -816,7 +824,8 @@
                 nav_services: "Services",
                 nav_portfolio: "Cases",
                 nav_contact: "Contact",
-                hero_phrase: "SMM, video production, and branding agency in Helsinki.",
+                hero_title: "Visual content crafted to make your brand sell",
+                hero_sub: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / Studio Profile ]",
                 about_p1: "SUNDAY Studio specializes in next-generation visual communications. We don't just manage social media — we curate a cohesive visual language for your brand.",
                 about_p2: "From conceptual photo shoots and video production to turn-key websites: each project is crafted as a refined artistic and commercial statement.",
@@ -847,7 +856,8 @@
                 nav_services: "Palvelut",
                 nav_portfolio: "Työt",
                 nav_contact: "Yhteystiedot",
-                hero_phrase: "Some-, videotuotanto- ja bränditoimisto Helsingissä.",
+                hero_title: "Visuaalista sisältöä, joka kasvattaa brändisi myyntiä",
+                hero_sub: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / Studio ]",
                 about_p1: "SUNDAY Studio on erikoistunut uuden sukupolven visuaaliseen viestintään. Emme ainoastaan hallinnoi sosiaalista mediaa — luomme brändillesi yhtenäisen ja tunnistettavan visuaalisen kielen.",
                 about_p2: "Konseptuaalisista kuvauksista ja videotuotannosta avaimet käteen -verkkosivuihin: jokainen projekti on huolella hiottu esteettinen ja kaupallinen kokonaisuus.",
