@@ -172,7 +172,7 @@
             display: inline-block;
         }
 
-        /* СЕКЦИЯ 01: ПРО НАС (АСИММЕТРИЧНАЯ, ДО ПРАВОГО КРАЯ) */
+        /* СЕКЦИЯ 01: ПРО НАС */
         .about-section {
             padding-top: 110px;
             padding-bottom: 110px;
@@ -472,7 +472,7 @@
                 <a href="#contacts" data-i18n="nav_contact">Контакты</a>
             </nav>
 
-            <!-- ЛОГОТИП -->
+            <!-- ЛОГОТИП ПО ЦЕНТРУ -->
             <div class="logo-center">
                 <a href="#">
                     <span class="brand-name">SUNDAY</span>
@@ -480,7 +480,7 @@
                 </a>
             </div>
 
-            <!-- ЯЗЫКИ -->
+            <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ -->
             <div class="lang-switch">
                 <button class="lang-btn active" onclick="setLang('ru')">RU</button>
                 <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -501,7 +501,7 @@
     <section id="about" class="about-section">
         <div class="about-layout">
             <div class="about-text-col">
-                <span class="about-label" data-i18n="about_label">[ 01 / Studio Profile ]</span>
+                <span class="about-label" data-i18n="about_label">[ 01 / О студии ]</span>
                 <div class="about-body">
                     <p data-i18n="about_p1">SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.</p>
                     <p data-i18n="about_p2">От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.</p>
@@ -509,12 +509,12 @@
             </div>
             
             <div class="about-image-col">
-                <span class="img-placeholder-tag">[ Studio Visual ]</span>
+                <span class="img-placeholder-tag" data-i18n="about_photo_tag">[ Визуал студии ]</span>
             </div>
         </div>
     </section>
 
-    <!-- КОНТЕЙНЕР ДЛЯ ОСТАЛЬНЫХ БЛОКОВ -->
+    <!-- СЕКЦИЯ 02 & 03 & 04 & КОНТАКТЫ -->
     <div class="page-container">
         <!-- СЕКЦИЯ 02: НАПРАВЛЕНИЯ РАБОТЫ -->
         <section id="services" class="services-section">
@@ -558,41 +558,41 @@
         <section id="portfolio" class="portfolio-section">
             <div class="section-header">
                 <span data-i18n="cases_label">[ 03 / Кейсы ]</span>
-                <span>Selected Works</span>
+                <span data-i18n="cases_sub">Избранные проекты</span>
             </div>
             <div class="cases-grid">
-                <!-- Кейс 1: Китайская чайная -->
+                <!-- Кейс 1: Teetao Teehuone -->
                 <div class="case-item">
                     <div class="case-img-wrap"></div>
                     <div class="case-info">
-                        <span data-i18n="c1_title">Китайская чайная</span>
+                        <span>Teetao Teehuone</span>
                         <span data-i18n="c1_meta">Видео, брендинг</span>
                     </div>
                 </div>
-                <!-- Кейс 2: Сумки -->
+                <!-- Кейс 2: Sunday Bag -->
                 <div class="case-item">
                     <div class="case-img-wrap"></div>
                     <div class="case-info">
-                        <span data-i18n="c2_title">KURA Objects</span>
+                        <span>Sunday Bag</span>
                         <span data-i18n="c2_meta">Под ключ</span>
                     </div>
                 </div>
-                <!-- Кейс 3: Салон красоты -->
+                <!-- Кейс 3: Muse Beauty -->
                 <div class="case-item">
                     <div class="case-img-wrap"></div>
                     <div class="case-info">
-                        <span data-i18n="c3_title">Maison Beauté</span>
+                        <span>Muse Beauty</span>
                         <span data-i18n="c3_meta">SMM и контент</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- РУБРИКИ / НОВОСТИ -->
+        <!-- СЕКЦИЯ 04: РУБРИКИ / НОВОСТИ -->
         <section class="news-section">
             <div class="section-header">
-                <span data-i18n="news_label">[ 04 / Рубрики & Инсайты ]</span>
-                <span data-i18n="news_sub">Недвижимость & Кейсы</span>
+                <span data-i18n="news_label">[ 04 / Рубрики и инсайты ]</span>
+                <span data-i18n="news_sub">Недвижимость и кейсы</span>
             </div>
             <div class="news-grid">
                 <div class="news-card">
@@ -601,7 +601,7 @@
                     <p class="news-excerpt" data-i18n="n1_desc">Почему короткие эстетичные рум-туры и съемка на рассвете привлекают инвесторов быстрее стандартных объявлений.</p>
                 </div>
                 <div class="news-card">
-                    <div class="news-tag" data-i18n="n2_tag">Истории продаж / Case Study</div>
+                    <div class="news-tag" data-i18n="n2_tag">Истории продаж / Разбор кейса</div>
                     <h4 class="news-title" data-i18n="n2_title">Продажа апартаментов в Тёёлё за 7 дней через один видео-кампейн</h4>
                     <p class="news-excerpt" data-i18n="n2_desc">Пошаговая стратегия визуального сторителлинга и узкого гео-таргетинга в социальных сетях.</p>
                 </div>
@@ -621,7 +621,7 @@
                         </div>
                         <div>
                             <span data-i18n="location_label">Локация</span>
-                            <strong>Helsinki, Finland</strong>
+                            <strong data-i18n="location_city">Хельсинки, Финляндия</strong>
                         </div>
                     </div>
                 </div>
@@ -633,7 +633,7 @@
         </footer>
     </div>
 
-    <!-- СКРИПТ ПЕРЕКЛЮЧЕНИЯ ЯЗЫКОВ -->
+    <!-- МУЛЬТИЯЗЫЧНОСТЬ (JS) -->
     <script>
         const translations = {
             ru: {
@@ -642,9 +642,10 @@
                 nav_portfolio: "Кейсы",
                 nav_contact: "Контакты",
                 hero_phrase: "Агентство SMM, видеопродакшна и брендинга в Хельсинки.",
-                about_label: "[ 01 / Studio Profile ]",
+                about_label: "[ 01 / О студии ]",
                 about_p1: "SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.",
                 about_p2: "От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.",
+                about_photo_tag: "[ Визуал студии ]",
                 services_label: "[ 02 / Направления работы ]",
                 services_count: "4 направления",
                 s1_title: "СММ под ключ",
@@ -656,23 +657,22 @@
                 s4_title: "Полный ребрендинг",
                 s4_desc: "Визуальная концепция, логотип, брендбук, типографика и переупаковка компании с нуля.",
                 cases_label: "[ 03 / Кейсы ]",
-                c1_title: "Китайская чайная",
+                cases_sub: "Избранные проекты",
                 c1_meta: "Видео, брендинг",
-                c2_title: "KURA Objects",
                 c2_meta: "Под ключ",
-                c3_title: "Maison Beauté",
                 c3_meta: "SMM и контент",
-                news_label: "[ 04 / Рубрики & Инсайты ]",
-                news_sub: "Недвижимость & Кейсы",
+                news_label: "[ 04 / Рубрики и инсайты ]",
+                news_sub: "Недвижимость и кейсы",
                 n1_tag: "Новости недвижимости / Хельсинки",
                 n1_title: "Как архитектурный визуал ускоряет продажу премиальных объектов",
                 n1_desc: "Почему короткие эстетичные рум-туры и съемка на рассвете привлекают инвесторов быстрее стандартных объявлений.",
-                n2_tag: "Истории продаж / Case Study",
+                n2_tag: "Истории продаж / Разбор кейса",
                 n2_title: "Продажа апартаментов в Тёёлё за 7 дней через один видео-кампейн",
                 n2_desc: "Пошаговая стратегия визуального сторителлинга и узкого гео-таргетинга в социальных сетях.",
                 contact_label: "[ 05 / Контакты ]",
                 social_label: "Instagram",
                 location_label: "Локация",
+                location_city: "Хельсинки, Финляндия",
                 rights: "Все права защищены"
             },
             en: {
@@ -684,8 +684,9 @@
                 about_label: "[ 01 / Studio Profile ]",
                 about_p1: "SUNDAY Studio specializes in next-generation visual communications. We don't just manage social media — we curate a cohesive visual language for your brand.",
                 about_p2: "From conceptual photo shoots and video production to turn-key websites: each project is crafted as a refined artistic and commercial statement.",
-                services_label: "[ 02 / Направления работы ]",
-                services_count: "4 core directions",
+                about_photo_tag: "[ Studio Visual ]",
+                services_label: "[ 02 / Services ]",
+                services_count: "4 directions",
                 s1_title: "Turn-Key SMM",
                 s1_desc: "Strategy, aesthetic content creation, consistent posting, community management, and targeted ads.",
                 s2_title: "Video Production",
@@ -694,14 +695,12 @@
                 s3_desc: "Clean, minimalist web design focused on sharp typography, mobile fluidity, and clear conversion.",
                 s4_title: "Full Rebranding",
                 s4_desc: "Brand identity, logos, comprehensive design systems, and art direction built from the ground up.",
-                cases_label: "[ 03 / Кейсы ]",
-                c1_title: "Chinese Tea House",
+                cases_label: "[ 03 / Cases ]",
+                cases_sub: "Selected Works",
                 c1_meta: "Video, Branding",
-                c2_title: "KURA Objects",
-                c2_meta: "Turn-Key Project",
-                c3_title: "Maison Beauté",
+                c2_meta: "Turn-Key",
                 c3_meta: "SMM & Content",
-                news_label: "[ 04 / Insights & News ]",
+                news_label: "[ 04 / Editorial & Insights ]",
                 news_sub: "Real Estate & Stories",
                 n1_tag: "Real Estate News / Helsinki",
                 n1_title: "How architectural imagery accelerates premium real estate sales",
@@ -709,9 +708,10 @@
                 n2_tag: "Sales Stories / Case Study",
                 n2_title: "Selling a Töölö apartment in 7 days via a single targeted video campaign",
                 n2_desc: "A breakdown of strategic storytelling paired with precision geo-targeting on social channels.",
-                contact_label: "[ 05 / Get in Touch ]",
+                contact_label: "[ 05 / Contact ]",
                 social_label: "Instagram",
                 location_label: "Location",
+                location_city: "Helsinki, Finland",
                 rights: "All rights reserved"
             },
             fi: {
@@ -720,10 +720,11 @@
                 nav_portfolio: "Työt",
                 nav_contact: "Yhteystiedot",
                 hero_phrase: "Some-, videotuotanto- ja bränditoimisto Helsingissä.",
-                about_label: "[ 01 / Studio Profile ]",
+                about_label: "[ 01 / Studio ]",
                 about_p1: "SUNDAY Studio on erikoistunut uuden sukupolven visuaaliseen viestintään. Emme ainoastaan hallinnoi sosiaalista mediaa — luomme brändillesi yhtenäisen ja tunnistettavan visuaalisen kielen.",
                 about_p2: "Konseptuaalisista kuvauksista ja videotuotannosta avaimet käteen -verkkosivuihin: jokainen projekti on huolella hiottu esteettinen ja kaupallinen kokonaisuus.",
-                services_label: "[ 02 / Направления работы ]",
+                about_photo_tag: "[ Studion visuaali ]",
+                services_label: "[ 02 / Palvelut ]",
                 services_count: "4 osaamisaluetta",
                 s1_title: "SMM avaimet käteen",
                 s1_desc: "Strategia, sisällöntuotanto, säännöllinen julkaisu, yhteisönhallinta ja kohdennettu mainonta.",
@@ -733,15 +734,13 @@
                 s3_desc: "Minimalistiset, typografiaan nojaavat sivustot, jotka toimivat saumattomasti mobiilissa.",
                 s4_title: "Brändiuudistus",
                 s4_desc: "Visuaalinen identiteetti, logot, typografia ja yrityksen kokonaisvaltainen uudelleenpaketointi alusta alkaen.",
-                cases_label: "[ 03 / Кейсы ]",
-                c1_title: "Kiinalainen teetalo",
+                cases_label: "[ 03 / Referenssit ]",
+                cases_sub: "Valikoidut työt",
                 c1_meta: "Video, brändäys",
-                c2_title: "KURA Objects",
                 c2_meta: "Avaimet käteen",
-                c3_title: "Maison Beauté",
-                c3_meta: "SMM & sisältö",
-                news_label: "[ 04 / Artikkelit ]",
-                news_sub: "Kiinteistöt & Tarinat",
+                c3_meta: "SMM ja sisältö",
+                news_label: "[ 04 / Artikkelit ja näkemykset ]",
+                news_sub: "Kiinteistöt ja tarinat",
                 n1_tag: "Kiinteistöuutiset / Helsinki",
                 n1_title: "Miten laadukas visuaalisuus nopeuttaa arvokohteiden myyntiä",
                 n1_desc: "Miksi esteettiset esittelyvideot herättävät ostajien kiinnostuksen perinteisiä ilmoituksia nopeammin.",
@@ -751,6 +750,7 @@
                 contact_label: "[ 05 / Yhteystiedot ]",
                 social_label: "Instagram",
                 location_label: "Sijainti",
+                location_city: "Helsinki, Suomi",
                 rights: "Kaikki oikeudet pidätetään"
             }
         };
