@@ -349,7 +349,7 @@
             color: var(--muted);
         }
 
-        /* СЛАЙДЕР ДЛЯ KNOT BAG */
+        /* СЛАЙДЕРЫ */
         .slider-container {
             position: relative;
             width: 100%;
@@ -371,10 +371,12 @@
             pointer-events: auto;
         }
 
-        .slide img {
+        .slide img,
+        .slide video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .slider-btn {
@@ -430,6 +432,31 @@
         .indicator-dot.active {
             background: #ffffff;
             transform: scale(1.2);
+        }
+
+        /* КНОПКА ЗВУКА */
+        .sound-toggle-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 15;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(4px);
+            border: none;
+            padding: 6px 10px;
+            font-family: var(--font);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #111;
+            cursor: pointer;
+            transition: background 0.2s ease, opacity 0.2s ease;
+            display: none;
+        }
+
+        .sound-toggle-btn:hover {
+            background: #ffffff;
         }
 
         /* РУБРИКИ / НОВОСТИ */
@@ -649,7 +676,39 @@
                 <!-- Кейс 1: Teetao Teehuone -->
                 <div class="case-item">
                     <div class="case-img-wrap">
-                        <!-- <img src="teetao.jpg" alt="Teetao Teehuone"> -->
+                        <div class="slider-container" id="teetaoSlider">
+                            <button id="teetaoSoundBtn" class="sound-toggle-btn" onclick="toggleTeetaoAudio()">Sound Off</button>
+
+                            <!-- 1: Фото з чайниками -->
+                            <div class="slide active">
+                                <img src="teetao-1.jpg" alt="Teetao teapots" onerror="this.style.display='none'">
+                            </div>
+
+                            <!-- 2: Відео з десертами (Cloudinary) -->
+                            <div class="slide">
+                                <video id="teetaoVideo1" src="https://res.cloudinary.com/rkmxpfot/video/upload/v1788792893/teetao-2.mp4" autoplay muted loop playsinline></video>
+                            </div>
+
+                            <!-- 3: Відео з атмосферою (Cloudinary) -->
+                            <div class="slide">
+                                <video id="teetaoVideo2" src="https://res.cloudinary.com/rkmxpfot/video/upload/v1788793399/teetao-3.mp4" autoplay muted loop playsinline></video>
+                            </div>
+
+                            <!-- 4: Фото сидять -->
+                            <div class="slide">
+                                <img src="teetao-4.jpg" alt="Teetao interior seating" onerror="this.style.display='none'">
+                            </div>
+
+                            <button class="slider-btn prev" onclick="changeSlide('teetaoSlider', -1)" aria-label="Предыдущий слайд">‹</button>
+                            <button class="slider-btn next" onclick="changeSlide('teetaoSlider', 1)" aria-label="Следующий слайд">›</button>
+
+                            <div class="slider-indicators">
+                                <span class="indicator-dot active" onclick="goToSlide('teetaoSlider', 0)"></span>
+                                <span class="indicator-dot" onclick="goToSlide('teetaoSlider', 1)"></span>
+                                <span class="indicator-dot" onclick="goToSlide('teetaoSlider', 2)"></span>
+                                <span class="indicator-dot" onclick="goToSlide('teetaoSlider', 3)"></span>
+                            </div>
+                        </div>
                     </div>
                     <div class="case-info">
                         <span>Teetao Teehuone</span>
@@ -657,37 +716,31 @@
                     </div>
                 </div>
 
-                <!-- Кейс 2: Knot Bag со слайдером на 4 фото -->
+                <!-- Кейс 2: Knot Bag -->
                 <div class="case-item">
                     <div class="case-img-wrap">
                         <div class="slider-container" id="knotBagSlider">
-                            <!-- Слайд 1: 4 сумки -->
                             <div class="slide active">
                                 <img src="knot-1.jpg" alt="4 Knot Bags" onerror="this.style.display='none'">
                             </div>
-                            <!-- Слайд 2: на столе -->
                             <div class="slide">
                                 <img src="knot-2.jpg" alt="Knot Bag on Table" onerror="this.style.display='none'">
                             </div>
-                            <!-- Слайд 3: синяя сумка -->
                             <div class="slide">
                                 <img src="knot-3.jpg" alt="Blue Knot Bag" onerror="this.style.display='none'">
                             </div>
-                            <!-- Слайд 4: инстаграм грид -->
                             <div class="slide">
                                 <img src="knot-4.jpg" alt="Instagram Grid" onerror="this.style.display='none'">
                             </div>
 
-                            <!-- Кнопки перелистывания -->
-                            <button class="slider-btn prev" onclick="changeSlide(-1)" aria-label="Предыдущее фото">‹</button>
-                            <button class="slider-btn next" onclick="changeSlide(1)" aria-label="Следующее фото">›</button>
+                            <button class="slider-btn prev" onclick="changeSlide('knotBagSlider', -1)" aria-label="Предыдущее фото">‹</button>
+                            <button class="slider-btn next" onclick="changeSlide('knotBagSlider', 1)" aria-label="Следующее фото">›</button>
 
-                            <!-- Точки-индикаторы -->
                             <div class="slider-indicators">
-                                <span class="indicator-dot active" onclick="goToSlide(0)"></span>
-                                <span class="indicator-dot" onclick="goToSlide(1)"></span>
-                                <span class="indicator-dot" onclick="goToSlide(2)"></span>
-                                <span class="indicator-dot" onclick="goToSlide(3)"></span>
+                                <span class="indicator-dot active" onclick="goToSlide('knotBagSlider', 0)"></span>
+                                <span class="indicator-dot" onclick="goToSlide('knotBagSlider', 1)"></span>
+                                <span class="indicator-dot" onclick="goToSlide('knotBagSlider', 2)"></span>
+                                <span class="indicator-dot" onclick="goToSlide('knotBagSlider', 3)"></span>
                             </div>
                         </div>
                     </div>
@@ -755,7 +808,7 @@
         </footer>
     </div>
 
-    <!-- СКРИПТ ПЕРЕКЛЮЧЕНИЯ ЯЗЫКОВ И СЛАЙДЕРА -->
+    <!-- СКРИПТЫ -->
     <script>
         const translations = {
             ru: {
@@ -892,31 +945,74 @@
             document.documentElement.lang = lang;
         }
 
-        /* ЛОГИКА СЛАЙДЕРА KNOT BAG */
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('#knotBagSlider .slide');
-        const dots = document.querySelectorAll('#knotBagSlider .indicator-dot');
+        /* СЛАЙДЕРЫ */
+        const sliderStates = {
+            teetaoSlider: 0,
+            knotBagSlider: 0
+        };
 
-        function showSlide(index) {
-            if (index >= slides.length) currentSlide = 0;
-            else if (index < 0) currentSlide = slides.length - 1;
-            else currentSlide = index;
+        let isSoundOn = false;
+
+        function updateSlider(sliderId, newIndex) {
+            const container = document.getElementById(sliderId);
+            if (!container) return;
+            const slides = container.querySelectorAll('.slide');
+            const dots = container.querySelectorAll('.indicator-dot');
+
+            if (newIndex >= slides.length) newIndex = 0;
+            else if (newIndex < 0) newIndex = slides.length - 1;
+
+            sliderStates[sliderId] = newIndex;
 
             slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === currentSlide);
+                const isActive = i === newIndex;
+                slide.classList.toggle('active', isActive);
+                
+                const vid = slide.querySelector('video');
+                if (vid) {
+                    if (isActive) {
+                        vid.currentTime = 0;
+                        vid.muted = !isSoundOn;
+                        vid.play().catch(() => {});
+                    } else {
+                        vid.pause();
+                    }
+                }
             });
 
             dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlide);
+                dot.classList.toggle('active', i === newIndex);
             });
+
+            if (sliderId === 'teetaoSlider') {
+                const soundBtn = document.getElementById('teetaoSoundBtn');
+                const activeSlide = slides[newIndex];
+                if (activeSlide && activeSlide.querySelector('video')) {
+                    soundBtn.style.display = 'block';
+                } else {
+                    soundBtn.style.display = 'none';
+                }
+            }
         }
 
-        function changeSlide(direction) {
-            showSlide(currentSlide + direction);
+        function changeSlide(sliderId, direction) {
+            const current = sliderStates[sliderId] || 0;
+            updateSlider(sliderId, current + direction);
         }
 
-        function goToSlide(index) {
-            showSlide(index);
+        function goToSlide(sliderId, index) {
+            updateSlider(sliderId, index);
+        }
+
+        function toggleTeetaoAudio() {
+            isSoundOn = !isSoundOn;
+            const soundBtn = document.getElementById('teetaoSoundBtn');
+            soundBtn.innerText = isSoundOn ? 'Sound On' : 'Sound Off';
+
+            const activeVideo = document.querySelector('#teetaoSlider .slide.active video');
+            if (activeVideo) {
+                activeVideo.muted = !isSoundOn;
+            }
         }
     </script>
 </body>
