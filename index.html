@@ -140,6 +140,7 @@
             inset: 0;
             z-index: 1;
             background-color: #ededed;
+            background-image: url('hero.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -148,7 +149,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.08);
+            background: rgba(0, 0, 0, 0.12);
         }
 
         .hero-center-box {
@@ -679,9 +680,9 @@
                         <div class="slider-container" id="teetaoSlider">
                             <button id="teetaoSoundBtn" class="sound-toggle-btn" onclick="toggleTeetaoAudio()">Sound Off</button>
 
-                            <!-- 1: Фото з чайниками -->
+                            <!-- 1: Перше оновлене фото Teetao -->
                             <div class="slide active">
-                                <img src="teetao-1.jpg" alt="Teetao teapots" onerror="this.style.display='none'">
+                                <img src="teetao-1.jpg" alt="Teetao photo 1" onerror="this.src='teetao-1.png'">
                             </div>
 
                             <!-- 2: Відео з десертами (Cloudinary) -->
@@ -696,7 +697,7 @@
 
                             <!-- 4: Фото сидять -->
                             <div class="slide">
-                                <img src="teetao-4.jpg" alt="Teetao interior seating" onerror="this.style.display='none'">
+                                <img src="teetao-4.jpg" alt="Teetao interior seating" onerror="this.src='teetao-4.png'">
                             </div>
 
                             <button class="slider-btn prev" onclick="changeSlide('teetaoSlider', -1)" aria-label="Предыдущий слайд">‹</button>
