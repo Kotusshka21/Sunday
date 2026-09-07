@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNDAY Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+            --muted: #767676;
+            --border: #e8e8e8;
+            --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ХЕДЕР */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 18px 32px;
+        }
+
+        .header-inner {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-left a {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .nav-left a:hover {
+            opacity: 0.5;
+        }
+
+        /* ЛОГОТИП ПО ЦЕНТРУ */
+        .logo-center {
+            text-align: center;
+        }
+
+        .logo-center a {
+            font-size: 21px;
+            letter-spacing: 0.18em;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .brand-name {
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .brand-sub {
+            font-weight: 400;
+            text-transform: capitalize; /* Только S заглавная, tudio маленькие */
+            letter-spacing: 0.1em;
+        }
+
+        /* ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ СПРАВА */
+        .lang-switch {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            padding: 2px 4px;
+            transition: color 0.2s;
+        }
+
+        .lang-btn.active {
+            color: var(--text);
+            font-weight: 700;
+            border-bottom: 1px solid var(--text);
+        }
+
+        /* HERO СЕКЦИЯ */
+        .hero {
+            position: relative;
+            height: 88vh;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .hero-media {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background-color: #ededed;
+            /* Вставьте сюда фоновое фото: */
+            /* background-image: url('your-hero-photo.jpg'); */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-media::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.08); /* деликатное затемнение для контраста */
+        }
+
+        .hero-center-box {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 680px;
+            padding: 20px;
+        }
+
+        .hero-center-box h1 {
+            font-size: clamp(1.25rem, 2.4vw, 1.9rem);
+            font-weight: 500;
+            line-height: 1.35;
+            letter-spacing: -0.015em;
+            color: #111;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(8px);
+            padding: 20px 32px;
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        /* СЕКЦИЯ ПРО НАС: АСИММЕТРИЧНАЯ, ДО ПРАВОГО КРАЯ */
+        .about-section {
+            padding-top: 110px;
+            padding-bottom: 110px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: minmax(320px, 460px) 1fr;
+            align-items: center;
+            gap: 60px;
+            padding-left: clamp(24px, 5vw, 80px);
+            padding-right: 0; /* правый край до упора */
+        }
+
+        .about-text-col {
+            padding-right: 20px;
+        }
+
+        .about-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--muted);
+            margin-bottom: 32px;
+            display: block;
+        }
+
+        .about-body p {
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: #2a2a2a;
+            font-weight: 400;
+        }
+
+        .about-body p + p {
+            margin-top: 20px;
+        }
+
+        .about-image-col {
+            width: 100%;
+            height: 520px;
+            background-color: #f2f2f2;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-image-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .img-placeholder-tag {
+            position: absolute;
+            bottom: 20px;
+            right: 24px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+        }
+
+        /* ОБЩИЙ КОНТЕЙНЕР ДЛЯ ОСТАЛЬНЫХ СЕКЦИЙ */
+        .page-container {
+            padding-left: clamp(24px, 5vw, 80px);
+            padding-right: clamp(24px, 5vw, 80px);
+        }
+
+        /* НАПРАВЛЕНИЯ РАБОТЫ */
+        .services-section {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 36px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background-color: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 36px 28px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card .num {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .service-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+
+        .service-card p {
+            font-size: 12.5px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* ПОРТФОЛИО */
+        .portfolio-section {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .case-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-img-wrap {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            background-color: #ededed;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .case-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .case-item:hover .case-img-wrap img {
+            transform: scale(1.03);
+        }
+
+        .case-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        .case-info span:first-child {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .case-info span:last-child {
+            color: var(--muted);
+        }
+
+        /* СТАТЬИ И РУБРИКИ */
+        .news-section {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .news-card {
+            border-top: 1px solid #000;
+            padding-top: 20px;
+        }
+
+        .news-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+
+        .news-title {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .news-excerpt {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* КОНТАКТЫ */
+        footer {
+            padding-top: 100px;
+            padding-bottom: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .footer-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+        }
+
+        .contact-mail {
+            font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            display: block;
+            margin-bottom: 24px;
+        }
+
+        .contact-details {
+            display: flex;
+            gap: 48px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .contact-details strong {
+            color: var(--text);
+            display: block;
+            margin-top: 4px;
+        }
+
+        .bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+        }
+
+        /* АДАПТИВНОСТЬ */
+        @media (max-width: 900px) {
+            header { padding: 16px 20px; }
+            .header-inner { grid-template-columns: 1fr auto; }
+            .nav-left { display: none; }
+            .about-layout {
+                grid-template-columns: 1fr;
+                padding-right: 20px;
+                padding-left: 20px;
+                gap: 40px;
+            }
+            .about-image-col { height: 380px; }
+            .page-container { padding-left: 20px; padding-right: 20px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .news-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- НАВИГАЦИЯ -->
+    <header>
+        <div class="header-inner">
+            <nav class="nav-left">
+                <a href="#about" data-i18n="nav_about">О нас</a>
+                <a href="#services" data-i18n="nav_services">Услуги</a>
+                <a href="#portfolio" data-i18n="nav_portfolio">Кейсы</a>
+                <a href="#contacts" data-i18n="nav_contact">Контакты</a>
+            </nav>
+
+            <!-- ЛОГОТИП ПО ЦЕНТРУ -->
+            <div class="logo-center">
+                <a href="#">
+                    <span class="brand-name">SUNDAY</span>
+                    <span class="brand-sub">Studio</span>
+                </a>
+            </div>
+
+            <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ -->
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('fi')">FI</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO СЕКЦИЯ С ФРАЗОЙ ПО ЦЕНТРУ -->
+    <section class="hero">
+        <div class="hero-media">
+            <!-- Сюда вставляется основное фото: -->
+            <!-- <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;" alt="Hero"> -->
+        </div>
+        <div class="hero-center-box">
+            <h1 data-i18n="hero_phrase">Агентство SMM, видеопродакшна и брендинга в Хельсинки.</h1>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ ПРО НАС (СЛЕВА МАЛЕНЬКИЙ ТЕКСТ, СПРАВА ФОТО ДО КРАЯ) -->
+    <section id="about" class="about-section">
+        <div class="about-layout">
+            <div class="about-text-col">
+                <span class="about-label" data-i18n="about_label">[ 01 / Про нас ]</span>
+                <div class="about-body">
+                    <p data-i18n="about_p1">SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.</p>
+                    <p data-i18n="about_p2">От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.</p>
+                </div>
+            </div>
+            
+            <div class="about-image-col">
+                <!-- Вставьте фото в этот блок: -->
+                <!-- <img src="about-side-photo.jpg" alt="About SUNDAY Studio"> -->
+                <span class="img-placeholder-tag">[ Studio Visual ]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 НАПРАВЛЕНИЯ РАБОТЫ -->
+    <div class="page-container">
+        <section id="services" class="services-section">
+            <div class="section-header">
+                <span data-i18n="services_label">[ 02 / Направления работы ]</span>
+                <span data-i18n="services_count">4 направления</span>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="num">01</span>
+                    <div>
+                        <h3 data-i18n="s1_title">СММ под ключ</h3>
+                        <p data-i18n="s1_desc">Стратегия, съемка контента, регулярный постинг, комьюнити-менеджмент и целевой таргет.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <span class="num">02</span>
+                    <div>
+                        <h3 data-i18n="s2_title">Видео продакшн</h3>
+                        <p data-i18n="s2_desc">Reels, кампейны, рекламные видео и YouTube. Скандинавский свет, чистый ритм и стиль.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <span class="num">03</span>
+                    <div>
+                        <h3 data-i18n="s3_title">Сайты под ключ</h3>
+                        <p data-i18n="s3_desc">Минималистичные сайты с фокусом на типографику, адаптивность под смартфоны и конверсию.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <span class="num">04</span>
+                    <div>
+                        <h3 data-i18n="s4_title">Полный ребрендинг</h3>
+                        <p data-i18n="s4_desc">Визуальная концепция, логотип, брендбук, типографика и переупаковка компании с нуля.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПОРТФОЛИО -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="section-header">
+                <span data-i18n="cases_label">[ 03 / Портфолио ]</span>
+                <span>Selected Works</span>
+            </div>
+            <div class="cases-grid">
+                <div class="case-item">
+                    <div class="case-img-wrap"></div>
+                    <div class="case-info">
+                        <span>Nordic Architecture</span>
+                        <span data-i18n="c1_meta">Брендинг & Веб</span>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <div class="case-img-wrap"></div>
+                    <div class="case-info">
+                        <span>Helsinki Concept Store</span>
+                        <span data-i18n="c2_meta">SMM & Видео</span>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <div class="case-img-wrap"></div>
+                    <div class="case-info">
+                        <span>Boutique Dining</span>
+                        <span data-i18n="c3_meta">Сайт & Контент</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- РУБРИКИ / НЕДВИЖИМОСТЬ / ИСТОРИИ ПРОДАЖ -->
+        <section class="news-section">
+            <div class="section-header">
+                <span data-i18n="news_label">[ 04 / Рубрики & Инсайты ]</span>
+                <span data-i18n="news_sub">Недвижимость & Кейсы</span>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-tag" data-i18n="n1_tag">Новости недвижимости / Хельсинки</div>
+                    <h4 class="news-title" data-i18n="n1_title">Как архитектурный визуал ускоряет продажу премиальных объектов</h4>
+                    <p class="news-excerpt" data-i18n="n1_desc">Почему короткие эстетичные рум-туры и съемка на рассвете привлекают инвесторов быстрее стандартных объявлений.</p>
+                </div>
+                <div class="news-card">
+                    <div class="news-tag" data-i18n="n2_tag">Истории продаж / Case Study</div>
+                    <h4 class="news-title" data-i18n="n2_title">Продажа апартаментов в Тёёлё за 7 дней через один видео-кампейн</h4>
+                    <p class="news-excerpt" data-i18n="n2_desc">Пошаговая стратегия визуального сторителлинга и узкого гео-таргетинга в социальных сетях.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- КОНТАКТЫ И ФУТЕР -->
+        <footer id="contacts">
+            <div class="footer-grid">
+                <div class="footer-label" data-i18n="contact_label">[ 05 / Контакты ]</div>
+                <div>
+                    <a href="mailto:hello@sundaystudio.fi" class="contact-mail">hello@sundaystudio.fi</a>
+                    <div class="contact-details">
+                        <div>
+                            <span data-i18n="social_label">Instagram</span>
+                            <strong>@sundaystudio.fi</strong>
+                        </div>
+                        <div>
+                            <span data-i18n="location_label">Локация</span>
+                            <strong>Helsinki, Finland</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <span>&copy; SUNDAY Studio</span>
+                <span data-i18n="rights">Все права защищены</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- МУЛЬТИЯЗЫЧНОСТЬ (JS) -->
+    <script>
+        const translations = {
+            ru: {
+                nav_about: "О нас",
+                nav_services: "Услуги",
+                nav_portfolio: "Кейсы",
+                nav_contact: "Контакты",
+                hero_phrase: "Агентство SMM, видеопродакшна и брендинга в Хельсинки.",
+                about_label: "[ 01 / Про нас ]",
+                about_p1: "SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.",
+                about_p2: "От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.",
+                services_label: "[ 02 / Направления работы ]",
+                services_count: "4 направления",
+                s1_title: "СММ под ключ",
+                s1_desc: "Стратегия, съемка контента, регулярный постинг, комьюнити-менеджмент и целевой таргет.",
+                s2_title: "Видео продакшн",
+                s2_desc: "Reels, кампейны, рекламные видео и YouTube. Скандинавский свет, чистый ритм и стиль.",
+                s3_title: "Сайты под ключ",
+                s3_desc: "Минималистичные сайты с фокусом на типографику, адаптивность под смартфоны и конверсию.",
+                s4_title: "Полный ребрендинг",
+                s4_desc: "Визуальная концепция, логотип, брендбук, типографика и переупаковка компании с нуля.",
+                cases_label: "[ 03 / Портфолио ]",
+                c1_meta: "Брендинг & Веб",
+                c2_meta: "SMM & Видео",
+                c3_meta: "Сайт & Контент",
+                news_label: "[ 04 / Рубрики & Инсайты ]",
+                news_sub: "Недвижимость & Кейсы",
+                n1_tag: "Новости недвижимости / Хельсинки",
+                n1_title: "Как архитектурный визуал ускоряет продажу премиальных объектов",
+                n1_desc: "Почему короткие эстетичные рум-туры и съемка на рассвете привлекают инвесторов быстрее стандартных объявлений.",
+                n2_tag: "Истории продаж / Case Study",
+                n2_title: "Продажа апартаментов в Тёёлё за 7 дней через один видео-кампейн",
+                n2_desc: "Пошаговая стратегия визуального сторителлинга и узкого гео-таргетинга в социальных сетях.",
+                contact_label: "[ 05 / Контакты ]",
+                social_label: "Instagram",
+                location_label: "Локация",
+                rights: "Все права защищены"
+            },
+            en: {
+                nav_about: "About",
+                nav_services: "Services",
+                nav_portfolio: "Cases",
+                nav_contact: "Contact",
+                hero_phrase: "SMM, video production, and branding agency in Helsinki.",
+                about_label: "[ 01 / About Us ]",
+                about_p1: "SUNDAY Studio specializes in next-generation visual communications. We don't just manage social media — we curate a cohesive visual language for your brand.",
+                about_p2: "From conceptual photo shoots and video production to turn-key websites: each project is crafted as a refined artistic and commercial statement.",
+                services_label: "[ 02 / Services ]",
+                services_count: "4 core directions",
+                s1_title: "Turn-Key SMM",
+                s1_desc: "Strategy, aesthetic content creation, consistent posting, community management, and targeted ads.",
+                s2_title: "Video Production",
+                s2_desc: "Reels, brand campaigns, commercials, and YouTube. Nordic lighting, rhythm, and editorial aesthetic.",
+                s3_title: "Turn-Key Websites",
+                s3_desc: "Clean, minimalist web design focused on sharp typography, mobile fluidity, and clear conversion.",
+                s4_title: "Full Rebranding",
+                s4_desc: "Brand identity, logos, comprehensive design systems, and art direction built from the ground up.",
+                cases_label: "[ 03 / Selected Works ]",
+                c1_meta: "Branding & Web",
+                c2_meta: "SMM & Film",
+                c3_meta: "Web & Content",
+                news_label: "[ 04 / Insights & News ]",
+                news_sub: "Real Estate & Stories",
+                n1_tag: "Real Estate News / Helsinki",
+                n1_title: "How architectural imagery accelerates premium real estate sales",
+                n1_desc: "Why cinematic room tours and curated sunrise lighting engage discerning buyers faster than classic portals.",
+                n2_tag: "Sales Stories / Case Study",
+                n2_title: "Selling a Töölö apartment in 7 days via a single targeted video campaign",
+                n2_desc: "A breakdown of strategic storytelling paired with precision geo-targeting on social channels.",
+                contact_label: "[ 05 / Get in Touch ]",
+                social_label: "Instagram",
+                location_label: "Location",
+                rights: "All rights reserved"
+            },
+            fi: {
+                nav_about: "Meistä",
+                nav_services: "Palvelut",
+                nav_portfolio: "Työt",
+                nav_contact: "Yhteystiedot",
+                hero_phrase: "Some-, videotuotanto- ja bränditoimisto Helsingissä.",
+                about_label: "[ 01 / Meistä ]",
+                about_p1: "SUNDAY Studio on erikoistunut uuden sukupolven visuaaliseen viestintään. Emme ainoastaan hallinnoi sosiaalista mediaa — luomme brändillesi yhtenäisen ja tunnistettavan visuaalisen kielen.",
+                about_p2: "Konseptuaalisista kuvauksista ja videotuotannosta avaimet käteen -verkkosivuihin: jokainen projekti on huolella hiottu esteettinen ja kaupallinen kokonaisuus.",
+                services_label: "[ 02 / Palvelut ]",
+                services_count: "4 osaamisaluetta",
+                s1_title: "SMM avaimet käteen",
+                s1_desc: "Strategia, sisällöntuotanto, säännöllinen julkaisu, yhteisönhallinta ja kohdennettu mainonta.",
+                s2_title: "Videotuotanto",
+                s2_desc: "Reelsit, brändikampanjat, mainosvideot ja YouTube. Pohjoismainen valo, selkeä rytmi ja tyyli.",
+                s3_title: "Verkkosivut",
+                s3_desc: "Minimalistiset, typografiaan nojaavat sivustot, jotka toimivat saumattomasti mobiilissa.",
+                s4_title: "Brändiuudistus",
+                s4_desc: "Visuaalinen identiteetti, logot, typografia ja yrityksen kokonaisvaltainen uudelleenpaketointi alusta alkaen.",
+                cases_label: "[ 03 / Referenssit ]",
+                c1_meta: "Brändäys & Web",
+                c2_meta: "SMM & Video",
+                c3_meta: "Web & Sisältö",
+                news_label: "[ 04 / Artikkelit ]",
+                news_sub: "Kiinteistöt & Tarinat",
+                n1_tag: "Kiinteistöuutiset / Helsinki",
+                n1_title: "Miten laadukas visuaalisuus nopeuttaa arvokohteiden myyntiä",
+                n1_desc: "Miksi esteettiset esittelyvideot herättävät ostajien kiinnostuksen perinteisiä ilmoituksia nopeammin.",
+                n2_tag: "Myyntitarinat / Case Study",
+                n2_title: "Töölöläisen asunnon myynti 7 päivässä yhdellä videokampanjalla",
+                n2_desc: "Visuaalisen tarinankerronnan ja tarkan paikallisen somemainonnan toimiva yhdistelmä.",
+                contact_label: "[ 05 / Yhteystiedot ]",
+                social_label: "Instagram",
+                location_label: "Sijainti",
+                rights: "Kaikki oikeudet pidätetään"
+            }
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+</html>
