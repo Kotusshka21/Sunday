@@ -92,7 +92,7 @@
 
         .brand-sub {
             font-weight: 400;
-            text-transform: capitalize; /* Только S заглавная, tudio маленькие */
+            text-transform: capitalize;
             letter-spacing: 0.1em;
         }
 
@@ -140,8 +140,6 @@
             inset: 0;
             z-index: 1;
             background-color: #ededed;
-            /* Вставьте сюда фоновое фото: */
-            /* background-image: url('your-hero-photo.jpg'); */
             background-size: cover;
             background-position: center;
         }
@@ -150,7 +148,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.08); /* деликатное затемнение для контраста */
+            background: rgba(0, 0, 0, 0.08);
         }
 
         .hero-center-box {
@@ -174,7 +172,7 @@
             display: inline-block;
         }
 
-        /* СЕКЦИЯ ПРО НАС: АСИММЕТРИЧНАЯ, ДО ПРАВОГО КРАЯ */
+        /* СЕКЦИЯ 01: ПРО НАС (АСИММЕТРИЧНАЯ, ДО ПРАВОГО КРАЯ) */
         .about-section {
             padding-top: 110px;
             padding-bottom: 110px;
@@ -187,7 +185,7 @@
             align-items: center;
             gap: 60px;
             padding-left: clamp(24px, 5vw, 80px);
-            padding-right: 0; /* правый край до упора */
+            padding-right: 0;
         }
 
         .about-text-col {
@@ -239,13 +237,13 @@
             color: var(--muted);
         }
 
-        /* ОБЩИЙ КОНТЕЙНЕР ДЛЯ ОСТАЛЬНЫХ СЕКЦИЙ */
+        /* ОБЩИЙ КОНТЕЙНЕР */
         .page-container {
             padding-left: clamp(24px, 5vw, 80px);
             padding-right: clamp(24px, 5vw, 80px);
         }
 
-        /* НАПРАВЛЕНИЯ РАБОТЫ */
+        /* СЕКЦИЯ 02: НАПРАВЛЕНИЯ РАБОТЫ */
         .services-section {
             padding-top: 100px;
             padding-bottom: 100px;
@@ -298,7 +296,7 @@
             line-height: 1.6;
         }
 
-        /* ПОРТФОЛИО */
+        /* СЕКЦИЯ 03: КЕЙСЫ */
         .portfolio-section {
             padding-top: 100px;
             padding-bottom: 100px;
@@ -350,7 +348,7 @@
             color: var(--muted);
         }
 
-        /* СТАТЬИ И РУБРИКИ */
+        /* РУБРИКИ / НОВОСТИ */
         .news-section {
             padding-top: 100px;
             padding-bottom: 100px;
@@ -464,7 +462,7 @@
 </head>
 <body>
 
-    <!-- НАВИГАЦИЯ -->
+    <!-- ХЕДЕР -->
     <header>
         <div class="header-inner">
             <nav class="nav-left">
@@ -474,7 +472,7 @@
                 <a href="#contacts" data-i18n="nav_contact">Контакты</a>
             </nav>
 
-            <!-- ЛОГОТИП ПО ЦЕНТРУ -->
+            <!-- ЛОГОТИП -->
             <div class="logo-center">
                 <a href="#">
                     <span class="brand-name">SUNDAY</span>
@@ -482,7 +480,7 @@
                 </a>
             </div>
 
-            <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ -->
+            <!-- ЯЗЫКИ -->
             <div class="lang-switch">
                 <button class="lang-btn active" onclick="setLang('ru')">RU</button>
                 <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -491,22 +489,19 @@
         </div>
     </header>
 
-    <!-- HERO СЕКЦИЯ С ФРАЗОЙ ПО ЦЕНТРУ -->
+    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero">
-        <div class="hero-media">
-            <!-- Сюда вставляется основное фото: -->
-            <!-- <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;" alt="Hero"> -->
-        </div>
+        <div class="hero-media"></div>
         <div class="hero-center-box">
             <h1 data-i18n="hero_phrase">Агентство SMM, видеопродакшна и брендинга в Хельсинки.</h1>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ ПРО НАС (СЛЕВА МАЛЕНЬКИЙ ТЕКСТ, СПРАВА ФОТО ДО КРАЯ) -->
+    <!-- СЕКЦИЯ 01: ПРО НАС -->
     <section id="about" class="about-section">
         <div class="about-layout">
             <div class="about-text-col">
-                <span class="about-label" data-i18n="about_label">[ 01 / Про нас ]</span>
+                <span class="about-label" data-i18n="about_label">[ 01 / Studio Profile ]</span>
                 <div class="about-body">
                     <p data-i18n="about_p1">SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.</p>
                     <p data-i18n="about_p2">От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.</p>
@@ -514,15 +509,14 @@
             </div>
             
             <div class="about-image-col">
-                <!-- Вставьте фото в этот блок: -->
-                <!-- <img src="about-side-photo.jpg" alt="About SUNDAY Studio"> -->
                 <span class="img-placeholder-tag">[ Studio Visual ]</span>
             </div>
         </div>
     </section>
 
-    <!-- 4 НАПРАВЛЕНИЯ РАБОТЫ -->
+    <!-- КОНТЕЙНЕР ДЛЯ ОСТАЛЬНЫХ БЛОКОВ -->
     <div class="page-container">
+        <!-- СЕКЦИЯ 02: НАПРАВЛЕНИЯ РАБОТЫ -->
         <section id="services" class="services-section">
             <div class="section-header">
                 <span data-i18n="services_label">[ 02 / Направления работы ]</span>
@@ -560,38 +554,41 @@
             </div>
         </section>
 
-        <!-- ПОРТФОЛИО -->
+        <!-- СЕКЦИЯ 03: КЕЙСЫ -->
         <section id="portfolio" class="portfolio-section">
             <div class="section-header">
-                <span data-i18n="cases_label">[ 03 / Портфолио ]</span>
+                <span data-i18n="cases_label">[ 03 / Кейсы ]</span>
                 <span>Selected Works</span>
             </div>
             <div class="cases-grid">
+                <!-- Кейс 1: Китайская чайная -->
                 <div class="case-item">
                     <div class="case-img-wrap"></div>
                     <div class="case-info">
-                        <span>Nordic Architecture</span>
-                        <span data-i18n="c1_meta">Брендинг & Веб</span>
+                        <span data-i18n="c1_title">Китайская чайная</span>
+                        <span data-i18n="c1_meta">Видео, брендинг</span>
                     </div>
                 </div>
+                <!-- Кейс 2: Сумки -->
                 <div class="case-item">
                     <div class="case-img-wrap"></div>
                     <div class="case-info">
-                        <span>Helsinki Concept Store</span>
-                        <span data-i18n="c2_meta">SMM & Видео</span>
+                        <span data-i18n="c2_title">KURA Objects</span>
+                        <span data-i18n="c2_meta">Под ключ</span>
                     </div>
                 </div>
+                <!-- Кейс 3: Салон красоты -->
                 <div class="case-item">
                     <div class="case-img-wrap"></div>
                     <div class="case-info">
-                        <span>Boutique Dining</span>
-                        <span data-i18n="c3_meta">Сайт & Контент</span>
+                        <span data-i18n="c3_title">Maison Beauté</span>
+                        <span data-i18n="c3_meta">SMM и контент</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- РУБРИКИ / НЕДВИЖИМОСТЬ / ИСТОРИИ ПРОДАЖ -->
+        <!-- РУБРИКИ / НОВОСТИ -->
         <section class="news-section">
             <div class="section-header">
                 <span data-i18n="news_label">[ 04 / Рубрики & Инсайты ]</span>
@@ -611,7 +608,7 @@
             </div>
         </section>
 
-        <!-- КОНТАКТЫ И ФУТЕР -->
+        <!-- КОНТАКТЫ -->
         <footer id="contacts">
             <div class="footer-grid">
                 <div class="footer-label" data-i18n="contact_label">[ 05 / Контакты ]</div>
@@ -636,7 +633,7 @@
         </footer>
     </div>
 
-    <!-- МУЛЬТИЯЗЫЧНОСТЬ (JS) -->
+    <!-- СКРИПТ ПЕРЕКЛЮЧЕНИЯ ЯЗЫКОВ -->
     <script>
         const translations = {
             ru: {
@@ -645,7 +642,7 @@
                 nav_portfolio: "Кейсы",
                 nav_contact: "Контакты",
                 hero_phrase: "Агентство SMM, видеопродакшна и брендинга в Хельсинки.",
-                about_label: "[ 01 / Про нас ]",
+                about_label: "[ 01 / Studio Profile ]",
                 about_p1: "SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.",
                 about_p2: "От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.",
                 services_label: "[ 02 / Направления работы ]",
@@ -658,10 +655,13 @@
                 s3_desc: "Минималистичные сайты с фокусом на типографику, адаптивность под смартфоны и конверсию.",
                 s4_title: "Полный ребрендинг",
                 s4_desc: "Визуальная концепция, логотип, брендбук, типографика и переупаковка компании с нуля.",
-                cases_label: "[ 03 / Портфолио ]",
-                c1_meta: "Брендинг & Веб",
-                c2_meta: "SMM & Видео",
-                c3_meta: "Сайт & Контент",
+                cases_label: "[ 03 / Кейсы ]",
+                c1_title: "Китайская чайная",
+                c1_meta: "Видео, брендинг",
+                c2_title: "KURA Objects",
+                c2_meta: "Под ключ",
+                c3_title: "Maison Beauté",
+                c3_meta: "SMM и контент",
                 news_label: "[ 04 / Рубрики & Инсайты ]",
                 news_sub: "Недвижимость & Кейсы",
                 n1_tag: "Новости недвижимости / Хельсинки",
@@ -681,10 +681,10 @@
                 nav_portfolio: "Cases",
                 nav_contact: "Contact",
                 hero_phrase: "SMM, video production, and branding agency in Helsinki.",
-                about_label: "[ 01 / About Us ]",
+                about_label: "[ 01 / Studio Profile ]",
                 about_p1: "SUNDAY Studio specializes in next-generation visual communications. We don't just manage social media — we curate a cohesive visual language for your brand.",
                 about_p2: "From conceptual photo shoots and video production to turn-key websites: each project is crafted as a refined artistic and commercial statement.",
-                services_label: "[ 02 / Services ]",
+                services_label: "[ 02 / Направления работы ]",
                 services_count: "4 core directions",
                 s1_title: "Turn-Key SMM",
                 s1_desc: "Strategy, aesthetic content creation, consistent posting, community management, and targeted ads.",
@@ -694,10 +694,13 @@
                 s3_desc: "Clean, minimalist web design focused on sharp typography, mobile fluidity, and clear conversion.",
                 s4_title: "Full Rebranding",
                 s4_desc: "Brand identity, logos, comprehensive design systems, and art direction built from the ground up.",
-                cases_label: "[ 03 / Selected Works ]",
-                c1_meta: "Branding & Web",
-                c2_meta: "SMM & Film",
-                c3_meta: "Web & Content",
+                cases_label: "[ 03 / Кейсы ]",
+                c1_title: "Chinese Tea House",
+                c1_meta: "Video, Branding",
+                c2_title: "KURA Objects",
+                c2_meta: "Turn-Key Project",
+                c3_title: "Maison Beauté",
+                c3_meta: "SMM & Content",
                 news_label: "[ 04 / Insights & News ]",
                 news_sub: "Real Estate & Stories",
                 n1_tag: "Real Estate News / Helsinki",
@@ -717,10 +720,10 @@
                 nav_portfolio: "Työt",
                 nav_contact: "Yhteystiedot",
                 hero_phrase: "Some-, videotuotanto- ja bränditoimisto Helsingissä.",
-                about_label: "[ 01 / Meistä ]",
+                about_label: "[ 01 / Studio Profile ]",
                 about_p1: "SUNDAY Studio on erikoistunut uuden sukupolven visuaaliseen viestintään. Emme ainoastaan hallinnoi sosiaalista mediaa — luomme brändillesi yhtenäisen ja tunnistettavan visuaalisen kielen.",
                 about_p2: "Konseptuaalisista kuvauksista ja videotuotannosta avaimet käteen -verkkosivuihin: jokainen projekti on huolella hiottu esteettinen ja kaupallinen kokonaisuus.",
-                services_label: "[ 02 / Palvelut ]",
+                services_label: "[ 02 / Направления работы ]",
                 services_count: "4 osaamisaluetta",
                 s1_title: "SMM avaimet käteen",
                 s1_desc: "Strategia, sisällöntuotanto, säännöllinen julkaisu, yhteisönhallinta ja kohdennettu mainonta.",
@@ -730,10 +733,13 @@
                 s3_desc: "Minimalistiset, typografiaan nojaavat sivustot, jotka toimivat saumattomasti mobiilissa.",
                 s4_title: "Brändiuudistus",
                 s4_desc: "Visuaalinen identiteetti, logot, typografia ja yrityksen kokonaisvaltainen uudelleenpaketointi alusta alkaen.",
-                cases_label: "[ 03 / Referenssit ]",
-                c1_meta: "Brändäys & Web",
-                c2_meta: "SMM & Video",
-                c3_meta: "Web & Sisältö",
+                cases_label: "[ 03 / Кейсы ]",
+                c1_title: "Kiinalainen teetalo",
+                c1_meta: "Video, brändäys",
+                c2_title: "KURA Objects",
+                c2_meta: "Avaimet käteen",
+                c3_title: "Maison Beauté",
+                c3_meta: "SMM & sisältö",
                 news_label: "[ 04 / Artikkelit ]",
                 news_sub: "Kiinteistöt & Tarinat",
                 n1_tag: "Kiinteistöuutiset / Helsinki",
