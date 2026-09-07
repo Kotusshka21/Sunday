@@ -23,6 +23,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font);
             background-color: var(--bg);
@@ -46,7 +50,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
-            padding: 18px 32px;
+            padding: 16px 32px;
         }
 
         .header-inner {
@@ -96,11 +100,32 @@
             letter-spacing: 0.1em;
         }
 
-        /* ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ */
-        .lang-switch {
+        /* ПРАВИЙ БЛОК: КНОПКА ЗВ'ЯЗКУ ТА МОВИ */
+        .header-right {
             display: flex;
             justify-content: flex-end;
-            gap: 12px;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-btn-top {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid var(--text);
+            transition: all 0.2s ease;
+        }
+
+        .contact-btn-top:hover {
+            background-color: var(--text);
+            color: #ffffff;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
         }
 
         .lang-btn {
@@ -122,7 +147,7 @@
             border-bottom: 1px solid var(--text);
         }
 
-        /* HERO СЕКЦИЯ БЕЗ БЕЛОГО ПРЯМОУГОЛЬНИКА */
+        /* HERO СЕКЦІЯ */
         .hero {
             position: relative;
             height: 90vh;
@@ -161,10 +186,11 @@
         }
 
         .hero-center-box h1 {
+            font-family: var(--font);
             font-size: clamp(2rem, 4.4vw, 3.8rem);
-            font-weight: 500;
-            line-height: 1.15;
-            letter-spacing: -0.03em;
+            font-weight: 400; /* Як у Studio */
+            letter-spacing: 0.04em;
+            line-height: 1.2;
             color: #ffffff;
             text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
             margin-bottom: 14px;
@@ -172,14 +198,14 @@
 
         .hero-sub {
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 400;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.85);
             text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* СЕКЦИЯ 01: ПРО НАС */
+        /* СЕКЦІЯ 01: ПРО НАС */
         .about-section {
             padding-top: 110px;
             padding-bottom: 110px;
@@ -234,23 +260,13 @@
             display: block;
         }
 
-        .img-placeholder-tag {
-            position: absolute;
-            bottom: 20px;
-            right: 24px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--muted);
-        }
-
-        /* ОБЩИЙ КОНТЕЙНЕР */
+        /* ЗАГАЛЬНИЙ КОНТЕЙНЕР */
         .page-container {
             padding-left: clamp(24px, 5vw, 80px);
             padding-right: clamp(24px, 5vw, 80px);
         }
 
-        /* СЕКЦИЯ 02: НАПРАВЛЕНИЯ РАБОТЫ */
+        /* СЕКЦІЯ 02: НАПРЯМКИ РОБОТИ */
         .services-section {
             padding-top: 100px;
             padding-bottom: 100px;
@@ -306,7 +322,7 @@
             line-height: 1.6;
         }
 
-        /* СЕКЦИЯ 03: КЕЙСЫ */
+        /* СЕКЦІЯ 03: КЕЙСИ */
         .portfolio-section {
             padding-top: 100px;
             padding-bottom: 100px;
@@ -359,7 +375,7 @@
             color: var(--muted);
         }
 
-        /* СЛАЙДЕРЫ */
+        /* СЛАЙДЕРИ */
         .slider-container {
             position: relative;
             width: 100%;
@@ -444,7 +460,7 @@
             transform: scale(1.2);
         }
 
-        /* КНОПКА ЗВУКА */
+        /* КНОПКА ЗВУКУ */
         .sound-toggle-btn {
             position: absolute;
             top: 12px;
@@ -469,9 +485,9 @@
             background: #ffffff;
         }
 
-        /* КОНТАКТЫ */
+        /* КОНТАКТИ */
         footer {
-            padding-top: 100px;
+            padding-top: 80px;
             padding-bottom: 40px;
         }
 
@@ -479,7 +495,7 @@
             display: grid;
             grid-template-columns: 300px 1fr;
             gap: 40px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .footer-label {
@@ -490,11 +506,18 @@
         }
 
         .contact-mail {
-            font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+            font-size: 18px; /* Лаконічний зменшений кегль */
             font-weight: 500;
-            letter-spacing: -0.03em;
-            display: block;
+            letter-spacing: 0.02em;
+            display: inline-block;
             margin-bottom: 24px;
+            border-bottom: 1px solid var(--text);
+            padding-bottom: 2px;
+            transition: opacity 0.2s;
+        }
+
+        .contact-mail:hover {
+            opacity: 0.6;
         }
 
         .contact-details {
@@ -521,10 +544,10 @@
             padding-top: 24px;
         }
 
-        /* АДАПТИВНОСТЬ */
+        /* АДАПТИВНІСТЬ */
         @media (max-width: 900px) {
             header { padding: 16px 20px; }
-            .header-inner { grid-template-columns: 1fr auto; }
+            .header-inner { grid-template-columns: auto 1fr auto; }
             .nav-left { display: none; }
             .about-layout {
                 grid-template-columns: 1fr;
@@ -552,7 +575,6 @@
                 <a href="#about" data-i18n="nav_about">О нас</a>
                 <a href="#services" data-i18n="nav_services">Услуги</a>
                 <a href="#portfolio" data-i18n="nav_portfolio">Кейсы</a>
-                <a href="#contacts" data-i18n="nav_contact">Контакты</a>
             </nav>
 
             <!-- ЛОГОТИП ПО ЦЕНТРУ -->
@@ -563,11 +585,14 @@
                 </a>
             </div>
 
-            <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ -->
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLang('ru')">RU</button>
-                <button class="lang-btn" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" onclick="setLang('fi')">FI</button>
+            <!-- ПРАВА ЧАСТИНА: КНОПКА ЗВ'ЯЗАТИСЯ ТА МОВИ -->
+            <div class="header-right">
+                <a href="#contacts" class="contact-btn-top" data-i18n="nav_contact_btn">Связаться</a>
+                <div class="lang-switch">
+                    <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+                    <button class="lang-btn" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" onclick="setLang('fi')">FI</button>
+                </div>
             </div>
         </div>
     </header>
@@ -576,12 +601,12 @@
     <section class="hero">
         <div class="hero-media"></div>
         <div class="hero-center-box">
-            <h1 data-i18n="hero_title">Создаем визуальный контент, который продает ваш бренд</h1>
+            <h1 data-i18n="hero_title">Создаем характер и стиль вашего бренда</h1>
             <div class="hero-sub" data-i18n="hero_sub">Helsinki — SMM, Video & Web</div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 01: ПРО НАС -->
+    <!-- СЕКЦИЯ 01: ПРО НАС З ФОТО ABOUT.JPG -->
     <section id="about" class="about-section">
         <div class="about-layout">
             <div class="about-text-col">
@@ -593,7 +618,7 @@
             </div>
             
             <div class="about-image-col">
-                <span class="img-placeholder-tag" data-i18n="about_photo_tag">[ Визуал студии ]</span>
+                <img src="about.jpg" alt="About SUNDAY Studio" onerror="this.src='about.png'">
             </div>
         </div>
     </section>
@@ -643,22 +668,15 @@
                         <div class="slider-container" id="teetaoSlider">
                             <button id="teetaoSoundBtn" class="sound-toggle-btn" onclick="toggleAudio('teetaoSlider', 'teetaoSoundBtn')">Sound Off</button>
 
-                            <!-- 1: Фото с чайниками -->
                             <div class="slide active">
                                 <img src="teetao-1.jpg" alt="Teetao photo 1" onerror="this.src='teetao-1.png'">
                             </div>
-
-                            <!-- 2: Видео с десертами -->
                             <div class="slide">
                                 <video src="https://res.cloudinary.com/rkmxpfot/video/upload/v1788792893/teetao-2.mp4" autoplay muted loop playsinline></video>
                             </div>
-
-                            <!-- 3: Видео с атмосферой -->
                             <div class="slide">
                                 <video src="https://res.cloudinary.com/rkmxpfot/video/upload/v1788793399/teetao-3.mp4" autoplay muted loop playsinline></video>
                             </div>
-
-                            <!-- 4: Фото интерьера -->
                             <div class="slide">
                                 <img src="teetao-4.jpg" alt="Teetao interior seating" onerror="this.src='teetao-4.png'">
                             </div>
@@ -720,22 +738,15 @@
                         <div class="slider-container" id="museBeautySlider">
                             <button id="museSoundBtn" class="sound-toggle-btn" onclick="toggleAudio('museBeautySlider', 'museSoundBtn')">Sound Off</button>
 
-                            <!-- 1: Фото салона -->
                             <div class="slide active">
                                 <img src="muse-1.jpg" alt="Muse Beauty salon" onerror="this.src='muse-1.png'">
                             </div>
-
-                            <!-- 2: Видео с мейком -->
                             <div class="slide">
                                 <video src="https://res.cloudinary.com/rkmxpfot/video/upload/v1788794793/%D0%BC%D0%B5%D0%B9%D0%BA.mp4" autoplay muted loop playsinline></video>
                             </div>
-
-                            <!-- 3: Видео со средствами -->
                             <div class="slide">
                                 <video src="https://res.cloudinary.com/rkmxpfot/video/upload/v1788794859/%D1%81%D0%B0%D0%BB%D0%BE%D0%BD3.mp4" autoplay muted loop playsinline></video>
                             </div>
-
-                            <!-- 4: Видео тату -->
                             <div class="slide">
                                 <video src="https://res.cloudinary.com/rkmxpfot/video/upload/v1788794899/%D1%81%D0%B0%D0%BB%D0%BE%D0%BD4.mp4" autoplay muted loop playsinline></video>
                             </div>
@@ -767,10 +778,6 @@
                     <a href="mailto:sundaycreative777@gmail.com" class="contact-mail">sundaycreative777@gmail.com</a>
                     <div class="contact-details">
                         <div>
-                            <span data-i18n="social_label">Instagram</span>
-                            <strong>@sundaystudio.fi</strong>
-                        </div>
-                        <div>
                             <span data-i18n="location_label">Локация</span>
                             <strong data-i18n="location_city">Хельсинки, Финляндия</strong>
                         </div>
@@ -791,13 +798,12 @@
                 nav_about: "О нас",
                 nav_services: "Услуги",
                 nav_portfolio: "Кейсы",
-                nav_contact: "Контакты",
-                hero_title: "Создаем визуальный контент, который продает ваш бренд",
+                nav_contact_btn: "Связаться",
+                hero_title: "Создаем характер и стиль вашего бренда",
                 hero_sub: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / О студии ]",
                 about_p1: "SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.",
                 about_p2: "От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.",
-                about_photo_tag: "[ Визуал студии ]",
                 services_label: "[ 02 / Направления работы ]",
                 services_count: "4 направления",
                 s1_title: "СММ под ключ",
@@ -814,7 +820,6 @@
                 c2_meta: "Под ключ",
                 c3_meta: "SMM и контент",
                 contact_label: "[ 04 / Контакты ]",
-                social_label: "Instagram",
                 location_label: "Локация",
                 location_city: "Хельсинки, Финляндия",
                 rights: "Все права защищены"
@@ -823,13 +828,12 @@
                 nav_about: "About",
                 nav_services: "Services",
                 nav_portfolio: "Cases",
-                nav_contact: "Contact",
-                hero_title: "Visual content crafted to make your brand sell",
+                nav_contact_btn: "Get in Touch",
+                hero_title: "Shaping the character and style of your brand",
                 hero_sub: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / Studio Profile ]",
                 about_p1: "SUNDAY Studio specializes in next-generation visual communications. We don't just manage social media — we curate a cohesive visual language for your brand.",
                 about_p2: "From conceptual photo shoots and video production to turn-key websites: each project is crafted as a refined artistic and commercial statement.",
-                about_photo_tag: "[ Studio Visual ]",
                 services_label: "[ 02 / Services ]",
                 services_count: "4 directions",
                 s1_title: "Turn-Key SMM",
@@ -846,7 +850,6 @@
                 c2_meta: "Turn-Key",
                 c3_meta: "SMM & Content",
                 contact_label: "[ 04 / Contact ]",
-                social_label: "Instagram",
                 location_label: "Location",
                 location_city: "Helsinki, Finland",
                 rights: "All rights reserved"
@@ -855,13 +858,12 @@
                 nav_about: "Meistä",
                 nav_services: "Palvelut",
                 nav_portfolio: "Työt",
-                nav_contact: "Yhteystiedot",
-                hero_title: "Visuaalista sisältöä, joka kasvattaa brändisi myyntiä",
+                nav_contact_btn: "Ota yhteyttä",
+                hero_title: "Luomme brändillesi luonteen ja tyylin",
                 hero_sub: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / Studio ]",
                 about_p1: "SUNDAY Studio on erikoistunut uuden sukupolven visuaaliseen viestintään. Emme ainoastaan hallinnoi sosiaalista mediaa — luomme brändillesi yhtenäisen ja tunnistettavan visuaalisen kielen.",
                 about_p2: "Konseptuaalisista kuvauksista ja videotuotannosta avaimet käteen -verkkosivuihin: jokainen projekti on huolella hiottu esteettinen ja kaupallinen kokonaisuus.",
-                about_photo_tag: "[ Studion visuaali ]",
                 services_label: "[ 02 / Palvelut ]",
                 services_count: "4 osaamisaluetta",
                 s1_title: "SMM avaimet käteen",
@@ -878,7 +880,6 @@
                 c2_meta: "Avaimet käteen",
                 c3_meta: "SMM ja sisältö",
                 contact_label: "[ 04 / Yhteystiedot ]",
-                social_label: "Instagram",
                 location_label: "Sijainti",
                 location_city: "Helsinki, Suomi",
                 rights: "Kaikki oikeudet pidätetään"
@@ -900,7 +901,7 @@
             document.documentElement.lang = lang;
         }
 
-        /* СЛАЙДЕРЫ */
+        /* СЛАЙДЕРИ */
         const sliderStates = {
             teetaoSlider: 0,
             knotBagSlider: 0,
