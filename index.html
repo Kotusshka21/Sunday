@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUNDAY Studio</title>
+    <title>Helsinki Smm</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -76,28 +76,18 @@
             opacity: 0.5;
         }
 
-        /* ЛОГОТИП ПО ЦЕНТРУ */
+        /* ТЕКСТ ПО ЦЕНТРУ */
         .logo-center {
             text-align: center;
         }
 
         .logo-center a {
-            font-size: 21px;
-            letter-spacing: 0.18em;
-            display: inline-flex;
-            align-items: baseline;
-            gap: 6px;
-        }
-
-        .brand-name {
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        .brand-sub {
+            font-family: var(--font);
+            font-size: 25px;
             font-weight: 400;
+            letter-spacing: 0.12em;
             text-transform: capitalize;
-            letter-spacing: 0.1em;
+            display: inline-block;
         }
 
         /* ПРАВИЙ БЛОК: КНОПКА ЗВ'ЯЗКУ ТА МОВИ */
@@ -188,7 +178,7 @@
         .hero-center-box h1 {
             font-family: var(--font);
             font-size: clamp(2rem, 4.4vw, 3.8rem);
-            font-weight: 400; /* Як у Studio */
+            font-weight: 400;
             letter-spacing: 0.04em;
             line-height: 1.2;
             color: #ffffff;
@@ -506,7 +496,7 @@
         }
 
         .contact-mail {
-            font-size: 18px; /* Лаконічний зменшений кегль */
+            font-size: 18px;
             font-weight: 500;
             letter-spacing: 0.02em;
             display: inline-block;
@@ -549,6 +539,7 @@
             header { padding: 16px 20px; }
             .header-inner { grid-template-columns: auto 1fr auto; }
             .nav-left { display: none; }
+            .logo-center a { font-size: 20px; }
             .about-layout {
                 grid-template-columns: 1fr;
                 padding-right: 20px;
@@ -577,15 +568,12 @@
                 <a href="#portfolio" data-i18n="nav_portfolio">Кейсы</a>
             </nav>
 
-            <!-- ЛОГОТИП ПО ЦЕНТРУ -->
+            <!-- ТЕКСТ ПО ЦЕНТРУ (HELSINKI SMM) -->
             <div class="logo-center">
-                <a href="#">
-                    <span class="brand-name">SUNDAY</span>
-                    <span class="brand-sub">Studio</span>
-                </a>
+                <a href="#">Helsinki Smm</a>
             </div>
 
-            <!-- ПРАВА ЧАСТИНА: КНОПКА ЗВ'ЯЗАТИСЯ ТА МОВИ -->
+            <!-- ПРАВА ЧАСТИНА: КНОПКА ЗВ'ЯЗКУ ТА МОВИ -->
             <div class="header-right">
                 <a href="#contacts" class="contact-btn-top" data-i18n="nav_contact_btn">Связаться</a>
                 <div class="lang-switch">
@@ -606,19 +594,19 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 01: ПРО НАС З ФОТО ABOUT.JPG -->
+    <!-- СЕКЦИЯ 01: ПРО НАС -->
     <section id="about" class="about-section">
         <div class="about-layout">
             <div class="about-text-col">
                 <span class="about-label" data-i18n="about_label">[ 01 / О студии ]</span>
                 <div class="about-body">
-                    <p data-i18n="about_p1">SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.</p>
+                    <p data-i18n="about_p1">Helsinki Smm специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.</p>
                     <p data-i18n="about_p2">От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.</p>
                 </div>
             </div>
             
             <div class="about-image-col">
-                <img src="about.jpg" alt="About SUNDAY Studio" onerror="this.src='about.png'">
+                <img src="about.jpg" alt="About Helsinki Smm" onerror="this.src='about.png'">
             </div>
         </div>
     </section>
@@ -785,7 +773,7 @@
                 </div>
             </div>
             <div class="bottom-bar">
-                <span>&copy; SUNDAY Studio</span>
+                <span>&copy; Helsinki Smm</span>
                 <span data-i18n="rights">Все права защищены</span>
             </div>
         </footer>
@@ -802,7 +790,7 @@
                 hero_title: "Создаем характер и стиль вашего бренда",
                 hero_sub: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / О студии ]",
-                about_p1: "SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.",
+                about_p1: "Helsinki Smm специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.",
                 about_p2: "От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.",
                 services_label: "[ 02 / Направления работы ]",
                 services_count: "4 направления",
@@ -832,7 +820,7 @@
                 hero_title: "Shaping the character and style of your brand",
                 hero_sub: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / Studio Profile ]",
-                about_p1: "SUNDAY Studio specializes in next-generation visual communications. We don't just manage social media — we curate a cohesive visual language for your brand.",
+                about_p1: "Helsinki Smm specializes in next-generation visual communications. We don't just manage social media — we curate a cohesive visual language for your brand.",
                 about_p2: "From conceptual photo shoots and video production to turn-key websites: each project is crafted as a refined artistic and commercial statement.",
                 services_label: "[ 02 / Services ]",
                 services_count: "4 directions",
@@ -862,7 +850,7 @@
                 hero_title: "Luomme brändillesi luonteen ja tyylin",
                 hero_sub: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / Studio ]",
-                about_p1: "SUNDAY Studio on erikoistunut uuden sukupolven visuaaliseen viestintään. Emme ainoastaan hallinnoi sosiaalista mediaa — luomme brändillesi yhtenäisen ja tunnistettavan visuaalisen kielen.",
+                about_p1: "Helsinki Smm on erikoistunut uuden sukupolven visuaaliseen viestintään. Emme ainoastaan hallinnoi sosiaalista mediaa — luomme brändillesi yhtenäisen ja tunnistettavan visuaalisen kielen.",
                 about_p2: "Konseptuaalisista kuvauksista ja videotuotannosta avaimet käteen -verkkosivuihin: jokainen projekti on huolella hiottu esteettinen ja kaupallinen kokonaisuus.",
                 services_label: "[ 02 / Palvelut ]",
                 services_count: "4 osaamisaluetta",
