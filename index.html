@@ -47,7 +47,7 @@
         header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
@@ -62,7 +62,7 @@
 
         .nav-left {
             display: flex;
-            gap: 24px;
+            gap: 28px;
         }
 
         .nav-left a {
@@ -101,12 +101,12 @@
             letter-spacing: 0.1em;
         }
 
-        /* ПРАВИЙ БЛОК: КНОПКА ЗВ'ЯЗКУ ТА МОВИ */
+        /* ПРАВИЙ БЛОК: КНОПКА СВЯЗАТЬСЯ І МОВИ */
         .header-right {
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            gap: 16px;
+            gap: 20px;
         }
 
         .contact-btn-top {
@@ -117,7 +117,6 @@
             padding: 8px 16px;
             border: 1px solid var(--text);
             transition: all 0.2s ease;
-            white-space: nowrap;
         }
 
         .contact-btn-top:hover {
@@ -127,7 +126,7 @@
 
         .lang-switch {
             display: flex;
-            gap: 4px;
+            gap: 6px;
         }
 
         .lang-btn {
@@ -152,14 +151,14 @@
         /* HERO СЕКЦІЯ */
         .hero {
             position: relative;
-            height: 86vh;
-            min-height: 520px;
+            height: 90vh;
+            min-height: 580px;
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Вирівнюємо у вільну зону ліворуч від картки */
-            padding: 0 clamp(32px, 8vw, 120px);
+            justify-content: center;
+            padding: 24px;
             overflow: hidden;
-            background-color: #f6f6f6;
+            background-color: #f1f1f1;
         }
 
         .hero-media {
@@ -169,33 +168,38 @@
             background-color: #ededed;
             background-image: url('hero.jpg'), url('hero.png');
             background-size: cover;
-            background-position: center right;
+            background-position: center;
+        }
+
+        .hero-media::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.26);
         }
 
         .hero-center-box {
             position: relative;
             z-index: 2;
-            text-align: left;
-            max-width: 58%; /* Обмежуємо ширину, щоб текст не торкався фото праворуч */
+            text-align: center;
+            max-width: 1000px;
+            padding: 20px;
         }
 
-        /* ЗАГОЛОВОК HELSINKI */
+        /* ГОЛОВНИЙ ЗАГОЛОВОК */
         .hero-center-box h1 {
             font-family: var(--font-hero);
             font-style: normal;
             font-weight: 600;
-            font-size: clamp(2rem, 3.8vw, 3.4rem);
+            font-size: clamp(2rem, 4.4vw, 3.8rem);
             letter-spacing: -0.025em;
-            line-height: 1.18;
-            color: #111111;
+            line-height: 1.15;
+            color: #ffffff;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
             background: transparent;
             padding: 0;
-            margin: 0;
+            border-radius: 0;
             display: inline-block;
-        }
-
-        .hero-center-box h1 span.nowrap-part {
-            white-space: nowrap;
         }
 
         /* СТАТИСТИЧНА ПЛАШКА */
@@ -269,7 +273,7 @@
         /* СЕКЦІЯ 01: ПРО НАС */
         .about-section {
             padding-top: 80px;
-            padding-bottom: 100px;
+            padding-bottom: 110px;
             border-bottom: 1px solid var(--border);
         }
 
@@ -278,7 +282,7 @@
             grid-template-columns: minmax(320px, 460px) 1fr;
             align-items: center;
             gap: 60px;
-            padding-left: clamp(20px, 5vw, 80px);
+            padding-left: clamp(24px, 5vw, 80px);
             padding-right: 0;
         }
 
@@ -291,7 +295,7 @@
             text-transform: uppercase;
             letter-spacing: 0.14em;
             color: var(--muted);
-            margin-bottom: 28px;
+            margin-bottom: 32px;
             display: block;
         }
 
@@ -323,8 +327,8 @@
 
         /* ЗАГАЛЬНИЙ КОНТЕЙНЕР */
         .page-container {
-            padding-left: clamp(20px, 5vw, 80px);
-            padding-right: clamp(20px, 5vw, 80px);
+            padding-left: clamp(24px, 5vw, 80px);
+            padding-right: clamp(24px, 5vw, 80px);
         }
 
         /* СЕКЦІЯ 02: КОМПАКТНА ТАБЛИЦЯ ПОРІВНЯННЯ */
@@ -334,18 +338,13 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .comp-container {
+        .comp-grid-wrap {
             display: grid;
             grid-template-columns: 1fr 1.05fr;
             border: 1px solid var(--border);
-            border-radius: 4px;
+            border-radius: 2px;
             overflow: hidden;
             width: 100%;
-        }
-
-        .comp-col-card {
-            display: flex;
-            flex-direction: column;
         }
 
         .comp-header-cell {
@@ -359,17 +358,14 @@
             gap: 10px;
         }
 
-        .comp-col-before {
+        .comp-header-before {
             background-color: #eeeeee;
-            border-right: 1px solid #dedede;
-        }
-
-        .comp-col-before .comp-header-cell {
             color: #555555;
+            border-right: 1px solid #dedede;
             border-bottom: 1px solid #dedede;
         }
 
-        .comp-col-before .comp-header-cell::before {
+        .comp-header-before::before {
             content: '';
             display: inline-block;
             width: 8px;
@@ -378,17 +374,13 @@
             background-color: #cb4848;
         }
 
-        .comp-col-after {
+        .comp-header-after {
             background-color: #111111;
-            color: #ffffff;
-        }
-
-        .comp-col-after .comp-header-cell {
             color: #ffffff;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
-        .comp-col-after .comp-header-cell::before {
+        .comp-header-after::before {
             content: '';
             display: inline-block;
             width: 8px;
@@ -398,19 +390,27 @@
         }
 
         .comp-cell {
-            padding: 22px 34px;
+            padding: 24px 34px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 96px;
+            border-bottom: 1px solid var(--border);
         }
 
-        .comp-col-before .comp-cell:not(:last-child) {
-            border-bottom: 1px solid #dedede;
+        .comp-cell.no-border {
+            border-bottom: none;
         }
 
-        .comp-col-after .comp-cell:not(:last-child) {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        .comp-cell-before {
+            background-color: #eeeeee;
+            border-right: 1px solid #dedede;
+            border-bottom-color: #dedede;
+        }
+
+        .comp-cell-after {
+            background-color: #111111;
+            color: #ffffff;
+            border-bottom-color: rgba(255, 255, 255, 0.08);
         }
 
         .metric-tag {
@@ -421,11 +421,11 @@
             font-weight: 600;
         }
 
-        .comp-col-before .metric-tag {
+        .comp-cell-before .metric-tag {
             color: #777;
         }
 
-        .comp-col-after .metric-tag {
+        .comp-cell-after .metric-tag {
             color: rgba(255, 255, 255, 0.5);
         }
 
@@ -434,11 +434,11 @@
             line-height: 1.5;
         }
 
-        .comp-col-before .metric-body {
+        .comp-cell-before .metric-body {
             color: #555555;
         }
 
-        .comp-col-after .metric-body {
+        .comp-cell-after .metric-body {
             color: #ededed;
         }
 
@@ -701,7 +701,6 @@
             border-bottom: 1px solid var(--text);
             padding-bottom: 2px;
             transition: opacity 0.2s;
-            word-break: break-all;
         }
 
         .contact-mail:hover {
@@ -732,168 +731,31 @@
             padding-top: 24px;
         }
 
-        /* АДАПТИВНІСТЬ ДЛЯ СМАРТФОНІВ ТА ПЛАНШЕТІВ */
+        /* АДАПТИВНІСТЬ */
         @media (max-width: 900px) {
-            header {
-                padding: 12px 16px;
-            }
-            .header-inner {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .nav-left {
-                display: none;
-            }
-            .logo-center a {
-                font-size: 17px;
-                letter-spacing: 0.1em;
-            }
-            .header-right {
-                gap: 8px;
-            }
-            .contact-btn-top {
-                padding: 6px 10px;
-                font-size: 9.5px;
-            }
-            .lang-switch {
-                gap: 2px;
-            }
-            .lang-btn {
-                font-size: 9.5px;
-                padding: 1px 2px;
-            }
-
-            /* HERO НА ТЕЛЕФОНІ: ВЕЛИКИЙ, ЧИТАБЕЛЬНИЙ ШРИФТ */
-            .hero {
-                height: 65vh;
-                min-height: 400px;
-                padding: 24px 20px;
-                justify-content: center;
-                align-items: center;
-            }
-            .hero-center-box {
-                max-width: 100%;
-                text-align: center;
-            }
-            .hero-center-box h1 {
-                font-size: 1.85rem; /* Збільшений чіткий кегль замість мікроскопічного */
-                line-height: 1.25;
-                white-space: normal; /* Дозволяємо природний перенос */
-                letter-spacing: -0.02em;
-            }
-
-            /* ПЛАШКА СТАТИСТИКИ */
-            .stats-banner-section {
-                padding: 36px 0 10px 0;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 28px;
-            }
-            .stat-item:not(:last-child)::after {
-                display: none;
-            }
-
-            /* ПРО НАС */
-            .about-section {
-                padding-top: 50px;
-                padding-bottom: 60px;
-            }
+            header { padding: 16px 20px; }
+            .header-inner { grid-template-columns: auto 1fr auto; }
+            .nav-left { display: none; }
             .about-layout {
                 grid-template-columns: 1fr;
-                padding-left: 16px;
-                padding-right: 16px;
-                gap: 32px;
+                padding-right: 20px;
+                padding-left: 20px;
+                gap: 40px;
             }
-            .about-text-col {
-                padding-right: 0;
-            }
-            .about-image-col {
-                height: 280px;
-            }
-
-            /* ТАБЛИЦЯ ЕФЕКТУ (ДВІ СУЦІЛЬНІ КАРТКИ БЕЗ ЗЕБРИ) */
-            .comparison-section {
-                padding-top: 50px;
-                padding-bottom: 60px;
-            }
-            .comp-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                border: none;
-                background: transparent;
-            }
-            .comp-col-card {
-                border-radius: 4px;
-                overflow: hidden;
-            }
-            .comp-col-before {
-                border: 1px solid #dedede;
-            }
-            .comp-col-after {
-                border: 1px solid #222222;
-                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-            }
-            .comp-header-cell {
-                padding: 16px 18px;
-                font-size: 12px;
-            }
-            .comp-cell {
-                padding: 16px 18px;
-                min-height: auto;
-            }
-
-            /* ПОСЛУГИ */
-            .services-section {
-                padding-top: 60px;
-                padding-bottom: 60px;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            .service-card {
-                min-height: auto;
-                padding: 24px 18px;
-            }
-            .service-card .num {
-                margin-bottom: 20px;
-            }
-
-            /* КЕЙСИ */
-            .portfolio-section {
-                padding-top: 60px;
-                padding-bottom: 60px;
-            }
-            .cases-grid {
-                grid-template-columns: 1fr;
-                gap: 28px;
-            }
-            .slider-btn {
-                opacity: 1;
-                width: 36px;
-                height: 36px;
-            }
-
-            /* ФУТЕР */
-            footer {
-                padding-top: 50px;
-                padding-bottom: 30px;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                margin-bottom: 36px;
-            }
-            .contact-details {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .bottom-bar {
-                flex-direction: column;
-                gap: 10px;
-                font-size: 10px;
-            }
+            .about-image-col { height: 380px; }
+            .page-container { padding-left: 20px; padding-right: 20px; }
+            .stats-grid { grid-template-columns: 1fr; gap: 32px; }
+            .stat-item:not(:last-child)::after { display: none; }
+            .comp-grid-wrap { grid-template-columns: 1fr; }
+            .comp-header-before { border-right: none; }
+            .comp-cell-before { border-right: none; }
+            .comp-header-cell, .comp-cell { padding: 22px 20px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { min-height: auto; }
+            .service-card .num { margin-bottom: 24px; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .slider-btn { opacity: 1; }
         }
     </style>
 </head>
@@ -930,11 +792,11 @@
         </div>
     </header>
 
-    <!-- ГОЛОВНИЙ ЕКРАН (БЕЗ НАЇЗДУ НА ФОТО НА ПК, ЗБІЛЬШЕНИЙ НА ТЕЛЕФОНІ) -->
+    <!-- ГОЛОВНИЙ ЕКРАН -->
     <section class="hero">
         <div class="hero-media"></div>
         <div class="hero-center-box">
-            <h1><span class="nowrap-part">Helsinki —</span> <span class="nowrap-part">SMM, Video & Web</span></h1>
+            <h1 data-i18n="hero_phrase">Helsinki — SMM, Video & Web</h1>
         </div>
     </section>
 
@@ -1008,58 +870,60 @@
     <!-- ОСНОВНИЙ КОНТЕЙНЕР СТОРІНКИ -->
     <div class="page-container">
 
-        <!-- СЕКЦІЯ 02: ТАБЛИЦЯ ПОРІВНЯННЯ (ОКРЕМІ КАРТКИ НА МОБІЛЬНОМУ) -->
+        <!-- СЕКЦІЯ 02: ГОРИЗОНТАЛЬНА ТАБЛИЦЯ ПОРІВНЯННЯ -->
         <section id="results" class="comparison-section">
             <div class="section-header">
                 <span data-i18n="results_label">[ 02 / Ефект від співпраці ]</span>
                 <span data-i18n="results_sub">Трансформація ключових показників бізнесу</span>
             </div>
 
-            <div class="comp-container">
-                <!-- Картка 1: До (Світло-сіра) -->
-                <div class="comp-col-card comp-col-before">
-                    <div class="comp-header-cell" data-i18n="comp_before_title">
-                        Бізнес до роботи з нами
-                    </div>
-                    <div class="comp-cell">
-                        <span class="metric-tag" data-i18n="cb_t1">Органічний трафік</span>
-                        <p class="metric-body" data-i18n="cb_d1">0–50 відвідувачів на місяць (тільки постійні або випадкові перехожі)</p>
-                    </div>
-                    <div class="comp-cell">
-                        <span class="metric-tag" data-i18n="cb_t2">Видимість у Google Maps</span>
-                        <p class="metric-body" data-i18n="cb_d2">Відсутня (бізнес залишається «невидимим» для нових жителів і гостей міста)</p>
-                    </div>
-                    <div class="comp-cell">
-                        <span class="metric-tag" data-i18n="cb_t3">Соцмережі та залучення</span>
-                        <p class="metric-body" data-i18n="cb_d3">Поодинокі повідомлення в дірект без регулярної системної довіри до бренду</p>
-                    </div>
-                    <div class="comp-cell">
-                        <span class="metric-tag" data-i18n="cb_t4">Джерело клієнтів</span>
-                        <p class="metric-body" data-i18n="cb_d4">Повна залежність тільки від сарафанного радіо та випадкового офлайн-трафіку</p>
-                    </div>
+            <div class="comp-grid-wrap">
+                <!-- РЯДОК 0: ЗАГОЛОВКИ -->
+                <div class="comp-header-cell comp-header-before" data-i18n="comp_before_title">
+                    Бізнес до роботи з нами
+                </div>
+                <div class="comp-header-cell comp-header-after" data-i18n="comp_after_title">
+                    З комплексними рішеннями SUNDAY Studio
                 </div>
 
-                <!-- Картка 2: З нами (Чорна) -->
-                <div class="comp-col-card comp-col-after">
-                    <div class="comp-header-cell" data-i18n="comp_after_title">
-                        З комплексними рішеннями SUNDAY Studio
-                    </div>
-                    <div class="comp-cell">
-                        <span class="metric-tag" data-i18n="ca_t1">Органічний трафік</span>
-                        <p class="metric-body"><span class="stat-highlight">+250%</span> <span data-i18n="ca_d1">зростання — до ~175 цільових відвідувачів/міс. завдяки SEO-оптимізації</span></p>
-                    </div>
-                    <div class="comp-cell">
-                        <span class="metric-tag" data-i18n="ca_t2">Видимість у Google Maps</span>
-                        <p class="metric-body"><span class="stat-highlight">100+</span> <span data-i18n="ca_d2">нових переходів та побудованих маршрутів щомісяця безпосередньо з Google</span></p>
-                    </div>
-                    <div class="comp-cell">
-                        <span class="metric-tag" data-i18n="ca_t3">Соцмережі та залучення</span>
-                        <p class="metric-body"><span class="stat-highlight">У 3 рази</span> <span data-i18n="ca_d3">більше звернень завдяки сучасному сайту та динамічним Reels</span></p>
-                    </div>
-                    <div class="comp-cell">
-                        <span class="metric-tag" data-i18n="ca_t4">Підсумковий результат</span>
-                        <p class="metric-body"><span class="stat-highlight">25–30+</span> <span data-i18n="ca_d4">стабільних замовлень на тиждень з органічного пошуку та соцмереж</span></p>
-                    </div>
+                <!-- РЯДОК 1: ОРГАНІЧНИЙ ТРАФІК -->
+                <div class="comp-cell comp-cell-before">
+                    <span class="metric-tag" data-i18n="cb_t1">Органічний трафік</span>
+                    <p class="metric-body" data-i18n="cb_d1">0–50 відвідувачів на місяць (тільки постійні або випадкові перехожі)</p>
+                </div>
+                <div class="comp-cell comp-cell-after">
+                    <span class="metric-tag" data-i18n="ca_t1">Органічний трафік</span>
+                    <p class="metric-body"><span class="stat-highlight">+250%</span> <span data-i18n="ca_d1">зростання — до ~175 цільових відвідувачів/міс. завдяки SEO-оптимізації</span></p>
+                </div>
+
+                <!-- РЯДОК 2: GOOGLE MAPS -->
+                <div class="comp-cell comp-cell-before">
+                    <span class="metric-tag" data-i18n="cb_t2">Видимість у Google Maps</span>
+                    <p class="metric-body" data-i18n="cb_d2">Відсутня (бізнес залишається «невидимим» для нових жителів і гостей міста)</p>
+                </div>
+                <div class="comp-cell comp-cell-after">
+                    <span class="metric-tag" data-i18n="ca_t2">Видимість у Google Maps</span>
+                    <p class="metric-body"><span class="stat-highlight">100+</span> <span data-i18n="ca_d2">нових переходів та побудованих маршрутів щомісяця безпосередньо з Google</span></p>
+                </div>
+
+                <!-- РЯДОК 3: СОЦМЕРЕЖІ ТА ЗАЛУЧЕННЯ -->
+                <div class="comp-cell comp-cell-before">
+                    <span class="metric-tag" data-i18n="cb_t3">Соцмережі та залучення</span>
+                    <p class="metric-body" data-i18n="cb_d3">Поодинокі повідомлення в дірект без регулярної системної довіри до бренду</p>
+                </div>
+                <div class="comp-cell comp-cell-after">
+                    <span class="metric-tag" data-i18n="ca_t3">Соцмережі та залучення</span>
+                    <p class="metric-body"><span class="stat-highlight">У 3 рази</span> <span data-i18n="ca_d3">більше звернень завдяки сучасному сайту та динамічним Reels</span></p>
+                </div>
+
+                <!-- РЯДОК 4: РЕЗУЛЬТАТ / ДЖЕРЕЛО КЛІЄНТІВ -->
+                <div class="comp-cell comp-cell-before no-border">
+                    <span class="metric-tag" data-i18n="cb_t4">Джерело клієнтів</span>
+                    <p class="metric-body" data-i18n="cb_d4">Повна залежність тільки від сарафанного радіо та випадкового офлайн-трафіку</p>
+                </div>
+                <div class="comp-cell comp-cell-after no-border">
+                    <span class="metric-tag" data-i18n="ca_t4">Підсумковий результат</span>
+                    <p class="metric-body"><span class="stat-highlight">25–30+</span> <span data-i18n="ca_d4">стабільних замовлень на тиждень з органічного пошуку та соцмереж</span></p>
                 </div>
             </div>
         </section>
@@ -1212,12 +1076,12 @@
         <!-- КОНТАКТИ -->
         <footer id="contacts">
             <div class="footer-grid">
-                <div class="footer-label" data-i18n="contact_label">[ 05 / Контакти ]</div>
+                <div class="footer-label" data-i18n="contact_label">[ 05 / Контакты ]</div>
                 <div>
                     <a href="mailto:studiosunday.agency@gmail.com" class="contact-mail">studiosunday.agency@gmail.com</a>
                     <div class="contact-details">
                         <div>
-                            <span data-i18n="location_label">Локація</span>
+                            <span data-i18n="location_label">Локация</span>
                             <strong data-i18n="location_city">Гельсінкі, Фінляндія</strong>
                         </div>
                     </div>
@@ -1239,6 +1103,7 @@
                 nav_services: "Послуги",
                 nav_portfolio: "Кейси",
                 nav_contact_btn: "Зв'язатися",
+                hero_phrase: "Helsinki — SMM, Video & Web",
                 stat_p1: "споживачів у Фінляндії шукають локальні послуги та заклади через Google та Google Maps перед візитом.",
                 stat_num2: "До 70%",
                 stat_p2: "користувачів приймають рішення про покупку чи візит після перегляду коротких відео (Reels / TikTok) або профілю в Instagram.",
@@ -1293,6 +1158,7 @@
                 nav_services: "Услуги",
                 nav_portfolio: "Кейсы",
                 nav_contact_btn: "Связаться",
+                hero_phrase: "Helsinki — SMM, Video & Web",
                 stat_p1: "потребителей в Финляндии ищут локальные заведения и услуги через Google и Google Maps перед визитом.",
                 stat_num2: "До 70%",
                 stat_p2: "пользователей принимают решение о покупке или визите после просмотра коротких видео (Reels / TikTok) или визуала в Instagram.",
@@ -1347,6 +1213,7 @@
                 nav_services: "Services",
                 nav_portfolio: "Cases",
                 nav_contact_btn: "Get in Touch",
+                hero_phrase: "Helsinki — SMM, Video & Web",
                 stat_p1: "of consumers in Finland search for local services and venues via Google and Google Maps before visiting.",
                 stat_num2: "Up to 70%",
                 stat_p2: "of prospective customers make purchasing decisions after viewing short-form video (Reels / TikTok) or Instagram profiles.",
@@ -1401,6 +1268,7 @@
                 nav_services: "Palvelut",
                 nav_portfolio: "Työt",
                 nav_contact_btn: "Ota yhteyttä",
+                hero_phrase: "Helsinki — SMM, Video & Web",
                 stat_p1: "suomalaisista kuluttajista etsii paikallisia palveluita ja toimipisteitä Googlen ja Google Mapsin kautta ennen vierailua.",
                 stat_num2: "Jopa 70%",
                 stat_p2: "käyttäjistä tekee ostopäätöksen tai valitsee palvelun lyhytvideoiden (Reels / TikTok) tai Instagram-profiilin perusteella.",
