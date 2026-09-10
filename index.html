@@ -198,6 +198,68 @@
             display: inline-block;
         }
 
+        /* СТАТИСТИЧНА ПЛАШКА ПІСЛЯ HERO */
+        .stats-banner-section {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 64px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 10%;
+            height: 80%;
+            width: 1px;
+            background-color: var(--border);
+        }
+
+        .stat-icon-wrap {
+            width: 32px;
+            height: 32px;
+            color: var(--text);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .stat-icon-wrap svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 1.5;
+        }
+
+        .stat-number {
+            font-size: clamp(34px, 3.6vw, 44px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .stat-text {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #444444;
+            font-weight: 400;
+        }
+
         /* СЕКЦІЯ 01: ПРО НАС */
         .about-section {
             padding-top: 110px;
@@ -259,7 +321,7 @@
             padding-right: clamp(24px, 5vw, 80px);
         }
 
-        /* СЕКЦІЯ 02: ШИРОКА ГОРИЗОНТАЛЬНА ТАБЛИЦЯ ПОРІВНЯННЯ */
+        /* СЕКЦІЯ 02: КОМПАКТНА ТАБЛИЦЯ ПОРІВНЯННЯ */
         .comparison-section {
             padding-top: 90px;
             padding-bottom: 90px;
@@ -317,7 +379,6 @@
             background-color: #2ec4b6;
         }
 
-        /* Окремі парні комірки для синхронного рівня */
         .comp-cell {
             padding: 24px 34px;
             display: flex;
@@ -673,6 +734,8 @@
             }
             .about-image-col { height: 380px; }
             .page-container { padding-left: 20px; padding-right: 20px; }
+            .stats-grid { grid-template-columns: 1fr; gap: 32px; }
+            .stat-item:not(:last-child)::after { display: none; }
             .comp-grid-wrap { grid-template-columns: 1fr; }
             .comp-header-before { border-right: none; }
             .comp-cell-before { border-right: none; }
@@ -726,6 +789,49 @@
         </div>
     </section>
 
+    <!-- ПЛАШКА ЗІ СТАТИСТИКОЮ (ОДРАЗУ ПІСЛЯ HERO) -->
+    <section class="stats-banner-section">
+        <div class="page-container">
+            <div class="stats-grid">
+                <!-- Пункт 1: Google Maps -->
+                <div class="stat-item">
+                    <div class="stat-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="stat-number">84%</div>
+                    <p class="stat-text" data-i18n="stat_p1">потребителей в Финляндии ищут локальные заведения и услуги через Google и Google Maps перед визитом.</p>
+                </div>
+
+                <!-- Пункт 2: Reels / Відео -->
+                <div class="stat-item">
+                    <div class="stat-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="4"></rect>
+                            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
+                        </svg>
+                    </div>
+                    <div class="stat-number" data-i18n="stat_num2">До 70%</div>
+                    <p class="stat-text" data-i18n="stat_p2">пользователей принимают решение о покупке или визите после просмотра коротких видео (Reels / TikTok) или визуала в Instagram.</p>
+                </div>
+
+                <!-- Пункт 3: Мобільний сайт / Конверсія -->
+                <div class="stat-item">
+                    <div class="stat-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <div class="stat-number">3.5x</div>
+                    <p class="stat-text" data-i18n="stat_p3">больше конверсий получают сайты со стильным визуалом и выверенной мобильной версией по сравнению с устаревшими ресурсами.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- СЕКЦІЯ 01: ПРО НАС -->
     <section id="about" class="about-section">
         <div class="about-layout">
@@ -747,7 +853,7 @@
     <!-- ОСНОВНИЙ КОНТЕЙНЕР СТОРІНКИ -->
     <div class="page-container">
 
-        <!-- СЕКЦІЯ 02: ГОРИЗОНТАЛЬНА ТАБЛИЦЯ ПОРІВНЯННЯ (СТРОГИЙ ЗБІГ РІВНІВ) -->
+        <!-- СЕКЦІЯ 02: ГОРИЗОНТАЛЬНА ТАБЛИЦЯ ПОРІВНЯННЯ -->
         <section id="results" class="comparison-section">
             <div class="section-header">
                 <span data-i18n="results_label">[ 02 / Эффект от сотрудничества ]</span>
@@ -981,6 +1087,10 @@
                 nav_portfolio: "Кейсы",
                 nav_contact_btn: "Связаться",
                 hero_phrase: "Helsinki — SMM, Video & Web",
+                stat_p1: "потребителей в Финляндии ищут локальные заведения и услуги через Google и Google Maps перед визитом.",
+                stat_num2: "До 70%",
+                stat_p2: "пользователей принимают решение о покупке или визите после просмотра коротких видео (Reels / TikTok) или визуала в Instagram.",
+                stat_p3: "больше конверсий получают сайты со стильным визуалом и выверенной мобильной версией по сравнению с устаревшими ресурсами.",
                 about_label: "[ 01 / О студии ]",
                 about_p1: "SUNDAY Studio — медиа-агентство в Хельсинки, которое помогает бизнесу расти и привлекать новых клиентов.",
                 about_p2: "Сегодня эффективное присутствие в интернете — это не просто эстетика, а один из главных двигателей продаж и развития компании. Мы создаем комплексные медиа-решения, объединяя сильный визуал, современную веб-разработку и инструменты продвижения.",
@@ -1032,6 +1142,10 @@
                 nav_portfolio: "Cases",
                 nav_contact_btn: "Get in Touch",
                 hero_phrase: "Helsinki — SMM, Video & Web",
+                stat_p1: "of consumers in Finland look up local businesses via Google and Google Maps before visiting.",
+                stat_num2: "Up to 70%",
+                stat_p2: "of prospective customers make purchasing decisions after viewing short-form video (Reels / TikTok) or Instagram profiles.",
+                stat_p3: "higher conversion rates for websites featuring sharp art direction and mobile-first fluid design compared to legacy platforms.",
                 about_label: "[ 01 / Studio Profile ]",
                 about_p1: "SUNDAY Studio is a media agency in Helsinki helping businesses grow and reach new clients.",
                 about_p2: "Today, an effective digital presence is not just about aesthetics — it is a primary driver of sales and business growth. We craft integrated media solutions combining sharp visual storytelling, modern web development, and performance marketing.",
@@ -1083,6 +1197,10 @@
                 nav_portfolio: "Työt",
                 nav_contact_btn: "Ota yhteyttä",
                 hero_phrase: "Helsinki — SMM, Video & Web",
+                stat_p1: "suomalaisista kuluttajista etsii paikallisia palveluita Googlen ja Google Mapsin kautta ennen vierailua.",
+                stat_num2: "Jopa 70%",
+                stat_p2: "käyttäjistä tekee ostopäätöksen tai valitsee palvelun lyhytvideoiden (Reels / TikTok) tai Instagram-profiilin perusteella.",
+                stat_p3: "enemmän konversioita sivustoilla, joilla on laadukas visuaalinen ilme ja mobiilioptimoitu käyttökokemus.",
                 about_label: "[ 01 / Studio ]",
                 about_p1: "SUNDAY Studio on helsinkiläinen mediatoimisto, joka auttaa yrityksiä kasvamaan ja tavoittamaan uusia asiakkaita.",
                 about_p2: "Tehokas digitaalinen läsnäolo ei ole vain estetiikkaa, vaan yrityksen keskeinen myynnin ja kasvun moottori. Luomme kokonaisvaltaisia mediaratkaisuja, joissa yhdistyvät vahva visuaalisuus, moderni verkkokehitys ja tuloksellinen markkinointi.",
