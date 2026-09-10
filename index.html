@@ -152,12 +152,12 @@
         /* HERO СЕКЦІЯ */
         .hero {
             position: relative;
-            height: 85vh;
-            min-height: 480px;
+            height: 86vh;
+            min-height: 520px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
+            justify-content: flex-start; /* Вирівнюємо у вільну зону ліворуч від картки */
+            padding: 0 clamp(32px, 8vw, 120px);
             overflow: hidden;
             background-color: #f6f6f6;
         }
@@ -169,30 +169,33 @@
             background-color: #ededed;
             background-image: url('hero.jpg'), url('hero.png');
             background-size: cover;
-            background-position: center;
+            background-position: center right;
         }
 
         .hero-center-box {
             position: relative;
             z-index: 2;
-            text-align: center;
-            max-width: 100%;
-            padding: 10px;
+            text-align: left;
+            max-width: 58%; /* Обмежуємо ширину, щоб текст не торкався фото праворуч */
         }
 
-        /* ЧОРНИЙ ЗАГОЛОВОК HELSINKI В ОДИН РЯДОК */
+        /* ЗАГОЛОВОК HELSINKI */
         .hero-center-box h1 {
             font-family: var(--font-hero);
             font-style: normal;
             font-weight: 600;
-            font-size: clamp(1.05rem, 4.3vw, 3.6rem);
-            letter-spacing: -0.02em;
-            line-height: 1.15;
+            font-size: clamp(2rem, 3.8vw, 3.4rem);
+            letter-spacing: -0.025em;
+            line-height: 1.18;
             color: #111111;
-            white-space: nowrap;
             background: transparent;
             padding: 0;
             margin: 0;
+            display: inline-block;
+        }
+
+        .hero-center-box h1 span.nowrap-part {
+            white-space: nowrap;
         }
 
         /* СТАТИСТИЧНА ПЛАШКА */
@@ -761,14 +764,23 @@
                 padding: 1px 2px;
             }
 
-            /* HERO */
+            /* HERO НА ТЕЛЕФОНІ: ВЕЛИКИЙ, ЧИТАБЕЛЬНИЙ ШРИФТ */
             .hero {
-                height: 60vh;
-                min-height: 380px;
-                padding: 16px 12px;
+                height: 65vh;
+                min-height: 400px;
+                padding: 24px 20px;
+                justify-content: center;
+                align-items: center;
             }
             .hero-center-box {
-                padding: 0;
+                max-width: 100%;
+                text-align: center;
+            }
+            .hero-center-box h1 {
+                font-size: 1.85rem; /* Збільшений чіткий кегль замість мікроскопічного */
+                line-height: 1.25;
+                white-space: normal; /* Дозволяємо природний перенос */
+                letter-spacing: -0.02em;
             }
 
             /* ПЛАШКА СТАТИСТИКИ */
@@ -801,7 +813,7 @@
                 height: 280px;
             }
 
-            /* ВИПРАВЛЕНА ТАБЛИЦЯ ЕФЕКТУ (ДВІ СУЦІЛЬНІ КАРТКИ БЕЗ ЗЕБРИ) */
+            /* ТАБЛИЦЯ ЕФЕКТУ (ДВІ СУЦІЛЬНІ КАРТКИ БЕЗ ЗЕБРИ) */
             .comparison-section {
                 padding-top: 50px;
                 padding-bottom: 60px;
@@ -918,11 +930,11 @@
         </div>
     </header>
 
-    <!-- ГОЛОВНИЙ ЕКРАН (HELSINKI СУВОРО В 1 РЯДОК) -->
+    <!-- ГОЛОВНИЙ ЕКРАН (БЕЗ НАЇЗДУ НА ФОТО НА ПК, ЗБІЛЬШЕНИЙ НА ТЕЛЕФОНІ) -->
     <section class="hero">
         <div class="hero-media"></div>
         <div class="hero-center-box">
-            <h1 data-i18n="hero_phrase">Helsinki — SMM, Video & Web</h1>
+            <h1><span class="nowrap-part">Helsinki —</span> <span class="nowrap-part">SMM, Video & Web</span></h1>
         </div>
     </section>
 
@@ -1227,7 +1239,6 @@
                 nav_services: "Послуги",
                 nav_portfolio: "Кейси",
                 nav_contact_btn: "Зв'язатися",
-                hero_phrase: "Helsinki — SMM, Video & Web",
                 stat_p1: "споживачів у Фінляндії шукають локальні послуги та заклади через Google та Google Maps перед візитом.",
                 stat_num2: "До 70%",
                 stat_p2: "користувачів приймають рішення про покупку чи візит після перегляду коротких відео (Reels / TikTok) або профілю в Instagram.",
@@ -1282,7 +1293,6 @@
                 nav_services: "Услуги",
                 nav_portfolio: "Кейсы",
                 nav_contact_btn: "Связаться",
-                hero_phrase: "Helsinki — SMM, Video & Web",
                 stat_p1: "потребителей в Финляндии ищут локальные заведения и услуги через Google и Google Maps перед визитом.",
                 stat_num2: "До 70%",
                 stat_p2: "пользователей принимают решение о покупке или визите после просмотра коротких видео (Reels / TikTok) или визуала в Instagram.",
@@ -1337,7 +1347,6 @@
                 nav_services: "Services",
                 nav_portfolio: "Cases",
                 nav_contact_btn: "Get in Touch",
-                hero_phrase: "Helsinki — SMM, Video & Web",
                 stat_p1: "of consumers in Finland search for local services and venues via Google and Google Maps before visiting.",
                 stat_num2: "Up to 70%",
                 stat_p2: "of prospective customers make purchasing decisions after viewing short-form video (Reels / TikTok) or Instagram profiles.",
@@ -1392,7 +1401,6 @@
                 nav_services: "Palvelut",
                 nav_portfolio: "Työt",
                 nav_contact_btn: "Ota yhteyttä",
-                hero_phrase: "Helsinki — SMM, Video & Web",
                 stat_p1: "suomalaisista kuluttajista etsii paikallisia palveluita ja toimipisteitä Googlen ja Google Mapsin kautta ennen vierailua.",
                 stat_num2: "Jopa 70%",
                 stat_p2: "käyttäjistä tekee ostopäätöksen tai valitsee palvelun lyhytvideoiden (Reels / TikTok) tai Instagram-profiilin perusteella.",
