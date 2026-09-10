@@ -198,17 +198,17 @@
             display: inline-block;
         }
 
-        /* СТАТИСТИЧНА ПЛАШКА ПІСЛЯ HERO */
+        /* СТАТИСТИЧНА ПЛАШКА (АКУРАТНИЙ МІНІМАЛІЗМ) */
         .stats-banner-section {
-            background-color: #ffffff;
+            background-color: #fafafa;
             border-bottom: 1px solid var(--border);
-            padding: 64px 0;
+            padding: 44px 0;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 48px;
         }
 
         .stat-item {
@@ -221,42 +221,48 @@
         .stat-item:not(:last-child)::after {
             content: '';
             position: absolute;
-            right: -20px;
-            top: 10%;
-            height: 80%;
+            right: -24px;
+            top: 15%;
+            height: 70%;
             width: 1px;
             background-color: var(--border);
         }
 
-        .stat-icon-wrap {
-            width: 32px;
-            height: 32px;
-            color: var(--text);
-            margin-bottom: 16px;
+        .stat-top-row {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .stat-icon-wrap {
+            width: 20px;
+            height: 20px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.85;
         }
 
         .stat-icon-wrap svg {
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             stroke-width: 1.5;
         }
 
         .stat-number {
-            font-size: clamp(34px, 3.6vw, 44px);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1;
             color: var(--text);
-            margin-bottom: 12px;
         }
 
         .stat-text {
-            font-size: 13px;
+            font-size: 12.5px;
             line-height: 1.6;
-            color: #444444;
+            color: #4a4a4a;
             font-weight: 400;
         }
 
@@ -795,38 +801,44 @@
             <div class="stats-grid">
                 <!-- Пункт 1: Google Maps -->
                 <div class="stat-item">
-                    <div class="stat-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
+                    <div class="stat-top-row">
+                        <div class="stat-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="stat-number">84%</div>
                     </div>
-                    <div class="stat-number">84%</div>
-                    <p class="stat-text" data-i18n="stat_p1">потребителей в Финляндии ищут локальные заведения и услуги через Google и Google Maps перед визитом.</p>
+                    <p class="stat-text" data-i18n="stat_p1">споживачів у Фінляндії шукають локальні послуги та заклади через Google та Google Maps перед візитом.</p>
                 </div>
 
                 <!-- Пункт 2: Reels / Відео -->
                 <div class="stat-item">
-                    <div class="stat-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="4"></rect>
-                            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
-                        </svg>
+                    <div class="stat-top-row">
+                        <div class="stat-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="4"></rect>
+                                <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
+                            </svg>
+                        </div>
+                        <div class="stat-number" data-i18n="stat_num2">До 70%</div>
                     </div>
-                    <div class="stat-number" data-i18n="stat_num2">До 70%</div>
-                    <p class="stat-text" data-i18n="stat_p2">пользователей принимают решение о покупке или визите после просмотра коротких видео (Reels / TikTok) или визуала в Instagram.</p>
+                    <p class="stat-text" data-i18n="stat_p2">користувачів приймають рішення про покупку чи візит після перегляду коротких відео (Reels / TikTok) або профілю в Instagram.</p>
                 </div>
 
                 <!-- Пункт 3: Мобільний сайт / Конверсія -->
                 <div class="stat-item">
-                    <div class="stat-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                        </svg>
+                    <div class="stat-top-row">
+                        <div class="stat-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="stat-number">3.5x</div>
                     </div>
-                    <div class="stat-number">3.5x</div>
-                    <p class="stat-text" data-i18n="stat_p3">больше конверсий получают сайты со стильным визуалом и выверенной мобильной версией по сравнению с устаревшими ресурсами.</p>
+                    <p class="stat-text" data-i18n="stat_p3">У 3.5 рази більше конверсій отримують сайти з професійним візуалом та оптимізованою мобільною версією порівняно із застарілими ресурсами.</p>
                 </div>
             </div>
         </div>
@@ -1090,7 +1102,7 @@
                 stat_p1: "потребителей в Финляндии ищут локальные заведения и услуги через Google и Google Maps перед визитом.",
                 stat_num2: "До 70%",
                 stat_p2: "пользователей принимают решение о покупке или визите после просмотра коротких видео (Reels / TikTok) или визуала в Instagram.",
-                stat_p3: "больше конверсий получают сайты со стильным визуалом и выверенной мобильной версией по сравнению с устаревшими ресурсами.",
+                stat_p3: "У 3.5 раза больше конверсий получают сайты с профессиональным визуалом и оптимизированной мобильной версией по сравнению с устаревшими ресурсами.",
                 about_label: "[ 01 / О студии ]",
                 about_p1: "SUNDAY Studio — медиа-агентство в Хельсинки, которое помогает бизнесу расти и привлекать новых клиентов.",
                 about_p2: "Сегодня эффективное присутствие в интернете — это не просто эстетика, а один из главных двигателей продаж и развития компании. Мы создаем комплексные медиа-решения, объединяя сильный визуал, современную веб-разработку и инструменты продвижения.",
@@ -1142,10 +1154,10 @@
                 nav_portfolio: "Cases",
                 nav_contact_btn: "Get in Touch",
                 hero_phrase: "Helsinki — SMM, Video & Web",
-                stat_p1: "of consumers in Finland look up local businesses via Google and Google Maps before visiting.",
+                stat_p1: "of consumers in Finland search for local services and venues via Google and Google Maps before visiting.",
                 stat_num2: "Up to 70%",
                 stat_p2: "of prospective customers make purchasing decisions after viewing short-form video (Reels / TikTok) or Instagram profiles.",
-                stat_p3: "higher conversion rates for websites featuring sharp art direction and mobile-first fluid design compared to legacy platforms.",
+                stat_p3: "3.5x higher conversions for websites with professional visual branding and an optimized mobile version compared to outdated platforms.",
                 about_label: "[ 01 / Studio Profile ]",
                 about_p1: "SUNDAY Studio is a media agency in Helsinki helping businesses grow and reach new clients.",
                 about_p2: "Today, an effective digital presence is not just about aesthetics — it is a primary driver of sales and business growth. We craft integrated media solutions combining sharp visual storytelling, modern web development, and performance marketing.",
@@ -1197,10 +1209,10 @@
                 nav_portfolio: "Työt",
                 nav_contact_btn: "Ota yhteyttä",
                 hero_phrase: "Helsinki — SMM, Video & Web",
-                stat_p1: "suomalaisista kuluttajista etsii paikallisia palveluita Googlen ja Google Mapsin kautta ennen vierailua.",
+                stat_p1: "suomalaisista kuluttajista etsii paikallisia palveluita ja toimipisteitä Googlen ja Google Mapsin kautta ennen vierailua.",
                 stat_num2: "Jopa 70%",
                 stat_p2: "käyttäjistä tekee ostopäätöksen tai valitsee palvelun lyhytvideoiden (Reels / TikTok) tai Instagram-profiilin perusteella.",
-                stat_p3: "enemmän konversioita sivustoilla, joilla on laadukas visuaalinen ilme ja mobiilioptimoitu käyttökokemus.",
+                stat_p3: "3,5-kertaisesti enemmän konversioita sivustoilla, joilla on ammattimainen visuaalinen ilme ja mobiilioptimoitu käyttökokemus vanhoihin sivustoihin verrattuna.",
                 about_label: "[ 01 / Studio ]",
                 about_p1: "SUNDAY Studio on helsinkiläinen mediatoimisto, joka auttaa yrityksiä kasvamaan ja tavoittamaan uusia asiakkaita.",
                 about_p2: "Tehokas digitaalinen läsnäolo ei ole vain estetiikkaa, vaan yrityksen keskeinen myynnin ja kasvun moottori. Luomme kokonaisvaltaisia mediaratkaisuja, joissa yhdistyvät vahva visuaalisuus, moderni verkkokehitys ja tuloksellinen markkinointi.",
