@@ -259,7 +259,112 @@
             padding-right: clamp(24px, 5vw, 80px);
         }
 
-        /* СЕКЦІЯ 02: НАПРЯМКИ РОБОТИ */
+        /* СЕКЦІЯ 02: ТАБЛИЦЯ ПОРІВНЯННЯ РЕЗУЛЬТАТІВ (ОНОВЛЕНИЙ ЧИСТИЙ ДИЗАЙН) */
+        .comparison-section {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid var(--border);
+            background: #ffffff;
+        }
+
+        .comp-col {
+            padding: 44px 36px;
+        }
+
+        .comp-col-before {
+            background-color: #fafafa;
+            border-right: 1px solid var(--border);
+        }
+
+        .comp-col-after {
+            background-color: #ffffff;
+        }
+
+        .comp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 36px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            width: 100%;
+        }
+
+        .comp-col-before .comp-badge {
+            color: #888;
+        }
+
+        .comp-col-after .comp-badge {
+            color: #111;
+        }
+
+        .comp-metric-row {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 22px;
+            margin-bottom: 22px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .comp-metric-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .metric-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .comp-col-before .metric-value {
+            font-size: 13.5px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .comp-col-after .metric-value {
+            font-size: 14px;
+            color: #111;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .stat-highlight {
+            display: inline-block;
+            font-weight: 700;
+            color: #111;
+            background: #f1f3f2;
+            padding: 1px 6px;
+            border-radius: 2px;
+            margin-right: 4px;
+        }
+
+        .comp-col-after .stat-highlight {
+            background: #111;
+            color: #fff;
+        }
+
+        .card-keyword {
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* СЕКЦІЯ 03: НАПРЯМКИ РОБОТИ */
         .services-section {
             padding-top: 100px;
             padding-bottom: 100px;
@@ -315,7 +420,7 @@
             line-height: 1.6;
         }
 
-        /* СЕКЦІЯ 03: КЕЙСИ */
+        /* СЕКЦІЯ 04: КЕЙСИ */
         .portfolio-section {
             padding-top: 100px;
             padding-bottom: 100px;
@@ -478,125 +583,6 @@
             background: #ffffff;
         }
 
-        /* СЕКЦІЯ 04: ТАБЛИЦЯ ПОРІВНЯННЯ / РЕЗУЛЬТАТ */
-        .comparison-section {
-            padding-top: 100px;
-            padding-bottom: 100px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.08fr;
-            gap: 24px;
-            align-items: stretch;
-        }
-
-        .comp-card {
-            padding: 44px 38px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-radius: 2px;
-        }
-
-        .comp-card-before {
-            background-color: #f7f7f7;
-            border: 1px solid var(--border);
-            color: var(--text);
-        }
-
-        .comp-card-after {
-            background-color: #121212;
-            color: #ffffff;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .comp-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid;
-            margin-bottom: 28px;
-        }
-
-        .comp-card-before .comp-header {
-            border-bottom-color: #e4e4e4;
-        }
-
-        .comp-card-after .comp-header {
-            border-bottom-color: rgba(255, 255, 255, 0.15);
-        }
-
-        .status-dot {
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .status-dot.red {
-            background-color: #e63946;
-            box-shadow: 0 0 8px rgba(230, 57, 70, 0.4);
-        }
-
-        .status-dot.green {
-            background-color: #2ec4b6;
-            box-shadow: 0 0 10px rgba(46, 196, 182, 0.6);
-        }
-
-        .comp-title {
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-        }
-
-        .comp-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-        }
-
-        .comp-item {
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        .comp-card-before .comp-item strong {
-            color: #111;
-            display: block;
-            margin-bottom: 2px;
-            font-size: 11.5px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .comp-card-before .comp-item span {
-            color: #666;
-        }
-
-        .comp-card-after .comp-item strong {
-            color: rgba(255, 255, 255, 0.7);
-            display: block;
-            margin-bottom: 2px;
-            font-size: 11.5px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .comp-card-after .comp-item span {
-            color: #f1f1f1;
-            font-weight: 400;
-        }
-
-        .comp-card-after .highlight {
-            color: #2ec4b6;
-            font-weight: 600;
-        }
-
         /* КОНТАКТИ */
         footer {
             padding-top: 80px;
@@ -669,12 +655,13 @@
             }
             .about-image-col { height: 380px; }
             .page-container { padding-left: 20px; padding-right: 20px; }
+            .comparison-table { grid-template-columns: 1fr; }
+            .comp-col-before { border-right: none; border-bottom: 1px solid var(--border); }
+            .comp-col { padding: 32px 24px; }
             .services-grid { grid-template-columns: 1fr; }
             .service-card { min-height: auto; }
             .service-card .num { margin-bottom: 24px; }
             .cases-grid { grid-template-columns: 1fr; }
-            .comparison-grid { grid-template-columns: 1fr; gap: 20px; }
-            .comp-card { padding: 32px 24px; }
             .footer-grid { grid-template-columns: 1fr; }
             .slider-btn { opacity: 1; }
         }
@@ -687,9 +674,9 @@
         <div class="header-inner">
             <nav class="nav-left">
                 <a href="#about" data-i18n="nav_about">О нас</a>
+                <a href="#results" data-i18n="nav_results">Эффект</a>
                 <a href="#services" data-i18n="nav_services">Услуги</a>
                 <a href="#portfolio" data-i18n="nav_portfolio">Кейсы</a>
-                <a href="#results" data-i18n="nav_results">Результаты</a>
             </nav>
 
             <!-- ЛОГОТИП ПО ЦЕНТРУ -->
@@ -712,7 +699,7 @@
         </div>
     </header>
 
-    <!-- ГЛАВНИЙ ЕКРАН -->
+    <!-- ГОЛОВНИЙ ЕКРАН -->
     <section class="hero">
         <div class="hero-media"></div>
         <div class="hero-center-box">
@@ -738,12 +725,79 @@
         </div>
     </section>
 
-    <!-- СЕКЦІЇ 02, 03, 04, КОНТАКТИ -->
+    <!-- ОСНОВНИЙ КОНТЕНТНИЙ БЛОК -->
     <div class="page-container">
-        <!-- СЕКЦІЯ 02: НАПРЯМКИ РОБОТИ -->
+
+        <!-- СЕКЦІЯ 02: ЕФЕКТ ВІД СПІВПРАЦІ (ПЕРЕНЕСЕНО ПЕРЕД НАПРЯМКАМИ) -->
+        <section id="results" class="comparison-section">
+            <div class="section-header">
+                <span data-i18n="results_label">[ 02 / Эффект от сотрудничества ]</span>
+                <span data-i18n="results_sub">Почему комплекс окупается</span>
+            </div>
+
+            <div class="comparison-table">
+                <!-- Ліва колонка: До -->
+                <div class="comp-col comp-col-before">
+                    <div class="comp-badge">
+                        <span>●</span>
+                        <span data-i18n="comp_before_title">Бизнес до работы с нами</span>
+                    </div>
+
+                    <div class="comp-metric-row">
+                        <span class="metric-label" data-i18n="cb_t1">Органический трафик</span>
+                        <p class="metric-value" data-i18n="cb_d1">0–50 посетителей в месяц (только постоянные или случайные прохожие)</p>
+                    </div>
+
+                    <div class="comp-metric-row">
+                        <span class="metric-label" data-i18n="cb_t2">Видимость в Google Maps</span>
+                        <p class="metric-value" data-i18n="cb_d2">Отсутствует (бизнес остается «невидимым» для новых жителей и гостей города)</p>
+                    </div>
+
+                    <div class="comp-metric-row">
+                        <span class="metric-label" data-i18n="cb_t3">Соцсети и вовлечение</span>
+                        <p class="metric-value" data-i18n="cb_d3">Единичные сообщения в директ без регулярного системного доверия</p>
+                    </div>
+
+                    <div class="comp-metric-row">
+                        <span class="metric-label" data-i18n="cb_t4">Источник клиентов</span>
+                        <p class="metric-value" data-i18n="cb_d4">Полная зависимость от сарафанного радио и случайного офлайн-потока</p>
+                    </div>
+                </div>
+
+                <!-- Права колонка: З нами -->
+                <div class="comp-col comp-col-after">
+                    <div class="comp-badge">
+                        <span style="color: #111;">✓</span>
+                        <span data-i18n="comp_after_title">С решением от SUNDAY Studio</span>
+                    </div>
+
+                    <div class="comp-metric-row">
+                        <span class="metric-label" data-i18n="ca_t1">Органический трафик</span>
+                        <p class="metric-value"><span class="stat-highlight">+250%</span> <span data-i18n="ca_d1">роста — до ~175 целевых посетителей/мес. за счет точечного локального SEO</span></p>
+                    </div>
+
+                    <div class="comp-metric-row">
+                        <span class="metric-label" data-i18n="ca_t2">Видимость в Google Maps</span>
+                        <p class="metric-value"><span class="stat-highlight">100+</span> <span data-i18n="ca_d2_part1">новых переходов и маршрутов каждый месяц непосредственно из</span> <span class="card-keyword" data-i18n="ca_d2_card">карточки</span> <span data-i18n="ca_d2_part2">Google</span></p>
+                    </div>
+
+                    <div class="comp-metric-row">
+                        <span class="metric-label" data-i18n="ca_t3">Соцсети и вовлечение</span>
+                        <p class="metric-value"><span class="stat-highlight">В 3 раза</span> <span data-i18n="ca_d3">больше входящих обращений благодаря лаконичному сайту и стильным Reels</span></p>
+                    </div>
+
+                    <div class="comp-metric-row">
+                        <span class="metric-label" data-i18n="ca_t4">Итоговый результат</span>
+                        <p class="metric-value"><span class="stat-highlight">25–30+</span> <span data-i18n="ca_d4">стабильных целевых заказов в неделю напрямую из поисковиков и соцсетей</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦІЯ 03: НАПРЯМКИ РОБОТИ -->
         <section id="services" class="services-section">
             <div class="section-header">
-                <span data-i18n="services_label">[ 02 / Направления работы ]</span>
+                <span data-i18n="services_label">[ 03 / Направления работы ]</span>
                 <span data-i18n="services_count">4 направления</span>
             </div>
             <div class="services-grid">
@@ -770,10 +824,10 @@
             </div>
         </section>
 
-        <!-- СЕКЦІЯ 03: КЕЙСИ -->
+        <!-- СЕКЦІЯ 04: КЕЙСИ -->
         <section id="portfolio" class="portfolio-section">
             <div class="section-header">
-                <span data-i18n="cases_label">[ 03 / Кейсы ]</span>
+                <span data-i18n="cases_label">[ 04 / Кейсы ]</span>
                 <span data-i18n="cases_sub">Избранные проекты</span>
             </div>
             <div class="cases-grid">
@@ -885,68 +939,6 @@
             </div>
         </section>
 
-        <!-- СЕКЦІЯ 04: ТАБЛИЦЯ ПОРІВНЯННЯ РЕЗУЛЬТАТІВ -->
-        <section id="results" class="comparison-section">
-            <div class="section-header">
-                <span data-i18n="results_label">[ 04 / Результаты трансформации ]</span>
-                <span data-i18n="results_sub">Наглядные показатели</span>
-            </div>
-
-            <div class="comparison-grid">
-                <!-- Лівий блок: ДО -->
-                <div class="comp-card comp-card-before">
-                    <div class="comp-header">
-                        <span class="status-dot red"></span>
-                        <h3 class="comp-title" data-i18n="comp_before_title">Бизнес до сотрудничества</h3>
-                    </div>
-                    <ul class="comp-list">
-                        <li class="comp-item">
-                            <strong data-i18n="cb_t1">Органический трафик</strong>
-                            <span data-i18n="cb_d1">0–50 посетителей в месяц (только постоянные или случайные прохожие)</span>
-                        </li>
-                        <li class="comp-item">
-                            <strong data-i18n="cb_t2">Видимость в Google Maps</strong>
-                            <span data-i18n="cb_d2">Отсутствует (бизнес «невидим» для новых клиентов в городе)</span>
-                        </li>
-                        <li class="comp-item">
-                            <strong data-i18n="cb_t3">Активность в соцсетях</strong>
-                            <span data-i18n="cb_d3">Единичные обращения (нет стабильного доверия к профилю)</span>
-                        </li>
-                        <li class="comp-item">
-                            <strong data-i18n="cb_t4">Зависимость</strong>
-                            <span data-i18n="cb_d4">Только сарафанное радио и непредсказуемый офлайн-поток</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Правий блок: ПІСЛЯ (АКЦЕНТНИЙ) -->
-                <div class="comp-card comp-card-after">
-                    <div class="comp-header">
-                        <span class="status-dot green"></span>
-                        <h3 class="comp-title" data-i18n="comp_after_title">С решением от SUNDAY Studio</h3>
-                    </div>
-                    <ul class="comp-list">
-                        <li class="comp-item">
-                            <strong data-i18n="ca_t1">Органический трафик</strong>
-                            <span data-i18n="ca_d1">Рост на <span class="highlight">250%</span> — до ~175 целевых посетителей/мес. за счет точного SEO</span>
-                        </li>
-                        <li class="comp-item">
-                            <strong data-i18n="ca_t2">Видимость в Google Maps</strong>
-                            <span data-i18n="ca_d2"><span class="highlight">+130 новых переходов</span> и маршрутов ежемесячно прямо с карточки Google</span>
-                        </li>
-                        <li class="comp-item">
-                            <strong data-i18n="ca_t3">Вовлечение и доверие</strong>
-                            <span data-i18n="ca_d3">Рост обращений в <span class="highlight">3 раза</span> благодаря стильному сайту и живым Reels</span>
-                        </li>
-                        <li class="comp-item">
-                            <strong data-i18n="ca_t4">Итоговый результат</strong>
-                            <span data-i18n="ca_d4">От хаотичных продаж к стабильным <span class="highlight">25–30+ заказам в неделю</span> из поиска и соцсетей</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
         <!-- КОНТАКТИ -->
         <footer id="contacts">
             <div class="footer-grid">
@@ -973,16 +965,38 @@
         const translations = {
             ru: {
                 nav_about: "О нас",
+                nav_results: "Эффект",
                 nav_services: "Услуги",
                 nav_portfolio: "Кейсы",
-                nav_results: "Результаты",
                 nav_contact_btn: "Связаться",
                 hero_phrase: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / О студии ]",
                 about_p1: "SUNDAY Studio — медиа-агентство в Хельсинки, которое помогает бизнесу расти и привлекать новых клиентов.",
                 about_p2: "Сегодня эффективное присутствие в интернете — это не просто эстетика, а один из главных двигателей продаж и развития компании. Мы создаем комплексные медиа-решения, объединяя сильный визуал, современную веб-разработку и инструменты продвижения.",
                 about_p3: "Мы берем на себя всю техническую и творческую работу: выстраиваем узнаваемый стиль бренда, выводим ваши ресурсы в топ поисковых систем и создаем контент, который удерживает внимание аудитории. Наша цель — сделать так, чтобы ваше присутствие в сети работало на ваш бизнес и приносило измеримый результат.",
-                services_label: "[ 02 / Направления работы ]",
+                results_label: "[ 02 / Эффект от сотрудничества ]",
+                results_sub: "Почему комплекс окупается",
+                comp_before_title: "Бизнес до работы с нами",
+                cb_t1: "Органический трафик",
+                cb_d1: "0–50 посетителей в месяц (только постоянные или случайные прохожие)",
+                cb_t2: "Видимость в Google Maps",
+                cb_d2: "Отсутствует (бизнес остается «невидимым» для новых жителей и гостей города)",
+                cb_t3: "Соцсети и вовлечение",
+                cb_d3: "Единичные сообщения в директ без регулярного системного доверия",
+                cb_t4: "Источник клиентов",
+                cb_d4: "Полная зависимость от сарафанного радио и случайного офлайн-потока",
+                comp_after_title: "С решением от SUNDAY Studio",
+                ca_t1: "Органический трафик",
+                ca_d1: "роста — до ~175 целевых посетителей/мес. за счет точечного локального SEO",
+                ca_t2: "Видимость в Google Maps",
+                ca_d2_part1: "новых переходов и маршрутов каждый месяц непосредственно из",
+                ca_d2_card: "карточки",
+                ca_d2_part2: "Google",
+                ca_t3: "Соцсети и вовлечение",
+                ca_d3: "больше входящих обращений благодаря лаконичному сайту и стильным Reels",
+                ca_t4: "Итоговый результат",
+                ca_d4: "стабильных целевых заказов в неделю напрямую из поисковиков и соцсетей",
+                services_label: "[ 03 / Направления работы ]",
                 services_count: "4 направления",
                 s1_title: "SMM под ключ",
                 s1_desc: "Берем полностью на себя управление вашими социальными сетями: от разработки контент-стратегии и организации съемок до написания текстов, публикации и настройки рекламы. Вы занимаетесь бизнесом, а мы — вашим Instagram.",
@@ -992,31 +1006,11 @@
                 s3_desc: "Разрабатываем современные и удобные сайты, адаптированные под любые устройства. Настраиваем полноценную SEO-оптимизацию и профиль в Google, чтобы ваш сайт занимал высокие позиции в поисковой выдаче и приводил вам новых клиентов.",
                 s4_title: "Упаковка бренда",
                 s4_desc: "Создаем визуальное лицо вашего бизнеса с нуля. Разрабатываем логотип, подбираем фирменные цвета, типографику и создаем узнаваемый образ, который выделяет вас среди конкурентов на рынке.",
-                cases_label: "[ 03 / Кейсы ]",
+                cases_label: "[ 04 / Кейсы ]",
                 cases_sub: "Избранные проекты",
                 c1_meta: "Видео, брендинг",
                 c2_meta: "Под ключ",
                 c3_meta: "SMM и контент",
-                results_label: "[ 04 / Результаты трансформации ]",
-                results_sub: "Наглядные показатели",
-                comp_before_title: "Бизнес до сотрудничества",
-                cb_t1: "Органический трафик",
-                cb_d1: "0–50 посетителей в месяц (только постоянные или случайные прохожие)",
-                cb_t2: "Видимость в Google Maps",
-                cb_d2: "Отсутствует (бизнес «невидим» для новых клиентов в городе)",
-                cb_t3: "Активность в соцсетях",
-                cb_d3: "Единичные обращения (нет стабильного доверия к профилю)",
-                cb_t4: "Зависимость",
-                cb_d4: "Только сарафанное радио и непредсказуемый офлайн-поток",
-                comp_after_title: "С решением от SUNDAY Studio",
-                ca_t1: "Органический трафик",
-                ca_d1: "Рост на 250% — до ~175 целевых посетителей/мес. за счет точного SEO",
-                ca_t2: "Видимость в Google Maps",
-                ca_d2: "+130 новых переходов и маршрутов ежемесячно прямо с карточки Google",
-                ca_t3: "Вовлечение и доверие",
-                ca_d3: "Рост обращений в 3 раза благодаря стильному сайту и живым Reels",
-                ca_t4: "Итоговый результат",
-                ca_d4: "От хаотичных продаж к стабильным 25–30+ заказам в неделю из поиска и соцсетей",
                 contact_label: "[ 05 / Контакты ]",
                 location_label: "Локация",
                 location_city: "Хельсинки, Финляндия",
@@ -1024,16 +1018,38 @@
             },
             en: {
                 nav_about: "About",
+                nav_results: "Impact",
                 nav_services: "Services",
                 nav_portfolio: "Cases",
-                nav_results: "Results",
                 nav_contact_btn: "Get in Touch",
                 hero_phrase: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / Studio Profile ]",
                 about_p1: "SUNDAY Studio is a media agency in Helsinki helping businesses grow and reach new clients.",
                 about_p2: "Today, an effective digital presence is not just about aesthetics — it is a primary driver of sales and business growth. We craft integrated media solutions combining sharp visual storytelling, modern web development, and performance marketing.",
                 about_p3: "We handle the entire technical and creative workflow: shaping a distinctive brand style, driving search rankings, and producing content that commands attention. Our goal is to make your online presence deliver measurable business results.",
-                services_label: "[ 02 / Services ]",
+                results_label: "[ 02 / Commercial Impact ]",
+                results_sub: "Why full-service pays off",
+                comp_before_title: "Before Collaboration",
+                cb_t1: "Organic Traffic",
+                cb_d1: "0–50 visitors per month (only repeat visitors or foot traffic)",
+                cb_t2: "Google Maps Presence",
+                cb_d2: "Invisible (new potential local buyers cannot discover your business)",
+                cb_t3: "Social Engagement",
+                cb_d3: "Sporadic inquiries without consistent audience trust",
+                cb_t4: "Acquisition Source",
+                cb_d4: "Entirely dependent on word-of-mouth and random offline walk-ins",
+                comp_after_title: "With SUNDAY Studio",
+                ca_t1: "Organic Traffic",
+                ca_d1: "increase — up to ~175 target monthly visitors via local SEO",
+                ca_t2: "Google Maps Presence",
+                ca_d2_part1: "new views and directions monthly directly from your Google",
+                ca_d2_card: "profile",
+                ca_d2_part2: "card",
+                ca_t3: "Social Engagement",
+                ca_d3: "more inbound inquiries through clean web design and editorial Reels",
+                ca_t4: "Final Output",
+                ca_d4: "predictable customer orders per week from search engines and socials",
+                services_label: "[ 03 / Services ]",
                 services_count: "4 directions",
                 s1_title: "Turn-Key SMM",
                 s1_desc: "Full-cycle social media management: from content strategy and production shoots to copywriting, scheduling, and targeted ad campaigns. You run your business, we run your Instagram.",
@@ -1043,31 +1059,11 @@
                 s3_desc: "Modern, responsive websites engineered for every device. Integrated SEO setup and Google Business optimization to rank high in search results and drive qualified inbound leads.",
                 s4_title: "Brand Identity",
                 s4_desc: "Visual identity design built from the ground up: logos, color systems, typography, and cohesive brand styling that sets you apart from market competitors.",
-                cases_label: "[ 03 / Cases ]",
+                cases_label: "[ 04 / Cases ]",
                 cases_sub: "Selected Works",
                 c1_meta: "Video, Branding",
                 c2_meta: "Turn-Key",
                 c3_meta: "SMM & Content",
-                results_label: "[ 04 / Growth Impact ]",
-                results_sub: "Performance Metrics",
-                comp_before_title: "Business Before Collaboration",
-                cb_t1: "Organic Traffic",
-                cb_d1: "0–50 visitors per month (mostly repeat clients or passers-by)",
-                cb_t2: "Google Maps Presence",
-                cb_d2: "Invisible (new potential local buyers cannot find you)",
-                cb_t3: "Social Media Inquiries",
-                cb_d3: "Sporadic DMs (lacks social proof and brand confidence)",
-                cb_t4: "Acquisition Reliance",
-                cb_d4: "Dependent only on word-of-mouth and foot traffic",
-                comp_after_title: "With SUNDAY Studio Solutions",
-                ca_t1: "Organic Traffic",
-                ca_d1: "+250% surge — up to ~175 target monthly visitors via local SEO",
-                ca_t2: "Google Maps Presence",
-                ca_d2: "+130 new profile clicks and directions monthly directly from Maps",
-                ca_t3: "Social Media Inquiries",
-                ca_d3: "3x increase in client leads through clean web design and engaging Reels",
-                ca_t4: "Commercial Impact",
-                ca_d4: "Predictable 25–30+ orders per week from organic search and socials",
                 contact_label: "[ 05 / Contact ]",
                 location_label: "Location",
                 location_city: "Helsinki, Finland",
@@ -1075,16 +1071,38 @@
             },
             fi: {
                 nav_about: "Meistä",
+                nav_results: "Tulokset",
                 nav_services: "Palvelut",
                 nav_portfolio: "Työt",
-                nav_results: "Tulokset",
                 nav_contact_btn: "Ota yhteyttä",
                 hero_phrase: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / Studio ]",
                 about_p1: "SUNDAY Studio on helsinkiläinen mediatoimisto, joka auttaa yrityksiä kasvamaan ja tavoittamaan uusia asiakkaita.",
                 about_p2: "Tehokas digitaalinen läsnäolo ei ole vain estetiikkaa, vaan yrityksen keskeinen myynnin ja kasvun moottori. Luomme kokonaisvaltaisia mediaratkaisuja, joissa yhdistyvät vahva visuaalisuus, moderni verkkokehitys ja tuloksellinen markkinointi.",
                 about_p3: "Vastaamme koko luovasta ja teknisestä prosessista: rakennamme tunnistettavan brändi-ilmeen, optimoimme näkyvyyden hakukoneissa ja tuotamme sisältöä, joka sitouttaa. Tavoitteemme on tuottaa mitattavia tuloksia liiketoiminnallesi.",
-                services_label: "[ 02 / Palvelut ]",
+                results_label: "[ 02 / Yhteistyön vaikutus ]",
+                results_sub: "Miksi kokonaisuus kannattaa",
+                comp_before_title: "Yritys ennen meitä",
+                cb_t1: "Orgaaninen liikenne",
+                cb_d1: "0–50 kävijää kuukaudessa (vain kanta-asiakkaita tai satunnaisia ohikulkijoita)",
+                cb_t2: "Google Maps -näkyvyys",
+                cb_d2: "Puuttuu (yritys on näkymätön uusille asiakkaille kaupungissa)",
+                cb_t3: "Some & sitoutuminen",
+                cb_d3: "Yksittäisiä yhteydenottoja ilman jatkuvaa vakuuttavaa luottamusta",
+                cb_t4: "Asiakashankinta",
+                cb_d4: "Täysi riippuvuus puskaradiosta ja satunnaisesta ohikulkuliikenteestä",
+                comp_after_title: "SUNDAY Studion ratkaisulla",
+                ca_t1: "Orgaaninen liikenne",
+                ca_d1: "kasvua — jopa ~175 kohdennettua kävijää/kk paikallisen SEO:n ansiosta",
+                ca_t2: "Google Maps -näkyvyys",
+                ca_d2_part1: "uutta klikkausta ja reittihakua kuukausittain suoraan Google-",
+                ca_d2_card: "profiilista",
+                ca_d2_part2: "",
+                ca_t3: "Some & sitoutuminen",
+                ca_d3: "enemmän yhteydenottoja selkeän sivuston ja tyylikkäiden Reelsien kautta",
+                ca_t4: "Lopullinen tulos",
+                ca_d4: "säännöllistä tilausta viikossa hakukoneista ja sosiaalisesta mediasta",
+                services_label: "[ 03 / Palvelut ]",
                 services_count: "4 osaamisaluetta",
                 s1_title: "SMM avaimet käteen",
                 s1_desc: "Sosiaalisen median kokonaisvaltainen hallinta: sisältöstrategiasta ja kuvauksista tekstintuotantoon, julkaisuun ja kohdennettuun mainontaan. Keskity liiketoimintaasi, me hoidamme Instagramisi.",
@@ -1094,31 +1112,11 @@
                 s3_desc: "Kaikille laitteille optimoidut modernit verkkosivustot. Kattava SEO-optimointi ja Google-näkyvyys varmistavat korkeat sijoitukset hakutuloksissa ja tuovat uusia asiakkaita.",
                 s4_title: "Brändi-identiteetti",
                 s4_desc: "Yrityksesi visuaalinen ilme alusta alkaen: logot, väripaletit, typografia ja yhtenäinen tyyli, joka erottuu edukseen markkinoilla.",
-                cases_label: "[ 03 / Referenssit ]",
+                cases_label: "[ 04 / Referenssit ]",
                 cases_sub: "Valikoidut työt",
                 c1_meta: "Video, brändäys",
                 c2_meta: "Avaimet käteen",
                 c3_meta: "SMM ja sisältö",
-                results_label: "[ 04 / Muutoksen tulokset ]",
-                results_sub: "Mitattavat hyödyt",
-                comp_before_title: "Yritys ennen yhteistyötä",
-                cb_t1: "Orgaaninen liikenne",
-                cb_d1: "0–50 kävijää kuukaudessa (vain kanta-asiakkaita tai satunnaisia ohikulkijoita)",
-                cb_t2: "Google Maps -näkyvyys",
-                cb_d2: "Ei näkyvyyttä (yritys on näkymätön uusille paikallisille asiakkaille)",
-                cb_t3: "Some-aktiivisuus",
-                cb_d3: "Yksittäisiä yhteydenottoja (tililtä puuttuu vakuuttava luottamus)",
-                cb_t4: "Riippuvuus",
-                cb_d4: "Vain puskaradion ja satunnaisen katuliikenteen varassa",
-                comp_after_title: "SUNDAY Studion ratkaisulla",
-                ca_t1: "Orgaaninen liikenne",
-                ca_d1: "+250% kasvu — n. 175 kohdennettuun kävijään/kk tarkan SEO:n ansiosta",
-                ca_t2: "Google Maps -näkyvyys",
-                ca_d2: "+130 uutta reittihakua ja klikkausta kuukaudessa suoraan Google-profiilista",
-                ca_t3: "Sitoutuminen ja luottamus",
-                ca_d3: "Yhteydenotot kolminkertaistuvat tyylikkäiden sivujen ja aitojen Reelsien avulla",
-                ca_t4: "Lopullinen tulos",
-                ca_d4: "Epäsäännöllisestä myynnistä tasaisiin 25–30+ tilaukseen viikossa",
                 contact_label: "[ 05 / Yhteystiedot ]",
                 location_label: "Sijainti",
                 location_city: "Helsinki, Suomi",
