@@ -47,7 +47,7 @@
         header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
@@ -62,7 +62,7 @@
 
         .nav-left {
             display: flex;
-            gap: 28px;
+            gap: 24px;
         }
 
         .nav-left a {
@@ -101,12 +101,12 @@
             letter-spacing: 0.1em;
         }
 
-        /* ПРАВИЙ БЛОК: КНОПКА СВЯЗАТЬСЯ І МОВИ */
+        /* ПРАВИЙ БЛОК: КНОПКА ЗВ'ЯЗКУ ТА МОВИ */
         .header-right {
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
         }
 
         .contact-btn-top {
@@ -117,6 +117,7 @@
             padding: 8px 16px;
             border: 1px solid var(--text);
             transition: all 0.2s ease;
+            white-space: nowrap;
         }
 
         .contact-btn-top:hover {
@@ -126,7 +127,7 @@
 
         .lang-switch {
             display: flex;
-            gap: 6px;
+            gap: 4px;
         }
 
         .lang-btn {
@@ -151,14 +152,14 @@
         /* HERO СЕКЦІЯ */
         .hero {
             position: relative;
-            height: 90vh;
-            min-height: 580px;
+            height: 85vh;
+            min-height: 520px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 24px;
             overflow: hidden;
-            background-color: #f1f1f1;
+            background-color: #f6f6f6;
         }
 
         .hero-media {
@@ -171,13 +172,6 @@
             background-position: center;
         }
 
-        .hero-media::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.26);
-        }
-
         .hero-center-box {
             position: relative;
             z-index: 2;
@@ -186,7 +180,7 @@
             padding: 20px;
         }
 
-        /* НОВИЙ ФЕШН-ЗАГОЛОВОК (SPACE GROTESK, ПРЯМИЙ) */
+        /* ЧОРНИЙ ЗАГОЛОВОК HELSINKI */
         .hero-center-box h1 {
             font-family: var(--font-hero);
             font-style: normal;
@@ -194,8 +188,7 @@
             font-size: clamp(2rem, 4.4vw, 3.8rem);
             letter-spacing: -0.025em;
             line-height: 1.15;
-            color: #ffffff;
-            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+            color: #111111;
             background: transparent;
             padding: 0;
             border-radius: 0;
@@ -273,7 +266,7 @@
         /* СЕКЦІЯ 01: ПРО НАС */
         .about-section {
             padding-top: 80px;
-            padding-bottom: 110px;
+            padding-bottom: 100px;
             border-bottom: 1px solid var(--border);
         }
 
@@ -282,7 +275,7 @@
             grid-template-columns: minmax(320px, 460px) 1fr;
             align-items: center;
             gap: 60px;
-            padding-left: clamp(24px, 5vw, 80px);
+            padding-left: clamp(20px, 5vw, 80px);
             padding-right: 0;
         }
 
@@ -295,7 +288,7 @@
             text-transform: uppercase;
             letter-spacing: 0.14em;
             color: var(--muted);
-            margin-bottom: 32px;
+            margin-bottom: 28px;
             display: block;
         }
 
@@ -327,8 +320,8 @@
 
         /* ЗАГАЛЬНИЙ КОНТЕЙНЕР */
         .page-container {
-            padding-left: clamp(24px, 5vw, 80px);
-            padding-right: clamp(24px, 5vw, 80px);
+            padding-left: clamp(20px, 5vw, 80px);
+            padding-right: clamp(20px, 5vw, 80px);
         }
 
         /* СЕКЦІЯ 02: КОМПАКТНА ТАБЛИЦЯ ПОРІВНЯННЯ */
@@ -701,6 +694,7 @@
             border-bottom: 1px solid var(--text);
             padding-bottom: 2px;
             transition: opacity 0.2s;
+            word-break: break-all;
         }
 
         .contact-mail:hover {
@@ -731,31 +725,144 @@
             padding-top: 24px;
         }
 
-        /* АДАПТИВНІСТЬ */
+        /* АДАПТИВНІСТЬ ПІД МОБІЛЬНІ ПРИСТРОЇ (ТАБЛЕТИ І СМАРТФОНИ) */
         @media (max-width: 900px) {
-            header { padding: 16px 20px; }
-            .header-inner { grid-template-columns: auto 1fr auto; }
-            .nav-left { display: none; }
+            header {
+                padding: 14px 18px;
+            }
+            .header-inner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .nav-left {
+                display: none; /* Приховуємо десктопне меню, залишаючи фокус на бренді й кнопці */
+            }
+            .logo-center a {
+                font-size: 18px;
+                letter-spacing: 0.12em;
+            }
+            .header-right {
+                gap: 10px;
+            }
+            .contact-btn-top {
+                padding: 6px 12px;
+                font-size: 10px;
+            }
+            .lang-btn {
+                font-size: 10px;
+                padding: 1px 2px;
+            }
+
+            /* HERO */
+            .hero {
+                height: 70vh;
+                min-height: 420px;
+                padding: 16px;
+            }
+            .hero-center-box h1 {
+                font-size: 1.85rem;
+                line-height: 1.2;
+            }
+
+            /* ПЛАШКА СТАТИСТИКИ */
+            .stats-banner-section {
+                padding: 40px 0 10px 0;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .stat-item:not(:last-child)::after {
+                display: none;
+            }
+
+            /* ПРО НАС */
+            .about-section {
+                padding-top: 60px;
+                padding-bottom: 70px;
+            }
             .about-layout {
                 grid-template-columns: 1fr;
-                padding-right: 20px;
                 padding-left: 20px;
-                gap: 40px;
+                padding-right: 20px;
+                gap: 36px;
             }
-            .about-image-col { height: 380px; }
-            .page-container { padding-left: 20px; padding-right: 20px; }
-            .stats-grid { grid-template-columns: 1fr; gap: 32px; }
-            .stat-item:not(:last-child)::after { display: none; }
-            .comp-grid-wrap { grid-template-columns: 1fr; }
-            .comp-header-before { border-right: none; }
-            .comp-cell-before { border-right: none; }
-            .comp-header-cell, .comp-cell { padding: 22px 20px; }
-            .services-grid { grid-template-columns: 1fr; }
-            .service-card { min-height: auto; }
-            .service-card .num { margin-bottom: 24px; }
-            .cases-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .slider-btn { opacity: 1; }
+            .about-text-col {
+                padding-right: 0;
+            }
+            .about-image-col {
+                height: 320px;
+            }
+
+            /* ТАБЛИЦЯ ПОРІВНЯННЯ */
+            .comparison-section {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+            .comp-grid-wrap {
+                grid-template-columns: 1fr;
+            }
+            .comp-header-before {
+                border-right: none;
+            }
+            .comp-cell-before {
+                border-right: none;
+            }
+            .comp-header-cell, .comp-cell {
+                padding: 18px 20px;
+            }
+
+            /* ПОСЛУГИ */
+            .services-section {
+                padding-top: 70px;
+                padding-bottom: 70px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-card {
+                min-height: auto;
+                padding: 28px 20px;
+            }
+            .service-card .num {
+                margin-bottom: 24px;
+            }
+
+            /* КЕЙСИ */
+            .portfolio-section {
+                padding-top: 70px;
+                padding-bottom: 70px;
+            }
+            .cases-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .slider-btn {
+                opacity: 1; /* Кнопки слайдера завжди активні на сенсорних екранах */
+                width: 36px;
+                height: 36px;
+            }
+
+            /* ФУТЕР */
+            footer {
+                padding-top: 60px;
+                padding-bottom: 32px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin-bottom: 40px;
+            }
+            .contact-details {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .bottom-bar {
+                flex-direction: column;
+                gap: 10px;
+                font-size: 10px;
+            }
         }
     </style>
 </head>
@@ -792,7 +899,7 @@
         </div>
     </header>
 
-    <!-- ГОЛОВНИЙ ЕКРАН (SPACE GROTESK, БЕЗ КУРСИВУ) -->
+    <!-- ГОЛОВНИЙ ЕКРАН (ЧОРНИЙ ТЕКСТ) -->
     <section class="hero">
         <div class="hero-media"></div>
         <div class="hero-center-box">
@@ -1094,7 +1201,7 @@
         </footer>
     </div>
 
-    <!-- СКРИПТИ З ПОВНОЮ ПІДТРИМКОЮ UA, RU, EN, FI -->
+    <!-- СКРИПТИ -->
     <script>
         const translations = {
             ua: {
