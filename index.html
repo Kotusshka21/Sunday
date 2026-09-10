@@ -259,148 +259,125 @@
             padding-right: clamp(24px, 5vw, 80px);
         }
 
-        /* СЕКЦІЯ 02: КОМПАКТНА ТАБЛИЦЯ ПОРІВНЯННЯ */
+        /* СЕКЦІЯ 02: ШИРОКА ГОРИЗОНТАЛЬНА ТАБЛИЦЯ ПОРІВНЯННЯ */
         .comparison-section {
-            padding-top: 80px;
-            padding-bottom: 80px;
+            padding-top: 90px;
+            padding-bottom: 90px;
             border-bottom: 1px solid var(--border);
         }
 
-        .comparison-table {
+        .comp-grid-wrap {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.05fr;
+            border: 1px solid var(--border);
             border-radius: 2px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-            border: 1px solid var(--border);
-            max-width: 1080px;
-            margin: 0 auto;
+            width: 100%;
         }
 
-        .comp-col {
-            padding: 34px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        /* Більш насичений сірий колір лівої колонки */
-        .comp-col-before {
-            background-color: #eeeeee;
-            border-right: 1px solid #e0e0e0;
-        }
-
-        .comp-col-before .comp-header-title {
-            font-size: 14.5px;
+        .comp-header-cell {
+            padding: 22px 34px;
+            font-size: 13.5px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: #555;
-            margin-bottom: 24px;
-            padding-bottom: 14px;
-            border-bottom: 1px solid #dedede;
+            letter-spacing: 0.08em;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .comp-col-before .comp-header-title::before {
+        .comp-header-before {
+            background-color: #eeeeee;
+            color: #555555;
+            border-right: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
+        }
+
+        .comp-header-before::before {
             content: '';
             display: inline-block;
-            width: 7px;
-            height: 7px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background-color: #cb4848;
         }
 
-        /* Чорна колонка */
-        .comp-col-after {
+        .comp-header-after {
             background-color: #111111;
             color: #ffffff;
-        }
-
-        .comp-col-after .comp-header-title {
-            font-size: 14.5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: #ffffff;
-            margin-bottom: 24px;
-            padding-bottom: 14px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .comp-col-after .comp-header-title::before {
+        .comp-header-after::before {
             content: '';
             display: inline-block;
-            width: 7px;
-            height: 7px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background-color: #2ec4b6;
         }
 
-        .comp-metric-row {
+        /* Окремі парні комірки для синхронного рівня */
+        .comp-cell {
+            padding: 24px 34px;
             display: flex;
             flex-direction: column;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-            border-bottom: 1px dashed;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
         }
 
-        .comp-col-before .comp-metric-row {
+        .comp-cell.no-border {
+            border-bottom: none;
+        }
+
+        .comp-cell-before {
+            background-color: #eeeeee;
+            border-right: 1px solid #dedede;
             border-bottom-color: #dedede;
         }
 
-        .comp-col-after .comp-metric-row {
-            border-bottom-color: rgba(255, 255, 255, 0.12);
+        .comp-cell-after {
+            background-color: #111111;
+            color: #ffffff;
+            border-bottom-color: rgba(255, 255, 255, 0.08);
         }
 
-        .comp-metric-row:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .metric-label {
-            font-size: 10.5px;
+        .metric-tag {
+            font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             font-weight: 600;
         }
 
-        .comp-col-before .metric-label {
+        .comp-cell-before .metric-tag {
             color: #777;
         }
 
-        .comp-col-after .metric-label {
+        .comp-cell-after .metric-tag {
             color: rgba(255, 255, 255, 0.5);
         }
 
-        .comp-col-before .metric-value {
-            font-size: 12.5px;
-            color: #555;
+        .metric-body {
+            font-size: 13px;
             line-height: 1.5;
         }
 
-        .comp-col-after .metric-value {
-            font-size: 13px;
+        .comp-cell-before .metric-body {
+            color: #555555;
+        }
+
+        .comp-cell-after .metric-body {
             color: #ededed;
-            line-height: 1.5;
-            font-weight: 400;
         }
 
         .stat-highlight {
             display: inline-block;
-            font-size: 14px;
+            font-size: 14.5px;
             font-weight: 700;
-            letter-spacing: -0.01em;
             color: #ffffff;
             background: rgba(255, 255, 255, 0.14);
-            padding: 1px 6px;
+            padding: 1px 7px;
             border-radius: 2px;
             margin-right: 4px;
         }
@@ -696,9 +673,10 @@
             }
             .about-image-col { height: 380px; }
             .page-container { padding-left: 20px; padding-right: 20px; }
-            .comparison-table { grid-template-columns: 1fr; }
-            .comp-col-before { border-right: none; border-bottom: 1px solid #dedede; }
-            .comp-col { padding: 28px 20px; }
+            .comp-grid-wrap { grid-template-columns: 1fr; }
+            .comp-header-before { border-right: none; }
+            .comp-cell-before { border-right: none; }
+            .comp-header-cell, .comp-cell { padding: 22px 20px; }
             .services-grid { grid-template-columns: 1fr; }
             .service-card { min-height: auto; }
             .service-card .num { margin-bottom: 24px; }
@@ -769,62 +747,60 @@
     <!-- ОСНОВНИЙ КОНТЕЙНЕР СТОРІНКИ -->
     <div class="page-container">
 
-        <!-- СЕКЦІЯ 02: ЕФЕКТ ВІД СПІВПРАЦІ (КОМПАКТНА ТАБЛИЦЯ) -->
+        <!-- СЕКЦІЯ 02: ГОРИЗОНТАЛЬНА ТАБЛИЦЯ ПОРІВНЯННЯ (СТРОГИЙ ЗБІГ РІВНІВ) -->
         <section id="results" class="comparison-section">
             <div class="section-header">
                 <span data-i18n="results_label">[ 02 / Эффект от сотрудничества ]</span>
                 <span data-i18n="results_sub">Трансформация ключевых показателей бизнеса</span>
             </div>
 
-            <div class="comparison-table">
-                <!-- Ліва колонка: До (Насичено-сіра) -->
-                <div class="comp-col comp-col-before">
-                    <h3 class="comp-header-title" data-i18n="comp_before_title">Бизнес до работы с нами</h3>
-
-                    <div class="comp-metric-row">
-                        <span class="metric-label" data-i18n="cb_t1">Органический трафик</span>
-                        <p class="metric-value" data-i18n="cb_d1">0–50 посетителей в месяц (только постоянные или случайные прохожие)</p>
-                    </div>
-
-                    <div class="comp-metric-row">
-                        <span class="metric-label" data-i18n="cb_t2">Видимость в Google Maps</span>
-                        <p class="metric-value" data-i18n="cb_d2">Отсутствует (бизнес остается «невидимым» для новых жителей и гостей города)</p>
-                    </div>
-
-                    <div class="comp-metric-row">
-                        <span class="metric-label" data-i18n="cb_t3">Соцсети и вовлечение</span>
-                        <p class="metric-value" data-i18n="cb_d3">Единичные сообщения в директ без регулярного системного доверия к бренду</p>
-                    </div>
-
-                    <div class="comp-metric-row">
-                        <span class="metric-label" data-i18n="cb_t4">Источник клиентов</span>
-                        <p class="metric-value" data-i18n="cb_d4">Полная зависимость только от сарафанного радио и случайного офлайн-трафика</p>
-                    </div>
+            <div class="comp-grid-wrap">
+                <!-- РЯДОК 0: ЗАГОЛОВКИ -->
+                <div class="comp-header-cell comp-header-before" data-i18n="comp_before_title">
+                    Бизнес до работы с нами
+                </div>
+                <div class="comp-header-cell comp-header-after" data-i18n="comp_after_title">
+                    С комплексными решениями SUNDAY Studio
                 </div>
 
-                <!-- Права колонка: З нами (Чорна) -->
-                <div class="comp-col comp-col-after">
-                    <h3 class="comp-header-title" data-i18n="comp_after_title">С комплексными решениями SUNDAY Studio</h3>
+                <!-- РЯДОК 1: ОРГАНІЧНИЙ ТРАФІК -->
+                <div class="comp-cell comp-cell-before">
+                    <span class="metric-tag" data-i18n="cb_t1">Органический трафик</span>
+                    <p class="metric-body" data-i18n="cb_d1">0–50 посетителей в месяц (только постоянные или случайные прохожие)</p>
+                </div>
+                <div class="comp-cell comp-cell-after">
+                    <span class="metric-tag" data-i18n="ca_t1">Органический трафик</span>
+                    <p class="metric-body"><span class="stat-highlight">+250%</span> <span data-i18n="ca_d1">роста — до ~175 целевых посетителей/мес. за счет SEO-оптимизации</span></p>
+                </div>
 
-                    <div class="comp-metric-row">
-                        <span class="metric-label" data-i18n="ca_t1">Органический трафик</span>
-                        <p class="metric-value"><span class="stat-highlight">+250%</span> <span data-i18n="ca_d1">роста — до ~175 целевых посетителей/мес. за счет SEO-оптимизации</span></p>
-                    </div>
+                <!-- РЯДОК 2: GOOGLE MAPS -->
+                <div class="comp-cell comp-cell-before">
+                    <span class="metric-tag" data-i18n="cb_t2">Видимость в Google Maps</span>
+                    <p class="metric-body" data-i18n="cb_d2">Отсутствует (бизнес остается «невидимым» для новых жителей и гостей города)</p>
+                </div>
+                <div class="comp-cell comp-cell-after">
+                    <span class="metric-tag" data-i18n="ca_t2">Видимость в Google Maps</span>
+                    <p class="metric-body"><span class="stat-highlight">100+</span> <span data-i18n="ca_d2">новых переходов и построенных маршрутов ежемесячно напрямую из Google</span></p>
+                </div>
 
-                    <div class="comp-metric-row">
-                        <span class="metric-label" data-i18n="ca_t2">Видимость в Google Maps</span>
-                        <p class="metric-value"><span class="stat-highlight">100+</span> <span data-i18n="ca_d2">новых переходов и построенных маршрутов ежемесячно напрямую из Google</span></p>
-                    </div>
+                <!-- РЯДОК 3: СОЦМЕРЕЖІ ТА ЗАЛУЧЕННЯ -->
+                <div class="comp-cell comp-cell-before">
+                    <span class="metric-tag" data-i18n="cb_t3">Соцсети и вовлечение</span>
+                    <p class="metric-body" data-i18n="cb_d3">Единичные сообщения в директ без регулярного системного доверия к бренду</p>
+                </div>
+                <div class="comp-cell comp-cell-after">
+                    <span class="metric-tag" data-i18n="ca_t3">Соцсети и вовлечение</span>
+                    <p class="metric-body"><span class="stat-highlight">В 3 раза</span> <span data-i18n="ca_d3">больше обращений благодаря современному сайту и динамичным Reels</span></p>
+                </div>
 
-                    <div class="comp-metric-row">
-                        <span class="metric-label" data-i18n="ca_t3">Соцсети и вовлечение</span>
-                        <p class="metric-value"><span class="stat-highlight">В 3 раза</span> <span data-i18n="ca_d3">больше обращений благодаря современному сайту и динамичным Reels</span></p>
-                    </div>
-
-                    <div class="comp-metric-row">
-                        <span class="metric-label" data-i18n="ca_t4">Итоговый результат</span>
-                        <p class="metric-value"><span class="stat-highlight">25–30+</span> <span data-i18n="ca_d4">стабильных заказов в неделю из органического поиска и соцсетей</span></p>
-                    </div>
+                <!-- РЯДОК 4: РЕЗУЛЬТАТ / ЗАЛЕЖНІСТЬ -->
+                <div class="comp-cell comp-cell-before no-border">
+                    <span class="metric-tag" data-i18n="cb_t4">Источник клиентов</span>
+                    <p class="metric-body" data-i18n="cb_d4">Полная зависимость только от сарафанного радио и случайного офлайн-трафика</p>
+                </div>
+                <div class="comp-cell comp-cell-after no-border">
+                    <span class="metric-tag" data-i18n="ca_t4">Итоговый результат</span>
+                    <p class="metric-body"><span class="stat-highlight">25–30+</span> <span data-i18n="ca_d4">стабильных заказов в неделю из органического поиска и соцсетей</span></p>
                 </div>
             </div>
         </section>
