@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUNDAY Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -15,6 +15,7 @@
             --muted: #767676;
             --border: #e8e8e8;
             --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-editorial: 'Cormorant Garamond', Georgia, serif;
         }
 
         * {
@@ -125,7 +126,7 @@
 
         .lang-switch {
             display: flex;
-            gap: 8px;
+            gap: 6px;
         }
 
         .lang-btn {
@@ -137,7 +138,7 @@
             font-weight: 500;
             letter-spacing: 0.08em;
             color: var(--muted);
-            padding: 2px 4px;
+            padding: 2px 3px;
             transition: color 0.2s;
         }
 
@@ -174,31 +175,34 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.28);
         }
 
         .hero-center-box {
             position: relative;
             z-index: 2;
             text-align: center;
-            max-width: 900px;
+            max-width: 960px;
             padding: 20px;
         }
 
+        /* ФЕШН-ЗАГОЛОВОК */
         .hero-center-box h1 {
-            font-size: clamp(14px, 1.6vw, 18px);
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            font-weight: 500;
+            font-family: var(--font-editorial);
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+            letter-spacing: 0.02em;
+            line-height: 1.15;
             color: #ffffff;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
             background: transparent;
             padding: 0;
             border-radius: 0;
             display: inline-block;
         }
 
-        /* СТАТИСТИЧНА ПЛАШКА (БЕЗ НИЖНЬОГО КОНТУРУ ТА БЕЗШОВНИЙ ПЕРЕХІД) */
+        /* СТАТИСТИЧНА ПЛАШКА */
         .stats-banner-section {
             background-color: #ffffff;
             border-bottom: none;
@@ -761,10 +765,10 @@
     <header>
         <div class="header-inner">
             <nav class="nav-left">
-                <a href="#about" data-i18n="nav_about">О нас</a>
-                <a href="#results" data-i18n="nav_results">Эффект</a>
-                <a href="#services" data-i18n="nav_services">Услуги</a>
-                <a href="#portfolio" data-i18n="nav_portfolio">Кейсы</a>
+                <a href="#about" data-i18n="nav_about">Про нас</a>
+                <a href="#results" data-i18n="nav_results">Ефект</a>
+                <a href="#services" data-i18n="nav_services">Послуги</a>
+                <a href="#portfolio" data-i18n="nav_portfolio">Кейси</a>
             </nav>
 
             <!-- ЛОГОТИП ПО ЦЕНТРУ -->
@@ -775,11 +779,12 @@
                 </a>
             </div>
 
-            <!-- ПРАВИЙ БЛОК: КНОПКА СВЯЗАТЬСЯ І МОВИ -->
+            <!-- ПРАВИЙ БЛОК: КНОПКА ЗВ'ЯЗКУ ТА МОВИ -->
             <div class="header-right">
-                <a href="#contacts" class="contact-btn-top" data-i18n="nav_contact_btn">Связаться</a>
+                <a href="#contacts" class="contact-btn-top" data-i18n="nav_contact_btn">Зв'язатися</a>
                 <div class="lang-switch">
-                    <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+                    <button class="lang-btn active" onclick="setLang('ua')">UA</button>
+                    <button class="lang-btn" onclick="setLang('ru')">RU</button>
                     <button class="lang-btn" onclick="setLang('en')">EN</button>
                     <button class="lang-btn" onclick="setLang('fi')">FI</button>
                 </div>
@@ -787,7 +792,7 @@
         </div>
     </header>
 
-    <!-- ГОЛОВНИЙ ЕКРАН -->
+    <!-- ГОЛОВНИЙ ЕКРАН (ФЕШН-ТИПОГРАФІКА) -->
     <section class="hero">
         <div class="hero-media"></div>
         <div class="hero-center-box">
@@ -795,7 +800,7 @@
         </div>
     </section>
 
-    <!-- ПЛАШКА ЗІ СТАТИСТИКОЮ (ОДРАЗУ ПІСЛЯ HERO, БЕЗ ЗРІЗУ ЗНИЗУ) -->
+    <!-- ПЛАШКА ЗІ СТАТИСТИКОЮ -->
     <section class="stats-banner-section">
         <div class="page-container">
             <div class="stats-grid">
@@ -848,11 +853,11 @@
     <section id="about" class="about-section">
         <div class="about-layout">
             <div class="about-text-col">
-                <span class="about-label" data-i18n="about_label">[ 01 / О студии ]</span>
+                <span class="about-label" data-i18n="about_label">[ 01 / Про студію ]</span>
                 <div class="about-body">
-                    <p data-i18n="about_p1">SUNDAY Studio — медиа-агентство в Хельсинки, которое помогает бизнесу расти и привлекать новых клиентов.</p>
-                    <p data-i18n="about_p2">Сегодня эффективное присутствие в интернете — это не просто эстетика, а один из главных двигателей продаж и развития компании. Мы создаем комплексные медиа-решения, объединяя сильный визуал, современную веб-разработку и инструменты продвижения.</p>
-                    <p data-i18n="about_p3">Мы берем на себя всю техническую и творческую работу: выстраиваем узнаваемый стиль бренда, выводим ваши ресурсы в топ поисковых систем и создаем контент, который удерживает внимание аудитории. Наша цель — сделать так, чтобы ваше присутствие в сети работало на ваш бизнес и приносило измеримый результат.</p>
+                    <p data-i18n="about_p1">SUNDAY Studio — медіа-агенція в Гельсінкі, яка допомагає бізнесу рости та залучати нових клієнтів.</p>
+                    <p data-i18n="about_p2">Сьогодні ефективна присутність в інтернеті — це не просто естетика, а один із головних двигунів продажів і розвитку компанії. Ми створюємо комплексні медіа-рішення, об'єднуючи сильний візуал, сучасну веб-розробку та інструменти просування.</p>
+                    <p data-i18n="about_p3">Ми беремо на себе всю технічну та творчу роботу: вибудовуємо впізнаваний стиль бренду, виводимо ваші ресурси в топ пошукових систем і створюємо контент, який утримує увагу аудиторії. Наша мета — зробити так, щоб ваша присутність у мережі працювала на ваш бізнес і приносила вимірюваний результат.</p>
                 </div>
             </div>
             
@@ -868,57 +873,57 @@
         <!-- СЕКЦІЯ 02: ГОРИЗОНТАЛЬНА ТАБЛИЦЯ ПОРІВНЯННЯ -->
         <section id="results" class="comparison-section">
             <div class="section-header">
-                <span data-i18n="results_label">[ 02 / Эффект от сотрудничества ]</span>
-                <span data-i18n="results_sub">Трансформация ключевых показателей бизнеса</span>
+                <span data-i18n="results_label">[ 02 / Ефект від співпраці ]</span>
+                <span data-i18n="results_sub">Трансформація ключових показників бізнесу</span>
             </div>
 
             <div class="comp-grid-wrap">
                 <!-- РЯДОК 0: ЗАГОЛОВКИ -->
                 <div class="comp-header-cell comp-header-before" data-i18n="comp_before_title">
-                    Бизнес до работы с нами
+                    Бізнес до роботи з нами
                 </div>
                 <div class="comp-header-cell comp-header-after" data-i18n="comp_after_title">
-                    С комплексными решениями SUNDAY Studio
+                    З комплексними рішеннями SUNDAY Studio
                 </div>
 
                 <!-- РЯДОК 1: ОРГАНІЧНИЙ ТРАФІК -->
                 <div class="comp-cell comp-cell-before">
-                    <span class="metric-tag" data-i18n="cb_t1">Органический трафик</span>
-                    <p class="metric-body" data-i18n="cb_d1">0–50 посетителей в месяц (только постоянные или случайные прохожие)</p>
+                    <span class="metric-tag" data-i18n="cb_t1">Органічний трафік</span>
+                    <p class="metric-body" data-i18n="cb_d1">0–50 відвідувачів на місяць (тільки постійні або випадкові перехожі)</p>
                 </div>
                 <div class="comp-cell comp-cell-after">
-                    <span class="metric-tag" data-i18n="ca_t1">Органический трафик</span>
-                    <p class="metric-body"><span class="stat-highlight">+250%</span> <span data-i18n="ca_d1">роста — до ~175 целевых посетителей/мес. за счет SEO-оптимизации</span></p>
+                    <span class="metric-tag" data-i18n="ca_t1">Органічний трафік</span>
+                    <p class="metric-body"><span class="stat-highlight">+250%</span> <span data-i18n="ca_d1">зростання — до ~175 цільових відвідувачів/міс. завдяки SEO-оптимізації</span></p>
                 </div>
 
                 <!-- РЯДОК 2: GOOGLE MAPS -->
                 <div class="comp-cell comp-cell-before">
-                    <span class="metric-tag" data-i18n="cb_t2">Видимость в Google Maps</span>
-                    <p class="metric-body" data-i18n="cb_d2">Отсутствует (бизнес остается «невидимым» для новых жителей и гостей города)</p>
+                    <span class="metric-tag" data-i18n="cb_t2">Видимість у Google Maps</span>
+                    <p class="metric-body" data-i18n="cb_d2">Відсутня (бізнес залишається «невидимим» для нових жителів і гостей міста)</p>
                 </div>
                 <div class="comp-cell comp-cell-after">
-                    <span class="metric-tag" data-i18n="ca_t2">Видимость в Google Maps</span>
-                    <p class="metric-body"><span class="stat-highlight">100+</span> <span data-i18n="ca_d2">новых переходов и построенных маршрутов ежемесячно напрямую из Google</span></p>
+                    <span class="metric-tag" data-i18n="ca_t2">Видимість у Google Maps</span>
+                    <p class="metric-body"><span class="stat-highlight">100+</span> <span data-i18n="ca_d2">нових переходів та побудованих маршрутів щомісяця безпосередньо з Google</span></p>
                 </div>
 
                 <!-- РЯДОК 3: СОЦМЕРЕЖІ ТА ЗАЛУЧЕННЯ -->
                 <div class="comp-cell comp-cell-before">
-                    <span class="metric-tag" data-i18n="cb_t3">Соцсети и вовлечение</span>
-                    <p class="metric-body" data-i18n="cb_d3">Единичные сообщения в директ без регулярного системного доверия к бренду</p>
+                    <span class="metric-tag" data-i18n="cb_t3">Соцмережі та залучення</span>
+                    <p class="metric-body" data-i18n="cb_d3">Поодинокі повідомлення в дірект без регулярної системної довіри до бренду</p>
                 </div>
                 <div class="comp-cell comp-cell-after">
-                    <span class="metric-tag" data-i18n="ca_t3">Соцсети и вовлечение</span>
-                    <p class="metric-body"><span class="stat-highlight">В 3 раза</span> <span data-i18n="ca_d3">больше обращений благодаря современному сайту и динамичным Reels</span></p>
+                    <span class="metric-tag" data-i18n="ca_t3">Соцмережі та залучення</span>
+                    <p class="metric-body"><span class="stat-highlight">У 3 рази</span> <span data-i18n="ca_d3">більше звернень завдяки сучасному сайту та динамічним Reels</span></p>
                 </div>
 
-                <!-- РЯДОК 4: РЕЗУЛЬТАТ / ЗАЛЕЖНІСТЬ -->
+                <!-- РЯДОК 4: РЕЗУЛЬТАТ / ДЖЕРЕЛО КЛІЄНТІВ -->
                 <div class="comp-cell comp-cell-before no-border">
-                    <span class="metric-tag" data-i18n="cb_t4">Источник клиентов</span>
-                    <p class="metric-body" data-i18n="cb_d4">Полная зависимость только от сарафанного радио и случайного офлайн-трафика</p>
+                    <span class="metric-tag" data-i18n="cb_t4">Джерело клієнтів</span>
+                    <p class="metric-body" data-i18n="cb_d4">Повна залежність тільки від сарафанного радіо та випадкового офлайн-трафіку</p>
                 </div>
                 <div class="comp-cell comp-cell-after no-border">
-                    <span class="metric-tag" data-i18n="ca_t4">Итоговый результат</span>
-                    <p class="metric-body"><span class="stat-highlight">25–30+</span> <span data-i18n="ca_d4">стабильных заказов в неделю из органического поиска и соцсетей</span></p>
+                    <span class="metric-tag" data-i18n="ca_t4">Підсумковий результат</span>
+                    <p class="metric-body"><span class="stat-highlight">25–30+</span> <span data-i18n="ca_d4">стабільних замовлень на тиждень з органічного пошуку та соцмереж</span></p>
                 </div>
             </div>
         </section>
@@ -926,29 +931,29 @@
         <!-- СЕКЦІЯ 03: НАПРЯМКИ РОБОТИ -->
         <section id="services" class="services-section">
             <div class="section-header">
-                <span data-i18n="services_label">[ 03 / Направления работы ]</span>
-                <span data-i18n="services_count">4 направления</span>
+                <span data-i18n="services_label">[ 03 / Напрямки роботи ]</span>
+                <span data-i18n="services_count">4 напрямки</span>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <span class="num">01</span>
-                    <h3 data-i18n="s1_title">SMM под ключ</h3>
-                    <p data-i18n="s1_desc">Берем полностью на себя управление вашими социальными сетями: от разработки контент-стратегии и организации съемок до написания текстов, публикации и настройки рекламы. Вы занимаетесь бизнесом, а мы — вашим Instagram.</p>
+                    <h3 data-i18n="s1_title">SMM під ключ</h3>
+                    <p data-i18n="s1_desc">Беремо повністю на себе управління вашими соціальними мережами: від розробки контент-стратегії та організації зйомок до написання текстів, публікації та налаштування реклами. Ви займаєтеся бізнесом, а ми — вашим Instagram.</p>
                 </div>
                 <div class="service-card">
                     <span class="num">02</span>
-                    <h3 data-i18n="s2_title">Видеопродакшн</h3>
-                    <p data-i18n="s2_desc">Создаем живой, эстетичный и продуманный видеоконтент, который цепляет с первых секунд. Снимаем всё: от динамичных коротких роликов для социальных сетей до презентационных видео о ваших товарах, услугах и атмосфере вашего бренда.</p>
+                    <h3 data-i18n="s2_title">Відеопродакшн</h3>
+                    <p data-i18n="s2_desc">Створюємо живий, естетичний і продуманий відеоконтент, який чіпляє з перших секунд. Знімаємо все: від динамічних коротких роликів для соціальних мереж до презентаційних відео про ваші товари, послуги та атмосферу бренду.</p>
                 </div>
                 <div class="service-card">
                     <span class="num">03</span>
-                    <h3 data-i18n="s3_title">Сайты и SEO-продвижение</h3>
-                    <p data-i18n="s3_desc">Разрабатываем современные и удобные сайты, адаптированные под любые устройства. Настраиваем полноценную SEO-оптимизацию и профиль в Google, чтобы ваш сайт занимал высокие позиции в поисковой выдаче и приводил вам новых клиентов.</p>
+                    <h3 data-i18n="s3_title">Сайти та SEO-просування</h3>
+                    <p data-i18n="s3_desc">Розробляємо сучасні та зручні сайти, адаптовані під будь-які пристрої. Налаштовуємо повноцінну SEO-оптимізацію та профіль у Google, щоб ваш сайт займав високі позиції у видачі та приводив нових клієнтів.</p>
                 </div>
                 <div class="service-card">
                     <span class="num">04</span>
-                    <h3 data-i18n="s4_title">Упаковка бренда</h3>
-                    <p data-i18n="s4_desc">Создаем визуальное лицо вашего бизнеса с нуля. Разрабатываем логотип, подбираем фирменные цвета, типографику и создаем узнаваемый образ, который выделяет вас среди конкурентов на рынке.</p>
+                    <h3 data-i18n="s4_title">Упаковка бренду</h3>
+                    <p data-i18n="s4_desc">Створюємо візуальне обличчя вашого бізнесу з нуля. Розробляємо логотип, підбираємо фірмові кольори, типографіку та створюємо впізнаваний образ, який виділяє вас серед конкурентів на ринку.</p>
                 </div>
             </div>
         </section>
@@ -956,8 +961,8 @@
         <!-- СЕКЦІЯ 04: КЕЙСИ -->
         <section id="portfolio" class="portfolio-section">
             <div class="section-header">
-                <span data-i18n="cases_label">[ 04 / Кейсы ]</span>
-                <span data-i18n="cases_sub">Избранные проекты</span>
+                <span data-i18n="cases_label">[ 04 / Кейси ]</span>
+                <span data-i18n="cases_sub">Обрані проекти</span>
             </div>
             <div class="cases-grid">
                 <!-- Кейс 1: Teetao Teehuone -->
@@ -979,8 +984,8 @@
                                 <img src="teetao-4.jpg" alt="Teetao interior seating" onerror="this.src='teetao-4.png'">
                             </div>
 
-                            <button class="slider-btn prev" onclick="changeSlide('teetaoSlider', -1)" aria-label="Предыдущий слайд">‹</button>
-                            <button class="slider-btn next" onclick="changeSlide('teetaoSlider', 1)" aria-label="Следующий слайд">›</button>
+                            <button class="slider-btn prev" onclick="changeSlide('teetaoSlider', -1)" aria-label="Попередній слайд">‹</button>
+                            <button class="slider-btn next" onclick="changeSlide('teetaoSlider', 1)" aria-label="Наступний слайд">›</button>
 
                             <div class="slider-indicators">
                                 <span class="indicator-dot active" onclick="goToSlide('teetaoSlider', 0)"></span>
@@ -992,7 +997,7 @@
                     </div>
                     <div class="case-info">
                         <span>Teetao Teehuone</span>
-                        <span data-i18n="c1_meta">Видео, брендинг</span>
+                        <span data-i18n="c1_meta">Відео, брендинг</span>
                     </div>
                 </div>
 
@@ -1013,8 +1018,8 @@
                                 <img src="knot-4.jpg" alt="Instagram Grid" onerror="this.style.display='none'">
                             </div>
 
-                            <button class="slider-btn prev" onclick="changeSlide('knotBagSlider', -1)" aria-label="Предыдущее фото">‹</button>
-                            <button class="slider-btn next" onclick="changeSlide('knotBagSlider', 1)" aria-label="Следующее фото">›</button>
+                            <button class="slider-btn prev" onclick="changeSlide('knotBagSlider', -1)" aria-label="Попереднє фото">‹</button>
+                            <button class="slider-btn next" onclick="changeSlide('knotBagSlider', 1)" aria-label="Наступне фото">›</button>
 
                             <div class="slider-indicators">
                                 <span class="indicator-dot active" onclick="goToSlide('knotBagSlider', 0)"></span>
@@ -1026,7 +1031,7 @@
                     </div>
                     <div class="case-info">
                         <span>Knot Bag</span>
-                        <span data-i18n="c2_meta">Под ключ</span>
+                        <span data-i18n="c2_meta">Під ключ</span>
                     </div>
                 </div>
 
@@ -1049,8 +1054,8 @@
                                 <video src="https://res.cloudinary.com/rkmxpfot/video/upload/v1788794899/%D1%81%D0%B0%D0%BB%D0%BE%D0%BD4.mp4" autoplay muted loop playsinline></video>
                             </div>
 
-                            <button class="slider-btn prev" onclick="changeSlide('museBeautySlider', -1)" aria-label="Предыдущий слайд">‹</button>
-                            <button class="slider-btn next" onclick="changeSlide('museBeautySlider', 1)" aria-label="Следующий слайд">›</button>
+                            <button class="slider-btn prev" onclick="changeSlide('museBeautySlider', -1)" aria-label="Попередній слайд">‹</button>
+                            <button class="slider-btn next" onclick="changeSlide('museBeautySlider', 1)" aria-label="Наступний слайд">›</button>
 
                             <div class="slider-indicators">
                                 <span class="indicator-dot active" onclick="goToSlide('museBeautySlider', 0)"></span>
@@ -1062,7 +1067,7 @@
                     </div>
                     <div class="case-info">
                         <span>Muse Beauty</span>
-                        <span data-i18n="c3_meta">SMM и контент</span>
+                        <span data-i18n="c3_meta">SMM та контент</span>
                     </div>
                 </div>
             </div>
@@ -1071,27 +1076,82 @@
         <!-- КОНТАКТИ -->
         <footer id="contacts">
             <div class="footer-grid">
-                <div class="footer-label" data-i18n="contact_label">[ 05 / Контакты ]</div>
+                <div class="footer-label" data-i18n="contact_label">[ 05 / Контакти ]</div>
                 <div>
                     <a href="mailto:studiosunday.agency@gmail.com" class="contact-mail">studiosunday.agency@gmail.com</a>
                     <div class="contact-details">
                         <div>
-                            <span data-i18n="location_label">Локация</span>
-                            <strong data-i18n="location_city">Хельсинки, Финляндия</strong>
+                            <span data-i18n="location_label">Локація</span>
+                            <strong data-i18n="location_city">Гельсінкі, Фінляндія</strong>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bottom-bar">
                 <span>&copy; SUNDAY Studio</span>
-                <span data-i18n="rights">Все права защищены</span>
+                <span data-i18n="rights">Всі права захищені</span>
             </div>
         </footer>
     </div>
 
-    <!-- СКРИПТИ -->
+    <!-- СКРИПТИ З ПОВНОЮ ПІДТРИМКОЮ UA, RU, EN, FI -->
     <script>
         const translations = {
+            ua: {
+                nav_about: "Про нас",
+                nav_results: "Ефект",
+                nav_services: "Послуги",
+                nav_portfolio: "Кейси",
+                nav_contact_btn: "Зв'язатися",
+                hero_phrase: "Helsinki — SMM, Video & Web",
+                stat_p1: "споживачів у Фінляндії шукають локальні послуги та заклади через Google та Google Maps перед візитом.",
+                stat_num2: "До 70%",
+                stat_p2: "користувачів приймають рішення про покупку чи візит після перегляду коротких відео (Reels / TikTok) або профілю в Instagram.",
+                stat_p3: "У 3.5 рази більше конверсій отримують сайти з професійним візуалом та оптимізованою мобільною версією порівняно із застарілими ресурсами.",
+                about_label: "[ 01 / Про студію ]",
+                about_p1: "SUNDAY Studio — медіа-агенція в Гельсінкі, яка допомагає бізнесу рости та залучати нових клієнтів.",
+                about_p2: "Сьогодні ефективна присутність в інтернеті — це не просто естетика, а один із головних двигунів продажів і розвитку компанії. Ми створюємо комплексні медіа-рішення, об'єднуючи сильний візуал, сучасну веб-розробку та інструменти просування.",
+                about_p3: "Ми беремо на себе всю технічну та творчу роботу: вибудовуємо впізнаваний стиль бренду, виводимо ваші ресурси в топ пошукових систем і створюємо контент, який утримує увагу аудиторії. Наша мета — зробити так, щоб ваша присутність у мережі працювала на ваш бізнес і приносила вимірюваний результат.",
+                results_label: "[ 02 / Ефект від співпраці ]",
+                results_sub: "Трансформація ключових показників бізнесу",
+                comp_before_title: "Бізнес до роботи з нами",
+                cb_t1: "Органічний трафік",
+                cb_d1: "0–50 відвідувачів на місяць (тільки постійні або випадкові перехожі)",
+                cb_t2: "Видимість у Google Maps",
+                cb_d2: "Відсутня (бізнес залишається «невидимим» для нових жителів і гостей міста)",
+                cb_t3: "Соцмережі та залучення",
+                cb_d3: "Поодинокі повідомлення в дірект без регулярної системної довіри до бренду",
+                cb_t4: "Джерело клієнтів",
+                cb_d4: "Повна залежність тільки від сарафанного радіо та випадкового офлайн-трафіку",
+                comp_after_title: "З комплексними рішеннями SUNDAY Studio",
+                ca_t1: "Органічний трафік",
+                ca_d1: "зростання — до ~175 цільових відвідувачів/міс. завдяки SEO-оптимізації",
+                ca_t2: "Видимість у Google Maps",
+                ca_d2: "нових переходів та побудованих маршрутів щомісяця безпосередньо з Google",
+                ca_t3: "Соцмережі та залучення",
+                ca_d3: "більше звернень завдяки сучасному сайту та динамічним Reels",
+                ca_t4: "Підсумковий результат",
+                ca_d4: "стабільних замовлень на тиждень з органічного пошуку та соцмереж",
+                services_label: "[ 03 / Напрямки роботи ]",
+                services_count: "4 напрямки",
+                s1_title: "SMM під ключ",
+                s1_desc: "Беремо повністю на себе управління вашими соціальними мережами: від розробки контент-стратегії та організації зйомок до написання текстів, публікації та налаштування реклами. Ви займаєтеся бізнесом, а ми — вашим Instagram.",
+                s2_title: "Відеопродакшн",
+                s2_desc: "Створюємо живий, естетичний і продуманий відеоконтент, який чіпляє з перших секунд. Знімаємо все: від динамічних коротких роликів для соціальних мереж до презентаційних відео про ваші товари, послуги та атмосферу бренду.",
+                s3_title: "Сайти та SEO-просування",
+                s3_desc: "Розробляємо сучасні та зручні сайти, адаптовані під будь-які пристрої. Налаштовуємо повноцінну SEO-оптимізацію та профіль у Google, щоб ваш сайт займав високі позиції у видачі та приводив нових клієнтів.",
+                s4_title: "Упаковка бренду",
+                s4_desc: "Створюємо візуальне обличчя вашого бізнесу з нуля. Розробляємо логотип, підбираємо фірмові кольори, типографіку та створюємо впізнаваний образ, який виділяє вас серед конкурентів на ринку.",
+                cases_label: "[ 04 / Кейси ]",
+                cases_sub: "Обрані проекти",
+                c1_meta: "Відео, брендинг",
+                c2_meta: "Під ключ",
+                c3_meta: "SMM та контент",
+                contact_label: "[ 05 / Контакти ]",
+                location_label: "Локація",
+                location_city: "Гельсінкі, Фінляндія",
+                rights: "Всі права захищені"
+            },
             ru: {
                 nav_about: "О нас",
                 nav_results: "Эффект",
@@ -1157,7 +1217,7 @@
                 stat_p1: "of consumers in Finland search for local services and venues via Google and Google Maps before visiting.",
                 stat_num2: "Up to 70%",
                 stat_p2: "of prospective customers make purchasing decisions after viewing short-form video (Reels / TikTok) or Instagram profiles.",
-                stat_p3: "У 3.5 рази більше конверсій отримують сайти з професійним візуалом та оптимізованою мобільною версією порівняно із застарілими ресурсами.",
+                stat_p3: "3.5x higher conversions for websites with professional visual branding and an optimized mobile version compared to outdated platforms.",
                 about_label: "[ 01 / Studio Profile ]",
                 about_p1: "SUNDAY Studio is a media agency in Helsinki helping businesses grow and reach new clients.",
                 about_p2: "Today, an effective digital presence is not just about aesthetics — it is a primary driver of sales and business growth. We craft integrated media solutions combining sharp visual storytelling, modern web development, and performance marketing.",
@@ -1212,7 +1272,7 @@
                 stat_p1: "suomalaisista kuluttajista etsii paikallisia palveluita ja toimipisteitä Googlen ja Google Mapsin kautta ennen vierailua.",
                 stat_num2: "Jopa 70%",
                 stat_p2: "käyttäjistä tekee ostopäätöksen tai valitsee palvelun lyhytvideoiden (Reels / TikTok) tai Instagram-profiilin perusteella.",
-                stat_p3: "У 3.5 рази більше конверсій отримують сайти з професійним візуалом та оптимізованою мобільною версією порівняно із застарілими ресурсами.",
+                stat_p3: "3,5-kertaisesti enemmän konversioita sivustoilla, joilla on ammattimainen visuaalinen ilme ja mobiilioptimoitu käyttökokemus vanhoihin sivustoihin verrattuna.",
                 about_label: "[ 01 / Studio ]",
                 about_p1: "SUNDAY Studio on helsinkiläinen mediatoimisto, joka auttaa yrityksiä kasvamaan ja tavoittamaan uusia asiakkaita.",
                 about_p2: "Tehokas digitaalinen läsnäolo ei ole vain estetiikkaa, vaan yrityksen keskeinen myynnin ja kasvun moottori. Luomme kokonaisvaltaisia mediaratkaisuja, joissa yhdistyvät vahva visuaalisuus, moderni verkkokehitys ja tuloksellinen markkinointi.",
@@ -1270,7 +1330,9 @@
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            event.target.classList.add('active');
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
             document.documentElement.lang = lang;
         }
 
