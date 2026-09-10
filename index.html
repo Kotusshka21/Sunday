@@ -259,10 +259,10 @@
             padding-right: clamp(24px, 5vw, 80px);
         }
 
-        /* СЕКЦІЯ 02: ТАБЛИЦЯ ПОРІВНЯННЯ РЕЗУЛЬТАТІВ (КОНТРАСТНИЙ ДИЗАЙН) */
+        /* СЕКЦІЯ 02: КОМПАКТНА ТАБЛИЦЯ ПОРІВНЯННЯ */
         .comparison-section {
-            padding-top: 100px;
-            padding-bottom: 100px;
+            padding-top: 80px;
+            padding-bottom: 80px;
             border-bottom: 1px solid var(--border);
         }
 
@@ -271,71 +271,73 @@
             grid-template-columns: 1fr 1fr;
             border-radius: 2px;
             overflow: hidden;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             border: 1px solid var(--border);
+            max-width: 1080px;
+            margin: 0 auto;
         }
 
         .comp-col {
-            padding: 52px 42px;
+            padding: 34px 30px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
         }
 
-        /* Ліва світло-сіра колонка */
+        /* Більш насичений сірий колір лівої колонки */
         .comp-col-before {
-            background-color: #f8f8f8;
-            border-right: 1px solid #e7e7e7;
+            background-color: #eeeeee;
+            border-right: 1px solid #e0e0e0;
         }
 
         .comp-col-before .comp-header-title {
-            font-size: 17px;
+            font-size: 14.5px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.06em;
-            color: #777;
-            margin-bottom: 36px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e8e8e8;
+            color: #555;
+            margin-bottom: 24px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #dedede;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .comp-col-before .comp-header-title::before {
             content: '';
             display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
-            background-color: #d15151;
+            background-color: #cb4848;
         }
 
-        /* Права насичено-чорна колонка */
+        /* Чорна колонка */
         .comp-col-after {
             background-color: #111111;
             color: #ffffff;
         }
 
         .comp-col-after .comp-header-title {
-            font-size: 17px;
+            font-size: 14.5px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: #ffffff;
-            margin-bottom: 36px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            margin-bottom: 24px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .comp-col-after .comp-header-title::before {
             content: '';
             display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background-color: #2ec4b6;
         }
@@ -343,13 +345,13 @@
         .comp-metric-row {
             display: flex;
             flex-direction: column;
-            padding-bottom: 22px;
-            margin-bottom: 22px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
             border-bottom: 1px dashed;
         }
 
         .comp-col-before .comp-metric-row {
-            border-bottom-color: #e4e4e4;
+            border-bottom-color: #dedede;
         }
 
         .comp-col-after .comp-metric-row {
@@ -363,43 +365,42 @@
         }
 
         .metric-label {
-            font-size: 11px;
+            font-size: 10.5px;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             font-weight: 600;
         }
 
         .comp-col-before .metric-label {
-            color: #999;
+            color: #777;
         }
 
         .comp-col-after .metric-label {
-            color: rgba(255, 255, 255, 0.55);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .comp-col-before .metric-value {
-            font-size: 13.5px;
-            color: #666;
-            line-height: 1.6;
+            font-size: 12.5px;
+            color: #555;
+            line-height: 1.5;
         }
 
         .comp-col-after .metric-value {
-            font-size: 14px;
+            font-size: 13px;
             color: #ededed;
-            line-height: 1.6;
+            line-height: 1.5;
             font-weight: 400;
         }
 
-        /* Збільшені та помітні акцентні цифри */
         .stat-highlight {
             display: inline-block;
-            font-size: 17px;
+            font-size: 14px;
             font-weight: 700;
             letter-spacing: -0.01em;
             color: #ffffff;
-            background: rgba(255, 255, 255, 0.12);
-            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.14);
+            padding: 1px 6px;
             border-radius: 2px;
             margin-right: 4px;
         }
@@ -696,8 +697,8 @@
             .about-image-col { height: 380px; }
             .page-container { padding-left: 20px; padding-right: 20px; }
             .comparison-table { grid-template-columns: 1fr; }
-            .comp-col-before { border-right: none; border-bottom: 1px solid #e7e7e7; }
-            .comp-col { padding: 36px 24px; }
+            .comp-col-before { border-right: none; border-bottom: 1px solid #dedede; }
+            .comp-col { padding: 28px 20px; }
             .services-grid { grid-template-columns: 1fr; }
             .service-card { min-height: auto; }
             .service-card .num { margin-bottom: 24px; }
@@ -768,7 +769,7 @@
     <!-- ОСНОВНИЙ КОНТЕЙНЕР СТОРІНКИ -->
     <div class="page-container">
 
-        <!-- СЕКЦІЯ 02: ЕФЕКТ ВІД СПІВПРАЦІ -->
+        <!-- СЕКЦІЯ 02: ЕФЕКТ ВІД СПІВПРАЦІ (КОМПАКТНА ТАБЛИЦЯ) -->
         <section id="results" class="comparison-section">
             <div class="section-header">
                 <span data-i18n="results_label">[ 02 / Эффект от сотрудничества ]</span>
@@ -776,7 +777,7 @@
             </div>
 
             <div class="comparison-table">
-                <!-- Ліва колонка: До (Світло-сіра) -->
+                <!-- Ліва колонка: До (Насичено-сіра) -->
                 <div class="comp-col comp-col-before">
                     <h3 class="comp-header-title" data-i18n="comp_before_title">Бизнес до работы с нами</h3>
 
@@ -801,13 +802,13 @@
                     </div>
                 </div>
 
-                <!-- Права колонка: З нами (Контрастна чорна) -->
+                <!-- Права колонка: З нами (Чорна) -->
                 <div class="comp-col comp-col-after">
                     <h3 class="comp-header-title" data-i18n="comp_after_title">С комплексными решениями SUNDAY Studio</h3>
 
                     <div class="comp-metric-row">
                         <span class="metric-label" data-i18n="ca_t1">Органический трафик</span>
-                        <p class="metric-value"><span class="stat-highlight">+250%</span> <span data-i18n="ca_d1">роста — до ~175 целевых посетителей/мес. за счет точечной SEO-оптимизации</span></p>
+                        <p class="metric-value"><span class="stat-highlight">+250%</span> <span data-i18n="ca_d1">роста — до ~175 целевых посетителей/мес. за счет SEO-оптимизации</span></p>
                     </div>
 
                     <div class="comp-metric-row">
@@ -1021,7 +1022,7 @@
                 cb_d4: "Полная зависимость только от сарафанного радио и случайного офлайн-трафика",
                 comp_after_title: "С комплексными решениями SUNDAY Studio",
                 ca_t1: "Органический трафик",
-                ca_d1: "роста — до ~175 целевых посетителей/мес. за счет точечной SEO-оптимизации",
+                ca_d1: "роста — до ~175 целевых посетителей/мес. за счет SEO-оптимизации",
                 ca_t2: "Видимость в Google Maps",
                 ca_d2: "новых переходов и построенных маршрутов ежемесячно напрямую из Google",
                 ca_t3: "Соцсети и вовлечение",
@@ -1123,7 +1124,7 @@
                 cb_d4: "Täysi riippuvuus puskaradiosta ja satunnaisesta ohikulkuliikenteestä",
                 comp_after_title: "SUNDAY Studion kokonaisratkaisulla",
                 ca_t1: "Orgaaninen liikenne",
-                ca_d1: "kasvua — jopa ~175 kohdennettua kävijää/kk paikallisen SEO:n ansiosta",
+                ca_d1: "kasvua — jopa ~175 kohdennettua kävijää/kk SEO-optimoinnin ansiosta",
                 ca_t2: "Google Maps -näkyvyys",
                 ca_d2: "uutta profiilihakua ja reittipyyntöä kuukausittain suoraan Googlesta",
                 ca_t3: "Some & sitoutuminen",
