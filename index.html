@@ -287,7 +287,7 @@
         .service-card {
             background-color: #fff;
             padding: 36px 28px;
-            min-height: 320px;
+            min-height: 340px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -499,7 +499,7 @@
         }
 
         .contact-mail {
-            font-size: 15px; /* Аккуратный минималистичный размер почты */
+            font-size: 15px;
             font-weight: 500;
             letter-spacing: 0.04em;
             display: inline-block;
@@ -590,7 +590,7 @@
         </div>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН (БЕЗ ПРЯМОУГОЛЬНИКА) -->
+    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero">
         <div class="hero-media"></div>
         <div class="hero-center-box">
@@ -604,8 +604,9 @@
             <div class="about-text-col">
                 <span class="about-label" data-i18n="about_label">[ 01 / О студии ]</span>
                 <div class="about-body">
-                    <p data-i18n="about_p1">SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.</p>
-                    <p data-i18n="about_p2">От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.</p>
+                    <p data-i18n="about_p1">SUNDAY Studio — медиа-агентство в Хельсинки, которое помогает бизнесу расти и привлекать новых клиентов.</p>
+                    <p data-i18n="about_p2">Сегодня эффективное присутствие в интернете — это не просто эстетика, а один из главных двигателей продаж и развития компании. Мы создаем комплексные медиа-решения, объединяя сильный визуал, современную веб-разработку и инструменты продвижения.</p>
+                    <p data-i18n="about_p3">Мы берем на себя всю техническую и творческую работу: выстраиваем узнаваемый стиль бренда, выводим ваши ресурсы в топ поисковых систем и создаем контент, который удерживает внимание аудитории. Наша цель — сделать так, чтобы ваше присутствие в сети работало на ваш бизнес и приносило измеримый результат.</p>
                 </div>
             </div>
             
@@ -626,23 +627,23 @@
             <div class="services-grid">
                 <div class="service-card">
                     <span class="num">01</span>
-                    <h3 data-i18n="s1_title">СММ под ключ</h3>
-                    <p data-i18n="s1_desc">Берем ваши соцсети полностью на себя: продумываем план, сами организуем съемки, пишем тексты, публикуем и настраиваем рекламу. Вы занимаетесь бизнесом, а мы — вашим Instagram.</p>
+                    <h3 data-i18n="s1_title">SMM под ключ</h3>
+                    <p data-i18n="s1_desc">Берем полностью на себя управление вашими социальными сетями: от разработки контент-стратегии и организации съемок до написания текстов, публикации и настройки рекламы. Вы занимаетесь бизнесом, а мы — вашим Instagram.</p>
                 </div>
                 <div class="service-card">
                     <span class="num">02</span>
-                    <h3 data-i18n="s2_title">Видео продакшн</h3>
-                    <p data-i18n="s2_desc">Создаем видео, которые привлекают клиентов. Снимаем всё: от динамичных Reels, которые залетают в рекомендации, до полноценных рекламных роликов с качественной картинкой и звуком.</p>
+                    <h3 data-i18n="s2_title">Видеопродакшн</h3>
+                    <p data-i18n="s2_desc">Создаем живой, эстетичный и продуманный видеоконтент, который цепляет с первых секунд. Снимаем всё: от динамичных коротких роликов для социальных сетей до презентационных видео о ваших товарах, услугах и атмосфере вашего бренда.</p>
                 </div>
                 <div class="service-card">
                     <span class="num">03</span>
-                    <h3 data-i18n="s3_title">Сайты под ключ</h3>
-                    <p data-i18n="s3_desc">Разрабатываем современные и понятные сайты. Делаем так, чтобы сайт быстро работал, стильно выглядел и помогал вашим клиентам легко сделать заказ.</p>
+                    <h3 data-i18n="s3_title">Сайты и SEO-продвижение</h3>
+                    <p data-i18n="s3_desc">Разрабатываем современные и удобные сайты, адаптированные под любые устройства. Настраиваем полноценную SEO-оптимизацию и профиль в Google, чтобы ваш сайт занимал высокие позиции в поисковой выдаче и приводил вам новых клиентов.</p>
                 </div>
                 <div class="service-card">
                     <span class="num">04</span>
                     <h3 data-i18n="s4_title">Упаковка бренда</h3>
-                    <p data-i18n="s4_desc">Создаем визуальное лицо вашего бизнеса с нуля. Разрабатываем логотип, подбираем фирменные цвета и делаем оформление, чтобы вы выглядели дорого и выделялись на фоне конкурентов.</p>
+                    <p data-i18n="s4_desc">Создаем визуальное лицо вашего бизнеса с нуля. Разрабатываем логотип, подбираем фирменные цвета, типографику и создаем узнаваемый образ, который выделяет вас среди конкурентов на рынке.</p>
                 </div>
             </div>
         </section>
@@ -807,18 +808,19 @@
                 nav_contact_btn: "Связаться",
                 hero_phrase: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / О студии ]",
-                about_p1: "SUNDAY Studio специализируется на визуальных коммуникациях нового поколения. Мы не просто ведём социальные сети — мы формируем цельный визуальный код бренда.",
-                about_p2: "От концептуальных съемок и видеопродакшна до запуска современных сайтов под ключ: каждый проект рассматривается как законченное художественное и бизнес-высказывание.",
+                about_p1: "SUNDAY Studio — медиа-агентство в Хельсинки, которое помогает бизнесу расти и привлекать новых клиентов.",
+                about_p2: "Сегодня эффективное присутствие в интернете — это не просто эстетика, а один из главных двигателей продаж и развития компании. Мы создаем комплексные медиа-решения, объединяя сильный визуал, современную веб-разработку и инструменты продвижения.",
+                about_p3: "Мы берем на себя всю техническую и творческую работу: выстраиваем узнаваемый стиль бренда, выводим ваши ресурсы в топ поисковых систем и создаем контент, который удерживает внимание аудитории. Наша цель — сделать так, чтобы ваше присутствие в сети работало на ваш бизнес и приносило измеримый результат.",
                 services_label: "[ 02 / Направления работы ]",
                 services_count: "4 направления",
-                s1_title: "СММ под ключ",
-                s1_desc: "Берем ваши соцсети полностью на себя: продумываем план, сами организуем съемки, пишем тексты, публикуем и настраиваем рекламу. Вы занимаетесь бизнесом, а мы — вашим Instagram.",
-                s2_title: "Видео продакшн",
-                s2_desc: "Создаем видео, которые привлекают клиентов. Снимаем всё: от динамичных Reels, которые залетают в рекомендации, до полноценных рекламных роликов с качественной картинкой и звуком.",
-                s3_title: "Сайты под ключ",
-                s3_desc: "Разрабатываем современные и понятные сайты. Делаем так, чтобы сайт быстро работал, стильно выглядел и помогал вашим клиентам легко сделать заказ.",
+                s1_title: "SMM под ключ",
+                s1_desc: "Берем полностью на себя управление вашими социальными сетями: от разработки контент-стратегии и организации съемок до написания текстов, публикации и настройки рекламы. Вы занимаетесь бизнесом, а мы — вашим Instagram.",
+                s2_title: "Видеопродакшн",
+                s2_desc: "Создаем живой, эстетичный и продуманный видеоконтент, который цепляет с первых секунд. Снимаем всё: от динамичных коротких роликов для социальных сетей до презентационных видео о ваших товарах, услугах и атмосфере вашего бренда.",
+                s3_title: "Сайты и SEO-продвижение",
+                s3_desc: "Разрабатываем современные и удобные сайты, адаптированные под любые устройства. Настраиваем полноценную SEO-оптимизацию и профиль в Google, чтобы ваш сайт занимал высокие позиции в поисковой выдаче и приводил вам новых клиентов.",
                 s4_title: "Упаковка бренда",
-                s4_desc: "Создаем визуальное лицо вашего бизнеса с нуля. Разрабатываем логотип, подбираем фирменные цвета и делаем оформление, чтобы вы выглядели дорого и выделялись на фоне конкурентов.",
+                s4_desc: "Создаем визуальное лицо вашего бизнеса с нуля. Разрабатываем логотип, подбираем фирменные цвета, типографику и создаем узнаваемый образ, который выделяет вас среди конкурентов на рынке.",
                 cases_label: "[ 03 / Кейсы ]",
                 cases_sub: "Избранные проекты",
                 c1_meta: "Видео, брендинг",
@@ -836,18 +838,19 @@
                 nav_contact_btn: "Get in Touch",
                 hero_phrase: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / Studio Profile ]",
-                about_p1: "SUNDAY Studio specializes in next-generation visual communications. We don't just manage social media — we curate a cohesive visual language for your brand.",
-                about_p2: "From conceptual photo shoots and video production to turn-key websites: each project is crafted as a refined artistic and commercial statement.",
+                about_p1: "SUNDAY Studio is a media agency in Helsinki helping businesses grow and reach new clients.",
+                about_p2: "Today, an effective digital presence is not just about aesthetics — it is a primary driver of sales and business growth. We craft integrated media solutions combining sharp visual storytelling, modern web development, and performance marketing.",
+                about_p3: "We handle the entire technical and creative workflow: shaping a distinctive brand style, driving search rankings, and producing content that commands attention. Our goal is to make your online presence deliver measurable business results.",
                 services_label: "[ 02 / Services ]",
                 services_count: "4 directions",
                 s1_title: "Turn-Key SMM",
-                s1_desc: "We take full ownership of your socials: strategy, content shoots, copywriting, posting, and targeted ads. You focus on running your business, we handle your Instagram.",
+                s1_desc: "Full-cycle social media management: from content strategy and production shoots to copywriting, scheduling, and targeted ad campaigns. You run your business, we run your Instagram.",
                 s2_title: "Video Production",
-                s2_desc: "We produce videos that convert. From dynamic, viral Reels to high-end commercial shoots with crisp visuals and clear sound design.",
-                s3_title: "Turn-Key Websites",
-                s3_desc: "Clean, intuitive websites built for speed and seamless mobile browsing, designed to make ordering and booking effortless for your customers.",
+                s2_desc: "Dynamic, engaging video content tailored to captivate from the first seconds. We film high-impact social clips, product showcases, and brand atmosphere reels.",
+                s3_title: "Websites & SEO",
+                s3_desc: "Modern, responsive websites engineered for every device. Integrated SEO setup and Google Business optimization to rank high in search results and drive qualified inbound leads.",
                 s4_title: "Brand Identity",
-                s4_desc: "Creating your visual identity from scratch: logo design, curated color palettes, and polished guidelines that elevate your business above competitors.",
+                s4_desc: "Visual identity design built from the ground up: logos, color systems, typography, and cohesive brand styling that sets you apart from market competitors.",
                 cases_label: "[ 03 / Cases ]",
                 cases_sub: "Selected Works",
                 c1_meta: "Video, Branding",
@@ -865,18 +868,19 @@
                 nav_contact_btn: "Ota yhteyttä",
                 hero_phrase: "Helsinki — SMM, Video & Web",
                 about_label: "[ 01 / Studio ]",
-                about_p1: "SUNDAY Studio on erikoistunut uuden sukupolven visuaaliseen viestintään. Emme ainoastaan hallinnoi sosiaalista mediaa — luomme brändillesi yhtenäisen ja tunnistettavan visuaalisen kielen.",
-                about_p2: "Konseptuaalisista kuvauksista ja videotuotannosta avaimet käteen -verkkosivuihin: jokainen projekti on huolella hiottu esteettinen ja kaupallinen kokonaisuus.",
+                about_p1: "SUNDAY Studio on helsinkiläinen mediatoimisto, joka auttaa yrityksiä kasvamaan ja tavoittamaan uusia asiakkaita.",
+                about_p2: "Tehokas digitaalinen läsnäolo ei ole vain estetiikkaa, vaan yrityksen keskeinen myynnin ja kasvun moottori. Luomme kokonaisvaltaisia mediaratkaisuja, joissa yhdistyvät vahva visuaalisuus, moderni verkkokehitys ja tuloksellinen markkinointi.",
+                about_p3: "Vastaamme koko luovasta ja teknisestä prosessista: rakennamme tunnistettavan brändi-ilmeen, optimoimme näkyvyyden hakukoneissa ja tuotamme sisältöä, joka sitouttaa. Tavoitteemme on tuottaa mitattavia tuloksia liiketoiminnallesi.",
                 services_label: "[ 02 / Palvelut ]",
                 services_count: "4 osaamisaluetta",
                 s1_title: "SMM avaimet käteen",
-                s1_desc: "Otamme somesi kokonaan haltuun: sisältösuunnitelmat, kuvaukset, tekstit, julkaisut ja kohdennettu mainonta. Sinä keskityt liiketoimintaan, me Instagramiisi.",
+                s1_desc: "Sosiaalisen median kokonaisvaltainen hallinta: sisältöstrategiasta ja kuvauksista tekstintuotantoon, julkaisuun ja kohdennettuun mainontaan. Keskity liiketoimintaasi, me hoidamme Instagramisi.",
                 s2_title: "Videotuotanto",
-                s2_desc: "Tuotamme videoita, jotka tuovat asiakkaita. Dynaamisista Reelseistä aina laadukkaisiin mainosvideoihin terävällä kuvalla ja äänellä.",
-                s3_title: "Verkkosivut",
-                s3_desc: "Suunnittelemme moderneja ja selkeitä verkkosivustoja. Nopea toiminta, tyylikäs mobiilinäkymä ja vaivaton ostopolku asiakkaillesi.",
+                s2_desc: "Elävää ja esteettistä videosisältöä, joka herättää kiinnostuksen ensi sekunneista alkaen. Lyhytvideoista brändin ilmettä ja palveluita esitteleviin kokonaisuuksiin.",
+                s3_title: "Verkkosivut & SEO",
+                s3_desc: "Kaikille laitteille optimoidut modernit verkkosivustot. Kattava SEO-optimointi ja Google-näkyvyys varmistavat korkeat sijoitukset hakutuloksissa ja tuovat uusia asiakkaita.",
                 s4_title: "Brändi-identiteetti",
-                s4_desc: "Yrityksesi visuaalinen ilme alusta alkaen: logo, väripaletti ja yhtenäinen tyyli, joka erottuu edukseen kilpailijoista.",
+                s4_desc: "Yrityksen visuaalinen ilme alusta alkaen: logot, väripaletit, typografia ja yhtenäinen tyyli, joka erottuu edukseen markkinoilla.",
                 cases_label: "[ 03 / Referenssit ]",
                 cases_sub: "Valikoidut työt",
                 c1_meta: "Video, brändäys",
