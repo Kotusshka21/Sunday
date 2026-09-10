@@ -6,7 +6,7 @@
     <title>SUNDAY Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -15,7 +15,7 @@
             --muted: #767676;
             --border: #e8e8e8;
             --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --font-editorial: 'Cormorant Garamond', Georgia, serif;
+            --font-hero: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         * {
@@ -175,27 +175,27 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.28);
+            background: rgba(0, 0, 0, 0.26);
         }
 
         .hero-center-box {
             position: relative;
             z-index: 2;
             text-align: center;
-            max-width: 960px;
+            max-width: 1000px;
             padding: 20px;
         }
 
-        /* ФЕШН-ЗАГОЛОВОК */
+        /* НОВИЙ ФЕШН-ЗАГОЛОВОК (SPACE GROTESK, ПРЯМИЙ) */
         .hero-center-box h1 {
-            font-family: var(--font-editorial);
-            font-style: italic;
-            font-weight: 400;
-            font-size: clamp(2.4rem, 5.2vw, 4.4rem);
-            letter-spacing: 0.02em;
+            font-family: var(--font-hero);
+            font-style: normal;
+            font-weight: 600;
+            font-size: clamp(2rem, 4.4vw, 3.8rem);
+            letter-spacing: -0.025em;
             line-height: 1.15;
             color: #ffffff;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
             background: transparent;
             padding: 0;
             border-radius: 0;
@@ -792,7 +792,7 @@
         </div>
     </header>
 
-    <!-- ГОЛОВНИЙ ЕКРАН (ФЕШН-ТИПОГРАФІКА) -->
+    <!-- ГОЛОВНИЙ ЕКРАН (SPACE GROTESK, БЕЗ КУРСИВУ) -->
     <section class="hero">
         <div class="hero-media"></div>
         <div class="hero-center-box">
